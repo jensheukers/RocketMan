@@ -44,7 +44,7 @@ public class RM_GameState : MonoBehaviour {
 
     /*
     * @brief Tries to find missiondata that contains parameter value, if so returns new RM_Mission instance
-    * @param RM_MissionSO mission name
+    * @param string mission name
     * @return RM_Mission
     */
     public RM_Mission ChangeMission(string name) {
@@ -52,5 +52,13 @@ public class RM_GameState : MonoBehaviour {
             if (data.name == name) return ChangeMission(data);
         }
         return null;
+    }
+
+    /*
+     * @brief Returns the mission list
+     * @return List<RM_MissionSO>
+     */
+    public List<RM_MissionSO> GetMissions() {
+        return missions;
     }
 }

@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RM_CharacterController : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class RM_CharacterController : MonoBehaviour {
+
+    private bool isMoving;
+
+    private void Start() {
+        isMoving = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    /**
+     * @brief Returns true if player is moving
+     * @return bool
+     */
+    public bool IsMoving() {
+        return isMoving;
     }
 }
