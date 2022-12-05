@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RM_CameraRotate : MonoBehaviour {
+public class RM_CameraHandle : MonoBehaviour {
 
     [SerializeField]
     private Transform followTarget; /** The follow transform target*/
@@ -15,6 +15,13 @@ public class RM_CameraRotate : MonoBehaviour {
 
     private Vector3 nextPosition;
     private Quaternion nextRotation;
+
+    [Tooltip("Variable cannot be changed at runtime!")]
+    [SerializeField] private bool lockCursor = true;
+
+    private void Start() {
+        if (lockCursor) Cursor.lockState = CursorLockMode.Locked;
+    }
 
     private void Update() {
         if (!followTarget) return; 
