@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 584ad083b0670b049975d89f7875e266, type: 3}
-  m_Name: RM_Mission_Main_Menu
+  m_Name: RM_Mission_Main_Menu_SO
   m_EditorClassIdentifier: 
   missionName: Main Menu
   missionSceneName: SampleScene
