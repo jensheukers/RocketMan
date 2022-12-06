@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: 24dada84e1e98e342a2eff0580671b0c
 ModelImporter:
   serializedVersion: 22103
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -203655887218126122
+    second: mixamo.com
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -123,7 +126,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0

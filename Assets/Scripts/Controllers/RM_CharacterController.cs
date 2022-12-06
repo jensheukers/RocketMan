@@ -17,7 +17,12 @@ public class RM_CharacterController : MonoBehaviour {
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         if (input.x != 0 || input.y != 0) {
-            transform.Translate(new Vector3((input.x * horizontalSpeed) * Time.deltaTime, 0, (input.y * verticalSpeed) * Time.deltaTime));
+            //transform.Translate(new Vector3((input.x * horizontalSpeed) * Time.deltaTime, 0, (input.y * verticalSpeed) * Time.deltaTime));
+
+
+            transform.position += (transform.forward * input.y) * horizontalSpeed * Time.deltaTime;
+            transform.position += (transform.right * input.x) * verticalSpeed * Time.deltaTime;
+
             isMoving = true;
         }
     }

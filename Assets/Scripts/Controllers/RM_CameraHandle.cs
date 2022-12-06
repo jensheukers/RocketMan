@@ -54,5 +54,19 @@ public class RM_CameraHandle : MonoBehaviour {
             followTarget.transform.localEulerAngles = new Vector3(angles.x, 0, 0);
         }
     }
-    
+
+    /**
+     * @brief Sets the followTarget
+     * @param Transform
+     */
+    public void SetFollowTarget(Transform target) {
+        this.followTarget = target;
+    }
+
+    /**
+     * @brief Sets the followObjectRoot
+     */
+    public void SetFollowObjectRoot(Transform target) {
+        this.followObjectRoot = target;
+    }
 }
