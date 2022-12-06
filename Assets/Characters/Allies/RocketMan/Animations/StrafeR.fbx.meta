@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 12ff1480a93c5454ca2d5ead64d744b3
+guid: 2f5fe354648a8ef468a5316e21c90034
 ModelImporter:
   serializedVersion: 22103
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: RM_RocketMan_Idle_Anim
+    second: RM_RocketMan_Strafe_R_Anim
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -36,11 +36,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: RM_RocketMan_Idle_Anim
+      name: RM_RocketMan_Strafe_R_Anim
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 59
+      lastFrame: 25
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

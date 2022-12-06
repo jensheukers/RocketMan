@@ -14,17 +14,38 @@ public class RM_CharacterController : MonoBehaviour {
 
     private void Update() {
         isMoving = false;
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
         if (input.x != 0 || input.y != 0) {
-            //transform.Translate(new Vector3((input.x * horizontalSpeed) * Time.deltaTime, 0, (input.y * verticalSpeed) * Time.deltaTime));
-
-
-            transform.position += (transform.forward * input.y) * horizontalSpeed * Time.deltaTime;
-            transform.position += (transform.right * input.x) * verticalSpeed * Time.deltaTime;
-
-            isMoving = true;
+            HandleMovement(input);
         }
+
+        HandleAnimations(input);
+    }
+
+    /*
+     * Handles Movement
+     * @param Vector2 input
+     */
+    protected virtual void HandleMovement(Vector2 input) {
+        transform.position += (transform.forward * input.y) * horizontalSpeed * Time.deltaTime;
+        transform.position += (transform.right * input.x) * verticalSpeed * Time.deltaTime;
+
+        isMoving = true;
+    }
+
+    /*
+     * Hanldes animations
+     * @param Vector2 input
+     */
+    protected virtual void HandleAnimations(Vector2 input) {
+        //Set movement blend tree variables
+        Animator animator = GetComponent<Animator>();
+        if (!animator) return;
+
+
+        animator.SetFloat("Horizontal", input.x);
+        animator.SetFloat("Vertical", input.y);
     }
 
     /**
