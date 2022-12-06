@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class RM_CameraHandle : MonoBehaviour {
 
@@ -9,6 +10,8 @@ public class RM_CameraHandle : MonoBehaviour {
 
     [SerializeField]
     private Transform followObjectRoot; /** The follow root object (For example player object)*/
+
+    private CinemachineVirtualCamera cinemachineCam;
 
     [SerializeField]
     private float rotationPower = 1f;
@@ -21,6 +24,16 @@ public class RM_CameraHandle : MonoBehaviour {
 
     private void Start() {
         if (lockCursor) Cursor.lockState = CursorLockMode.Locked;
+
+        //Search the cinemachine camera then set its follow target to our follow target
+        cinemachineCam = GameObject.FindGameObjectWithTag("CinemachineCam").GetComponent<CinemachineVirtualCamera>();
+
+        if (!cinemachineCam) {
+            Debug.LogError("No cinemachine virtual camera in scene, or tag is not correctly set up");
+        }
+        else {
+            cinemachineCam.Follow = followTarget;
+        }
     }
 
     private void Update() {
