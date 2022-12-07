@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// RN_CharacterController is the main controller class for controlling objects in RocketMan
+/// </summary>
 public class RM_CharacterController : MonoBehaviour {
 
     private bool isMoving; /** True if player is moving*/
 
     [SerializeField]
-    private float horizontalSpeed = 5f;
+    private float horizontalSpeed = 5f; /** The horizontal movement speed*/
 
     [SerializeField]
-    private float verticalSpeed = 5f;
+    private float verticalSpeed = 5f; /** The vertical movement speed*/
 
     private void Update() {
         isMoving = false;

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
+/// <summary>
+/// RM_CameraHandle handles all camera movement by rotating a followtarget, however if followObjectRoot is set, it will rotate that object based on the horizontal rotation of mouse input.
+/// </summary>
 public class RM_CameraHandle : MonoBehaviour {
 
     [SerializeField]
@@ -15,9 +18,6 @@ public class RM_CameraHandle : MonoBehaviour {
 
     [SerializeField]
     private float rotationPower = 1f;
-
-    private Vector3 nextPosition;
-    private Quaternion nextRotation;
 
     [Tooltip("Variable cannot be changed at runtime!")]
     [SerializeField] private bool lockCursor = true;
@@ -74,6 +74,8 @@ public class RM_CameraHandle : MonoBehaviour {
      */
     public void SetFollowTarget(Transform target) {
         this.followTarget = target;
+
+        if (cinemachineCam) cinemachineCam.Follow = target;
     }
 
     /**
