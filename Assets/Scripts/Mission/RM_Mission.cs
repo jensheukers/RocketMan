@@ -9,6 +9,9 @@ using UnityEngine.SceneManagement;
 public class RM_Mission : MonoBehaviour {
     private RM_MissionSO data; /** MissionDataSO Reference */
 
+    /**
+     * @brief  Loads and start the mission, should be called first before any other runtime action is performed on the mission
+     */
     public IEnumerator LoadAndStartMission(RM_MissionSO data) {
         this.data = data;
 

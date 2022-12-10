@@ -15,13 +15,8 @@ public class RM_Trigger : MonoBehaviour {
     public UnityEvent<Collider> onTriggerEnterEvent; /** OnTriggerEnter action event listener. */
     public UnityEvent<Collider> onTriggerStayEvent; /** OnTriggerStay action event listener. */
     public UnityEvent<Collider> onTriggerExitEvent; /** OnTriggerExit action event listener. */
-
-
-    private void Awake() {
-    }
    
     //Unity automated events
-
     private void OnTriggerEnter(Collider other) {
         onTriggerEnterEvent.Invoke(other);
     }

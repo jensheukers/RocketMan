@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 /// <summary>
 /// RM_MissionSO is a ScriptableObject containing mission data
 /// </summary>
@@ -16,6 +14,9 @@ public class RM_MissionSO : ScriptableObject {
 
     private bool done; /* Gets set to true in OnStart, and set to false in OnStop */
 
+    /*
+     * @brief Gets called by RM_Mission class when mission data is to be started.
+     */
     public virtual void OnStart() {
         done = false;
 
@@ -33,10 +34,17 @@ public class RM_MissionSO : ScriptableObject {
             });
         }
     }
+    
+    /**
+    * @brief Gets called by default endMissionTrigger
+    */
     public virtual void OnStop() {
         done = true;
     }
 
+    /**
+     * @brief Gets called every frame by RM_Mission
+     */
     public virtual void OnUpdate() { }
 
     /**
