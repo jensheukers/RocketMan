@@ -9,15 +9,31 @@ using UnityEngine.SceneManagement;
 public class RM_Mission : MonoBehaviour {
     private RM_MissionSO data; /** MissionDataSO Reference */
 
-    public void LoadMission(RM_MissionSO data) {
+    public IEnumerator LoadAndStartMission(RM_MissionSO data) {
         this.data = data;
 
-        SceneManager.LoadScene(data.missionSceneName);
+        AsyncOperation async = SceneManager.LoadSceneAsync(data.missionSceneName);
+
+        while (!async.isDone) {
+            yield return 0;
+        }
+
+        data.OnStart();
     }
 
-    public void StartMission() { data.OnStart(); }
-
+    /**
+     * @brief Calls the OnStop function on mission data ScriptableObject 
+     */
     public void StopMission() { data.OnStop(); }
 
+    /**
+     * @brief returns data.IsDone
+     * @return bool
+     */
+    public bool IsDone() { return data.IsDone(); }
+
+    /**
+     * @brief Calls the OnUpdate function on mission data ScriptableObject 
+     */
     public void Update() { data.OnUpdate(); }
 }

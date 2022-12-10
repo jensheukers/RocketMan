@@ -29,6 +29,17 @@ public class RM_GameState : MonoBehaviour {
         else ChangeMission(mainMenu);
     }
 
+
+    private void Update() {
+
+        //Check if mission is done if so return to main menu
+        if (currentMission) {
+            if (currentMission.IsDone()) {
+                ChangeMission(mainMenu);
+            }
+        } 
+    }
+
     /*
     * @brief Changes the mission and returns new RM_Mission instance.
     * @param RM_MissionSO mission data
@@ -37,8 +48,8 @@ public class RM_GameState : MonoBehaviour {
     public RM_Mission ChangeMission(RM_MissionSO data) {
         if (currentMission) currentMission.StopMission();
         currentMission = gameObject.AddComponent<RM_Mission>();
-        currentMission.LoadMission(data);
-        currentMission.StartMission();
+
+        StartCoroutine(currentMission.LoadAndStartMission(data));
         return currentMission;
     }
 
