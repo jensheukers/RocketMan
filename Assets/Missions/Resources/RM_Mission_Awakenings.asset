@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8978cd56f6217e46bdd4b87b880fb77, type: 3}
   m_Name: RM_Mission_Awakenings
   m_EditorClassIdentifier: 
-  missionName: Unnamed Mission
-  missionSceneName: SampleScene
-  playerPrefab: {fileID: 0}
+  missionName: Awakenings
+  missionSceneName: RM_Scene_Awakenings
   endMissionTriggerKey: RM_Trigger_Mission_End
   missionHasEnd: 1
   unlockCursorInStart: 0
-  checkPointTriggerNames: []
+  checkPointTriggerKeys: []
+  playerPrefab: {fileID: 5439533329924763095, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
+  spawnPos: {x: 0, y: 2, z: 0}
