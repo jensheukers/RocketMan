@@ -10,7 +10,10 @@ public class RM_MissionSO : ScriptableObject {
     public string missionName = "Unnamed Mission"; //* Mission name definition */
     public string missionSceneName = "SampleScene"; /* Mission scene name reference */
 
-    protected const string endMissionTriggerKey = "RM_Trigger_Mission_End"; /* The key of the trigger that marks the end of the mission */
+    //Trigger keys
+    public string endMissionTriggerKey = "RM_Trigger_Mission_End"; /* The key of the trigger that marks the end of the mission */
+    public bool missionHasEnd = true;
+    public bool unlockCursorInStart = true;
 
     private bool done; /* Gets set to true in OnStart, and set to false in OnStop */
 
@@ -20,13 +23,15 @@ public class RM_MissionSO : ScriptableObject {
     public virtual void OnStart() {
         done = false;
 
+        if (unlockCursorInStart) Cursor.lockState = CursorLockMode.None;
+
         //Default Level setup
         RM_Trigger endMissionTrigger = FindTriggerByName(endMissionTriggerKey);
 
-        if (!endMissionTrigger) {
+        if (!endMissionTrigger && missionHasEnd) {
             Debug.LogWarning("End of mission has not been set up, please make sure to create a trigger and set the triggerkey to " + endMissionTriggerKey);
         }
-        else {
+        else if (endMissionTrigger) {
             endMissionTrigger.onTriggerEnterEvent.AddListener((Collider other) => {
                 if (other.tag == "RM_Player") {
                     OnStop();

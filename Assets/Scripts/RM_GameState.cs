@@ -9,6 +9,7 @@ using UnityEngine;
 /// It handles mission changing, and it responsible for talking to multiple systems.
 /// </summary>
 public class RM_GameState : MonoBehaviour {
+    private static RM_GameState _instance;
 
     private RM_Mission currentMission; //* Reference to the current mission*/
 
@@ -23,6 +24,14 @@ public class RM_GameState : MonoBehaviour {
     * @return void
     */
     void Awake() {
+        if (_instance) {
+            Destroy(this.gameObject);
+            Debug.LogError("Only 1 instance of RM_GameState can be present");
+            return;
+        }
+
+        _instance = this;
+
         DontDestroyOnLoad(this.gameObject);
 
         if (!mainMenu) Debug.LogError("RM_GameState: " + "main menu not set!");
@@ -63,6 +72,15 @@ public class RM_GameState : MonoBehaviour {
             if (data.name == name) return ChangeMission(data);
         }
         return null;
+    }
+
+    //Static functions
+    public static void ChangeMissionStatic(RM_MissionSO data) {
+        _instance.ChangeMission(data);
+    }
+
+    public static void ChangeMissionStatic(string name) {
+        _instance.ChangeMission(name);
     }
 
     /*

@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 584ad083b0670b049975d89f7875e266, type: 3}
-  m_Name: RM_Mission_Main_Menu_SO
+  m_Script: {fileID: 11500000, guid: a8978cd56f6217e46bdd4b87b880fb77, type: 3}
+  m_Name: RM_Mission_Awakenings
   m_EditorClassIdentifier: 
-  missionName: Main Menu
-  missionSceneName: RM_Scene_Main_Menu
+  missionName: Unnamed Mission
+  missionSceneName: SampleScene
   playerPrefab: {fileID: 0}
-  endMissionTriggerKey: 
-  missionHasEnd: 0
+  endMissionTriggerKey: RM_Trigger_Mission_End
+  missionHasEnd: 1
+  unlockCursorInStart: 0
+  checkPointTriggerNames: []
