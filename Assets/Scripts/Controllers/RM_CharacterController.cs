@@ -16,12 +16,19 @@ public class RM_CharacterController : MonoBehaviour {
     [SerializeField]
     private float verticalSpeed = 5f; /** The vertical movement speed*/
 
+    [SerializeField]
+    private RM_Jetpack jetPack; /** Jetpack reference */
+
     private void Update() {
         isMoving = false;
         Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
         if (input.x != 0 || input.y != 0) {
             HandleMovement(input);
+        }
+
+        if (Input.GetKey(KeyCode.Space) && jetPack) {
+            jetPack.Boost(this.gameObject);
         }
 
         HandleAnimations(input);
