@@ -55,7 +55,9 @@ public class RM_GameState : MonoBehaviour {
     * @return RM_Mission
     */
     public RM_Mission ChangeMission(RM_MissionSO data) {
-        if (currentMission) currentMission.StopMission();
+        if (currentMission) {
+            currentMission.StopMission();
+        }
         currentMission = gameObject.AddComponent<RM_Mission>();
 
         StartCoroutine(currentMission.LoadAndStartMission(data));

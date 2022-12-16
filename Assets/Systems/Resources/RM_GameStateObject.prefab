@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 11400000, guid: 7777f77597d6dda4da14555cf26272d8, type: 2}
-  missions: []
+  missions:
+  - {fileID: 11400000, guid: 44dcf324e3337d54095e5920d9b86c2d, type: 2}
