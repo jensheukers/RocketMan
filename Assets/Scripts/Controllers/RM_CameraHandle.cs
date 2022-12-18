@@ -43,10 +43,10 @@ public class RM_CameraHandle : MonoBehaviour {
         followTarget.transform.rotation *= Quaternion.AngleAxis(Input.GetAxis("Mouse X") * rotationPower, Vector3.up);
         followTarget.transform.rotation *= Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * rotationPower, Vector3.right);
 
-        var angles = followTarget.transform.localEulerAngles;
+        Vector3 angles = followTarget.transform.localEulerAngles;
         angles.z = 0;
 
-        var angle = followTarget.transform.localEulerAngles.x;
+        float angle = followTarget.transform.localEulerAngles.x;
 
         //Clamp the Up/Down rotation
         if (angle > 180 && angle < 340) {
@@ -60,12 +60,16 @@ public class RM_CameraHandle : MonoBehaviour {
         followTarget.transform.localEulerAngles = angles;
 
         if (!followObjectRoot) return;
-        if (followObjectRoot.GetComponent<RM_CharacterController>() && followObjectRoot.GetComponent<RM_CharacterController>().IsMoving()) {
-            //Set the player rotation based on the look transform
-            followObjectRoot.rotation = Quaternion.Euler(0, followTarget.transform.rotation.eulerAngles.y, 0);
-            //reset the y rotation of the look transform
-            followTarget.transform.localEulerAngles = new Vector3(angles.x, 0, 0);
+        if (followObjectRoot.GetComponent<RM_CharacterController>() && followObjectRoot.GetComponent<RM_CharacterController>().IsMoving() || followObjectRoot.GetComponent<RM_AimStateManager>().GetAimAmount() > 0) {
+            RotateFollowObject(angles);
         }
+    }
+
+    private void RotateFollowObject(Vector3 angles) {
+        //Set the player rotation based on the look transform
+        followObjectRoot.rotation = Quaternion.Euler(0, followTarget.transform.rotation.eulerAngles.y, 0);
+        //reset the y rotation of the look transform
+        followTarget.transform.localEulerAngles = new Vector3(angles.x, 0, 0);
     }
 
     /**

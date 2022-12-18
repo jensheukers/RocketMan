@@ -23,6 +23,9 @@ public class RM_AimStateManager : MonoBehaviour {
     private Transform aimTarget;
 
     [SerializeField]
+    private Transform followTarget; // Temporary
+
+    [SerializeField]
     private float aimSmoothSpeed = 20;
 
     [SerializeField]
@@ -34,10 +37,6 @@ public class RM_AimStateManager : MonoBehaviour {
     float originalFov = 0;
 
     private void Start() {
-        if (!(animator = GetComponent<Animator>())) {
-            Debug.LogError("RM_AimStateManager: no animator component present on object!");
-        }
-
         GameObject cam = GameObject.FindGameObjectWithTag("CinemachineCam");
         if (cam) {
             virtualCamera = cam.GetComponent<CinemachineVirtualCamera>();
@@ -50,7 +49,7 @@ public class RM_AimStateManager : MonoBehaviour {
         }
     }
 
-    private void Update() {
+    private void LateUpdate() {
         if (Input.GetMouseButton(1)) {
             if (aimAmount < 1) aimAmount += aimSpeed * Time.deltaTime;
             else aimAmount = 1;
@@ -69,13 +68,17 @@ public class RM_AimStateManager : MonoBehaviour {
             else virtualCamera.m_Lens.FieldOfView = originalFov;
         }
 
-        //animator.SetFloat(aimAmountAnimatorFloatName, aimAmount);
+        if (GetComponent<RM_CharacterController>().IsMoving() || aimAmount > 0) {
+            Vector2 screenCentre = new Vector2(Screen.width / 2, Screen.height / 2);
+            Ray ray = Camera.main.ScreenPointToRay(screenCentre);
 
-        Vector2 screenCentre = new Vector2(Screen.width / 2, Screen.height / 2);
-        Ray ray = Camera.main.ScreenPointToRay(screenCentre);
-
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, aimMask)) {
-            aimTarget.position = Vector3.Lerp(aimTarget.position, hit.point, aimSmoothSpeed * Time.deltaTime);
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, aimMask)) {
+                aimTarget.position = Vector3.Lerp(aimTarget.position, hit.point, aimSmoothSpeed * Time.deltaTime);
+            }
         }
+    }
+
+    public float GetAimAmount() {
+        return this.aimAmount;
     }
 }
