@@ -3,12 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - RM_Trigger
+  - RM_World
+  - CinemachineCam
+  - RM_Player
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PlayerIgnore
   - Water
   - UI
   - 

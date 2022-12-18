@@ -19,7 +19,7 @@ public class RM_CharacterController : MonoBehaviour {
     [SerializeField]
     private RM_Jetpack jetPack; /** Jetpack reference */
 
-    private void Update() {
+    private void LateUpdate() {
         isMoving = false;
         Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
