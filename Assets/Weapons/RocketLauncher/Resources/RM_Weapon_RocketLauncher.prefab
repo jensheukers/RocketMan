@@ -123,6 +123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3593303265352392210}
+  - component: {fileID: 4742326509823938177}
   m_Layer: 0
   m_Name: RM_Weapon_RocketLauncher
   m_TagString: Untagged
@@ -145,9 +146,27 @@ Transform:
   - {fileID: 2600650586524995987}
   - {fileID: 3344095787682456428}
   - {fileID: 7890647002567247125}
+  - {fileID: 1368776140637066189}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4742326509823938177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4221608861714662568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe09b35a2643a9749b9d4e1f1031e507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Rocket Launcher
+  projectilePrefab: {fileID: 7471077436232062337, guid: 27f54975fe63bd8438711f1d8c9955d9, type: 3}
+  barrelEnd: {fileID: 1368776140637066189}
+  ammo: 30
+  shootForce: 50000
 --- !u!1 &4941829764231670136
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,3 +198,34 @@ Transform:
   m_Father: {fileID: 3593303265352392210}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 64.298, y: 45.791, z: 48.765}
+--- !u!1 &9074799527391462202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1368776140637066189}
+  m_Layer: 0
+  m_Name: BarrelEnd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1368776140637066189
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9074799527391462202}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: -2.353, y: 0.047, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3593303265352392210}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -90}

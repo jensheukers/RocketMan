@@ -6749,10 +6749,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 690500082, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 690500082, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
       propertyPath: m_Sources.Array.data[0].sourceTransform
       value: 
       objectReference: {fileID: 1114694595}
@@ -6807,22 +6803,6 @@ PrefabInstance:
     - target: {fileID: 5439533329924763095, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
       propertyPath: m_Name
       value: RM_Allies_RocketMan
-      objectReference: {fileID: 0}
-    - target: {fileID: 6531582190929723254, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7036416
-      objectReference: {fileID: 0}
-    - target: {fileID: 6531582190929723254, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.009424452
-      objectReference: {fileID: 0}
-    - target: {fileID: 6531582190929723254, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.71043134
-      objectReference: {fileID: 0}
-    - target: {fileID: 6531582190929723254, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.009334512
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
