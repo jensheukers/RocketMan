@@ -3141,6 +3141,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 32302962}
     - target: {fileID: 3522848932615089689, guid: a6f7e601613bd2f46a3c87509fc4bf71, type: 3}
+      propertyPath: maxCameraClamp
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522848932615089689, guid: a6f7e601613bd2f46a3c87509fc4bf71, type: 3}
+      propertyPath: minCameraClamp
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522848932615089689, guid: a6f7e601613bd2f46a3c87509fc4bf71, type: 3}
       propertyPath: followObjectRoot
       value: 
       objectReference: {fileID: 4627107849343354503}

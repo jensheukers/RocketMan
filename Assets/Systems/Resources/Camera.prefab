@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &3522848932615089693
 Camera:
@@ -135,4 +135,6 @@ MonoBehaviour:
   followTarget: {fileID: 0}
   followObjectRoot: {fileID: 0}
   rotationPower: 1
+  minCameraClamp: 25
+  maxCameraClamp: 320
   lockCursor: 1

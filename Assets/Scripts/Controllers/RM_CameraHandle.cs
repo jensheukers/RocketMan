@@ -19,6 +19,13 @@ public class RM_CameraHandle : MonoBehaviour {
     [SerializeField]
     private float rotationPower = 1f;
 
+    [SerializeField]
+    private float minCameraClamp = 50;
+
+    [SerializeField]
+    private float maxCameraClamp = 330;
+
+
     [Tooltip("Variable cannot be changed at runtime!")]
     [SerializeField] private bool lockCursor = true;
 
@@ -48,12 +55,14 @@ public class RM_CameraHandle : MonoBehaviour {
 
         float angle = followTarget.transform.localEulerAngles.x;
 
+        Debug.Log(angles.x);
+
         //Clamp the Up/Down rotation
-        if (angle > 180 && angle < 340) {
-            angles.x = 340;
+        if (angle > 180 && angle < maxCameraClamp) {
+            angles.x = maxCameraClamp;
         }
-        else if (angle < 180 && angle > 40) {
-            angles.x = 40;
+        else if (angle < 180 && angle > minCameraClamp) {
+            angles.x = minCameraClamp;
         }
 
 
