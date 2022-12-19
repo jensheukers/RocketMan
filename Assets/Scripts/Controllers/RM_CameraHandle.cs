@@ -55,8 +55,6 @@ public class RM_CameraHandle : MonoBehaviour {
 
         float angle = followTarget.transform.localEulerAngles.x;
 
-        Debug.Log(angles.x);
-
         //Clamp the Up/Down rotation
         if (angle > 180 && angle < maxCameraClamp) {
             angles.x = maxCameraClamp;

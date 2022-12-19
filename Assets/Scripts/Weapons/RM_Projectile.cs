@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class RM_Projectile : MonoBehaviour {
     [SerializeField]
-    private ParticleSystem explosionParticleSystem;
+    private GameObject hitParticlePrefab;
 
     public void OnCollisionEnter(Collision collision) {
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
-        GetComponent<Rigidbody>().useGravity = false;
-
-        explosionParticleSystem.Play();
-        Destroy(gameObject, explosionParticleSystem.main.duration);
+        GameObject particleSystem = Instantiate(hitParticlePrefab, transform.position, transform.rotation);
+        Destroy(this.gameObject);
     }
 }
