@@ -28,7 +28,7 @@ public class RM_Weapon : MonoBehaviour {
         if (ammo <= 0) return;
 
         GameObject projectile = Instantiate(projectilePrefab, barrelEnd.transform.position, barrelEnd.transform.rotation);
-        projectile.GetComponent<Rigidbody>().velocity = projectile.transform.forward * (shootForce * Time.deltaTime);
+        projectile.GetComponent<Rigidbody>().velocity = barrelEnd.transform.up * (shootForce);
     }
 
     public void AddAmmo(int amount) {
