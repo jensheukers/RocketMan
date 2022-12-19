@@ -143,7 +143,7 @@ Animator:
   m_GameObject: {fileID: 1504964265332292635}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 24dada84e1e98e342a2eff0580671b0c, type: 3}
-  m_Controller: {fileID: 9100000, guid: 531e471b8b32d2b42beb79901f36d656, type: 2}
+  m_Controller: {fileID: 9100000, guid: 74cae87419666c44a9d5e6a3695e2671, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -213,7 +213,9 @@ MonoBehaviour:
   horizontalSpeed: 5
   verticalSpeed: 5
   jetPack: {fileID: 0}
-  attackDistance: 5
+  chaseDistance: 15
+  attackDistance: 1.5
+  attackInterval: 2.5
 --- !u!195 &8931832496622302307
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -22,11 +22,18 @@ public class RM_AICharacterController : RM_CharacterController {
     [SerializeField]
     private float attackDistance = 2f;
 
+    [SerializeField]
+    private float attackInterval = 5f;
+
     RM_AiState state;
+
+    private bool canAttack;
 
     private void Start() {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("RM_Player").transform;
+
+        canAttack = true;
     }
 
     protected override void LateUpdate() {
@@ -76,8 +83,22 @@ public class RM_AICharacterController : RM_CharacterController {
         //Attack state
         agent.isStopped = true;
 
-        transform.LookAt(target.position);
+        transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
         HandleAnimations(new Vector2(0, 0));
+
+        //Handle attack
+        if (canAttack) {
+            GetComponent<Animator>().SetTrigger("OnAttack");
+            canAttack = false;
+
+            StartCoroutine(ResetAttack());
+        }
+    }
+
+    //private methods
+    private IEnumerator ResetAttack() {
+        yield return new WaitForSeconds(attackInterval);
+        canAttack = true;
     }
 
     void OnDrawGizmos() {
