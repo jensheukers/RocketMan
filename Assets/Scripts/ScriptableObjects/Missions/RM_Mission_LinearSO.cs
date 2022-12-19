@@ -8,7 +8,25 @@ using UnityEngine;
 /// </summary>
 [CreateAssetMenu(fileName = "New Mission", menuName = "Missions/Mission_Linear")]
 public class RM_Mission_LinearSO : RM_MissionSO {
-    public List<string> checkPointTriggerKeys; /** The trigger keys of checkpoint triggers*/
+    [SerializeField]
+    private List<string> checkPointTriggerKeys; /** The trigger keys of checkpoint triggers*/
 
-    public GameObject playerPrefab; /** The prefab of the player to initiate*/
+    private GameObject playerPrefab; /** The prefab of the player to initiate*/
+
+    public override void OnStart() {
+        base.OnStart();
+
+        //Set up triggers
+        for (int i = 0; i < checkPointTriggerKeys.Count; i++) {
+            RM_Trigger trigger = FindTriggerByName(checkPointTriggerKeys[i]);
+
+            if (!trigger) continue;
+
+            trigger.onTriggerEnterEvent.AddListener((Collider other) => {
+                if (other.tag == "RM_Player") {
+                    Debug.Log("Checkpoint Reached");
+                }
+            });
+        }
+    }
 }

@@ -63,7 +63,7 @@ public class RM_MissionSO : ScriptableObject {
      * @brief Finds a trigger by keyname
      * @return RM_Trigger
      */
-    private RM_Trigger FindTriggerByName(string triggerKey) {
+    protected RM_Trigger FindTriggerByName(string triggerKey) {
         GameObject[] list = GameObject.FindGameObjectsWithTag("RM_Trigger");
 
         foreach (GameObject go in list) {

@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class RM_CharacterController : MonoBehaviour {
 
-    private bool isMoving; /** True if player is moving*/
+    protected bool isMoving; /** True if player is moving*/
 
     [SerializeField]
     private float horizontalSpeed = 5f; /** The horizontal movement speed*/
@@ -19,7 +19,7 @@ public class RM_CharacterController : MonoBehaviour {
     [SerializeField]
     private RM_Jetpack jetPack; /** Jetpack reference */
 
-    private void LateUpdate() {
+    protected virtual void LateUpdate() {
         isMoving = false;
         Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 

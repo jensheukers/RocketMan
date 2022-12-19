@@ -17,6 +17,6 @@ MonoBehaviour:
   endMissionTriggerKey: RM_Trigger_Mission_End
   missionHasEnd: 1
   unlockCursorInStart: 0
-  checkPointTriggerKeys: []
-  playerPrefab: {fileID: 5439533329924763095, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
-  spawnPos: {x: 0, y: 2, z: 0}
+  checkPointTriggerKeys:
+  - RM_Awakenings_Checkpoint_0
+  - RM_Awakenings_Checkpoint_1
