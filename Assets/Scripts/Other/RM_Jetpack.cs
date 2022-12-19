@@ -19,7 +19,10 @@ public class RM_Jetpack : MonoBehaviour {
     private float fuel;
 
     [SerializeField]
-    private ParticleSystem boostParticleSystem;
+    private ParticleSystem smokeParticleSystem;
+
+    [SerializeField]
+    private ParticleSystem trailParticleSystem;
 
     private void Start() {
         fuel = maxFuel;
@@ -34,8 +37,17 @@ public class RM_Jetpack : MonoBehaviour {
         holder.GetComponent<Rigidbody>().AddForce(new Vector3(0, force, 0) * Time.deltaTime);
 
         fuel -= fuelUsage * Time.deltaTime;
+        if (smokeParticleSystem) {
+            if (!smokeParticleSystem.isPlaying) {
+                smokeParticleSystem.Play();
+            }
+        }
 
-        if (boostParticleSystem) boostParticleSystem.Emit(1);
+        if (trailParticleSystem) {
+            if (!trailParticleSystem.isPlaying) {
+                trailParticleSystem.Play();
+            }
+        }
     }
 
     public void AddFuel(float amount) {
