@@ -25,6 +25,9 @@ public class RM_AICharacterController : RM_CharacterController {
     [SerializeField]
     private float attackInterval = 5f;
 
+    [SerializeField]
+    protected List<Transform> partrolPoints;
+
     RM_AiState state;
 
     private bool canAttack;
@@ -57,7 +60,12 @@ public class RM_AICharacterController : RM_CharacterController {
                 HandleAnimations(new Vector2(0, 1));
             }
             else {
-                OnAttack();
+                if (target == player) {
+                    OnAttack();
+                }
+                else {
+                    target = null;
+                }
             }
         }
         else {
@@ -67,7 +75,13 @@ public class RM_AICharacterController : RM_CharacterController {
 
     protected virtual void OnPatrolling() {
         state = RM_AiState.Patrolling;
-        target = null;
+        if (target == null || target == player) {
+            //set new target
+
+            if (partrolPoints.Count > 0) {
+                target = partrolPoints[Random.Range(0, partrolPoints.Count)];
+            }
+        }
     }
 
     protected virtual void OnChase() {
@@ -110,6 +124,11 @@ public class RM_AICharacterController : RM_CharacterController {
         else {
             Gizmos.color = Color.red;
             Gizmos.DrawLine(transform.position, player.position);
+        }
+
+        if (state == RM_AiState.Patrolling && target) {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawLine(transform.position, target.position);
         }
     }
 }
