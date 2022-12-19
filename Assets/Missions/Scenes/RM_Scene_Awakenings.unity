@@ -3141,14 +3141,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 32302962}
     - target: {fileID: 3522848932615089689, guid: a6f7e601613bd2f46a3c87509fc4bf71, type: 3}
-      propertyPath: maxCameraClamp
-      value: 320
-      objectReference: {fileID: 0}
-    - target: {fileID: 3522848932615089689, guid: a6f7e601613bd2f46a3c87509fc4bf71, type: 3}
-      propertyPath: minCameraClamp
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3522848932615089689, guid: a6f7e601613bd2f46a3c87509fc4bf71, type: 3}
       propertyPath: followObjectRoot
       value: 
       objectReference: {fileID: 4627107849343354503}
@@ -3199,10 +3191,6 @@ PrefabInstance:
     - target: {fileID: 3522848932615089695, guid: a6f7e601613bd2f46a3c87509fc4bf71, type: 3}
       propertyPath: m_Name
       value: Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 3522848932615089695, guid: a6f7e601613bd2f46a3c87509fc4bf71, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -25614,6 +25602,14 @@ PrefabInstance:
     - target: {fileID: 2281466467200919201, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262397078513633994, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
+      propertyPath: chaseDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262397078513633994, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
+      propertyPath: attackDistance
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
