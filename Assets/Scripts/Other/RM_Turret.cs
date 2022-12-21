@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RM_Turret : MonoBehaviour {
+public class RM_Turret : RM_Weapon {
 
     [SerializeField]
     private Transform mount;
@@ -23,8 +23,22 @@ public class RM_Turret : MonoBehaviour {
     [SerializeField]
     private float maxGunRotateAmount = 75f;
 
-[SerializeField]
+    [SerializeField]
     private Transform target;
+
+    private bool canShoot;
+
+    [SerializeField]
+    private float timeBetweenShots;
+
+
+    [SerializeField]
+    private float aimDistance = 100f;
+
+
+    private void Start() {
+        canShoot = true;
+    }
 
     private void Update() {
         if (target) {
@@ -38,7 +52,21 @@ public class RM_Turret : MonoBehaviour {
 
             gun.localEulerAngles = new Vector3(gun.localEulerAngles.x, 0, 0);
 
+            RaycastHit hit;
+            if (Physics.Raycast(barrelEnd.position, barrelEnd.up, out hit, aimDistance)) {
+                if (hit.transform.root == target && canShoot) {
+                    Shoot();
+                    canShoot = false;
+
+                    StartCoroutine(ResetShootTimer());
+                }
+            }
         }
+    }
+    private IEnumerator ResetShootTimer() {
+        yield return new WaitForSeconds(timeBetweenShots);
+
+        canShoot = true;
     }
 
     public void SetTarget(Transform target) {

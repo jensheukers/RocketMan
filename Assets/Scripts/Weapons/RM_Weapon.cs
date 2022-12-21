@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class RM_Weapon : MonoBehaviour {
     [SerializeField]
-    private string weaponName = "Weapon";
-
-    [SerializeField]
     private GameObject projectilePrefab;
 
     [SerializeField]
-    private Transform barrelEnd;
+    protected Transform barrelEnd;
 
     [SerializeField]
     private int ammo;
@@ -27,11 +24,15 @@ public class RM_Weapon : MonoBehaviour {
     public void Shoot() {
         if (ammo <= 0) return;
 
-        GameObject projectile = Instantiate(projectilePrefab, barrelEnd.transform.position, barrelEnd.transform.rotation);
-        projectile.GetComponent<Rigidbody>().velocity = barrelEnd.transform.up * (shootForce);
+        GameObject projectile = Instantiate(projectilePrefab, barrelEnd.position, barrelEnd.rotation);
+        projectile.GetComponent<Rigidbody>().velocity = barrelEnd.up * (shootForce);
     }
 
     public void AddAmmo(int amount) {
         ammo += amount;
+    }
+
+    private void OnDrawGizmos() {
+        Debug.DrawLine(barrelEnd.position, barrelEnd.position + (barrelEnd.up * 5), Color.green);
     }
 }
