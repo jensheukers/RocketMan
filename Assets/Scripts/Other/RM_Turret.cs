@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RM_Turret : RM_Weapon {
-
     [SerializeField]
     private Transform mount;
 
@@ -42,6 +41,7 @@ public class RM_Turret : RM_Weapon {
 
     private void Update() {
         if (target) {
+
             //First part - Rotates the base of the turret
             Quaternion lookRotation = Quaternion.LookRotation(target.position - mount.position, Vector3.up);
             mount.rotation = Quaternion.RotateTowards(mount.rotation, lookRotation, Time.deltaTime * mountRotateSpeed);
@@ -61,6 +61,7 @@ public class RM_Turret : RM_Weapon {
                     StartCoroutine(ResetShootTimer());
                 }
             }
+           
         }
     }
     private IEnumerator ResetShootTimer() {

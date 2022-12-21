@@ -80,6 +80,9 @@ MonoBehaviour:
   barrelEnd: {fileID: 288234868}
   ammo: 9999
   shootForce: 100
+  visionIgnoreMask:
+    serializedVersion: 2
+    m_Bits: 4
   mount: {fileID: 5043381119540777735}
   mountRotateSpeed: 500
   gun: {fileID: 1779176820018731344}
