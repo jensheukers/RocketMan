@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 387601354649539156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.5518494, y: 3.8902051, z: 14.833753}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8396798083609079880}
@@ -80,9 +80,6 @@ MonoBehaviour:
   barrelEnd: {fileID: 288234868}
   ammo: 9999
   shootForce: 100
-  visionIgnoreMask:
-    serializedVersion: 2
-    m_Bits: 4
   mount: {fileID: 5043381119540777735}
   mountRotateSpeed: 500
   gun: {fileID: 1779176820018731344}
@@ -287,7 +284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9208941990056782578}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.5518494, y: -1.8902051, z: -1.8337526}
+  m_LocalPosition: {x: -1.5518494, y: -2.12, z: -2.56}
   m_LocalScale: {x: 99.91547, y: 80.96156, z: 39.403408}
   m_ConstrainProportionsScale: 0
   m_Children:
