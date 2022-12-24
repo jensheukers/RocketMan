@@ -9835,3 +9835,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitParticlePrefab: {fileID: 5460045106627551367, guid: 9782cff77a3fe9e44a39ff046bd3d3c3, type: 3}
+  damage: 8

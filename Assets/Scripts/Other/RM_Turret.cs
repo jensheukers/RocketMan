@@ -25,19 +25,8 @@ public class RM_Turret : RM_Weapon {
     [SerializeField]
     private Transform target;
 
-    private bool canShoot;
-
-    [SerializeField]
-    private float timeBetweenShots;
-
-
     [SerializeField]
     private float aimDistance = 100f;
-
-
-    private void Start() {
-        canShoot = true;
-    }
 
     private void Update() {
         if (target) {
@@ -54,20 +43,12 @@ public class RM_Turret : RM_Weapon {
 
             RaycastHit hit;
             if (Physics.Raycast(barrelEnd.position, barrelEnd.up, out hit, aimDistance)) {
-                if (hit.transform.root == target && canShoot) {
+                if (hit.transform.root == target) {
                     Shoot();
-                    canShoot = false;
-
-                    StartCoroutine(ResetShootTimer());
                 }
             }
            
         }
-    }
-    private IEnumerator ResetShootTimer() {
-        yield return new WaitForSeconds(timeBetweenShots);
-
-        canShoot = true;
     }
 
     public void SetTarget(Transform target) {

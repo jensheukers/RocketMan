@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public enum RM_AiState {
     Patrolling,
@@ -28,6 +29,18 @@ public class RM_AICharacterController : RM_CharacterController {
     [SerializeField]
     protected List<Transform> partrolPoints;
 
+    [SerializeField]
+    protected UnityEvent<Transform> onAttack;
+
+    [SerializeField]
+    protected UnityEvent<Transform> onChase;
+
+    [SerializeField]
+    protected UnityEvent<Transform> onPatrol;
+
+    [SerializeField]
+    protected bool lookAtOnAttack = true;
+
     RM_AiState state;
 
     private bool canAttack;
@@ -44,8 +57,7 @@ public class RM_AICharacterController : RM_CharacterController {
     }
 
     protected virtual void HandleMovement() {
-    
-        if (Vector3.Distance(player.position, transform.position) <= chaseDistance) {
+        if (player && Vector3.Distance(player.position, transform.position) <= chaseDistance) {
             OnChase();
         }
         else {
@@ -82,6 +94,8 @@ public class RM_AICharacterController : RM_CharacterController {
                 target = partrolPoints[Random.Range(0, partrolPoints.Count)];
             }
         }
+
+        onPatrol.Invoke(null);
     }
 
     protected virtual void OnChase() {
@@ -89,6 +103,7 @@ public class RM_AICharacterController : RM_CharacterController {
 
         //Chasing player state
         target = player;
+        onChase.Invoke(target);
     }
 
     protected virtual void OnAttack() {
@@ -97,12 +112,19 @@ public class RM_AICharacterController : RM_CharacterController {
         //Attack state
         agent.isStopped = true;
 
-        transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
+        if (lookAtOnAttack) {
+            transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
+        }
+
         HandleAnimations(new Vector2(0, 0));
 
         //Handle attack
         if (canAttack) {
-            GetComponent<Animator>().SetTrigger("OnAttack");
+            if (GetComponent<Animator>()) {
+                GetComponent<Animator>().SetTrigger("OnAttack");
+            }
+
+            onAttack.Invoke(target);
             canAttack = false;
 
             StartCoroutine(ResetAttack());

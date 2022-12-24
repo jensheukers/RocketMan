@@ -920,6 +920,7 @@ GameObject:
   - component: {fileID: 8067923035290952351}
   - component: {fileID: 8067923035290952350}
   - component: {fileID: 8067923035290952352}
+  - component: {fileID: 2136487719735690305}
   m_Layer: 0
   m_Name: RM_Enemies_SpaceTech_Enforcer
   m_TagString: Untagged
@@ -942,7 +943,7 @@ Transform:
   - {fileID: 4099095403869888071}
   - {fileID: 3434973935630987672}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &8067923035290952351
 NavMeshAgent:
@@ -988,10 +989,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  onAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  onChase:
+    m_PersistentCalls:
+      m_Calls: []
+  onPatrol:
+    m_PersistentCalls:
+      m_Calls: []
+  lookAtOnAttack: 1
 --- !u!95 &8067923035290952352
 Animator:
   serializedVersion: 4
@@ -1012,3 +1019,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2136487719735690305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9221520379437638761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 584488df2ae89244d8d2cbfa69625f6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  destroyOnHealthZero: 1
+  onHealthZeroEvent:
+    m_PersistentCalls:
+      m_Calls: []

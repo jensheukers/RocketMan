@@ -8,7 +8,14 @@ public class RM_HealthComponent : MonoBehaviour {
     private int maxHealth = 100; /*** The maximum health this entity can have*/
     private int currentHealth; /*** The current health of the entity*/
 
+    [SerializeField]
+    private bool destroyOnHealthZero;
+
     public UnityEvent onHealthZeroEvent; /** OnHealthZero action event listener. */
+
+    private void Awake() {
+        currentHealth = maxHealth;
+    }
 
     /*
      * @brief Add amount to currentHealth
@@ -24,8 +31,15 @@ public class RM_HealthComponent : MonoBehaviour {
      * @param int
      */
     public void Damage(int amount) {
+        Debug.Log(amount);
         currentHealth -= amount;
 
-        if (currentHealth < 0) onHealthZeroEvent.Invoke();
+        if (currentHealth < 0) {
+            onHealthZeroEvent.Invoke();
+
+            if (destroyOnHealthZero) {
+                Destroy(gameObject);
+            }
+        }
     }
 }
