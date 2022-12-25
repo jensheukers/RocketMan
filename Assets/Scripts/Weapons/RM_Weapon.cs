@@ -32,6 +32,7 @@ public class RM_Weapon : MonoBehaviour {
      * */
     public void Shoot() {
         if (ammo <= 0 || !canShoot) return;
+        ammo--;
 
         GameObject projectile = Instantiate(projectilePrefab, barrelEnd.position, barrelEnd.rotation);
         projectile.GetComponent<Rigidbody>().velocity = barrelEnd.up * (shootForce);
@@ -58,6 +59,15 @@ public class RM_Weapon : MonoBehaviour {
     public void AddAmmo(int amount) {
         ammo += amount;
     }
+
+    /**
+     * gets the weapon ammo amount
+     * @return int
+     */
+    public int GetAmmo() {
+        return ammo;
+    }
+
 
     //Editor methods
     private void OnDrawGizmos() {

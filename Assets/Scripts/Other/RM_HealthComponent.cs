@@ -31,7 +31,6 @@ public class RM_HealthComponent : MonoBehaviour {
      * @param int
      */
     public void Damage(int amount) {
-        Debug.Log(amount);
         currentHealth -= amount;
 
         if (currentHealth < 0) {
