@@ -42,4 +42,18 @@ public class RM_HealthComponent : MonoBehaviour {
             }
         }
     }
+
+    /*
+     * @brief Returns the current health
+     */
+    public int GetHealth() {
+        return currentHealth;
+    }
+
+    /*
+     * @brief Returns the max health
+     */
+    public int GetMaxHealth() {
+        return maxHealth;
+    }
 }

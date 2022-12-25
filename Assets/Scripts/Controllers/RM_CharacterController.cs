@@ -66,4 +66,11 @@ public class RM_CharacterController : MonoBehaviour {
     public bool IsMoving() {
         return isMoving;
     }
+
+    /*
+     * @brief returns the jetpack instance
+     */
+    public RM_Jetpack GetJetpack() {
+        return jetPack;
+    }
 }

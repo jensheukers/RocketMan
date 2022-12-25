@@ -65,4 +65,18 @@ public class RM_Jetpack : MonoBehaviour {
         }
         fuel += amount;
     }
+
+    /*
+     * @brief Returns the current fuel
+     */
+    public float GetFuel() {
+        return fuel;
+    }
+
+    /*
+     * @brief Returns the max fuel
+     */
+    public float GetMaxFuel() {
+        return maxFuel;
+    }
 }
