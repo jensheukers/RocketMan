@@ -4,33 +4,25 @@ using UnityEngine;
 
 public class RM_Turret : RM_Weapon {
     [SerializeField]
-    private Transform mount;
+    private Transform mount; /** The mount of the turret, rotates around the z axis*/
 
     [SerializeField]
-    private float mountRotateSpeed = 250f;
+    private float mountRotateSpeed = 250f; /** The speed at wich the mount rotates*/
 
     [SerializeField]
-    private Transform gun;
-
-
-    [SerializeField]
-    private float gunRotateSpeed = 250f;
+    private Transform gun; /** The gun transform , rotates around the x axis*/
 
     [SerializeField]
-    private float minGunRotateAmount = -40f;
+    private float gunRotateSpeed = 250f; /** The rotate speed of the gun*/
 
     [SerializeField]
-    private float maxGunRotateAmount = 75f;
+    private Transform target; /** The target transform*/
 
     [SerializeField]
-    private Transform target;
-
-    [SerializeField]
-    private float aimDistance = 100f;
+    private float aimDistance = 100f; /** The maximum distance to shoot*/
 
     private void Update() {
         if (target) {
-
             //First part - Rotates the base of the turret
             Quaternion lookRotation = Quaternion.LookRotation(target.position - mount.position, Vector3.up);
             mount.rotation = Quaternion.RotateTowards(mount.rotation, lookRotation, Time.deltaTime * mountRotateSpeed);
@@ -51,6 +43,10 @@ public class RM_Turret : RM_Weapon {
         }
     }
 
+    /**
+     * @brief Sets the target transform
+     * @param Transform
+     */
     public void SetTarget(Transform target) {
         this.target = target;
     }

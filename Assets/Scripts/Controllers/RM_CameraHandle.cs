@@ -14,20 +14,20 @@ public class RM_CameraHandle : MonoBehaviour {
     [SerializeField]
     private Transform followObjectRoot; /** The follow root object (For example player object)*/
 
-    private CinemachineVirtualCamera cinemachineCam;
+    private CinemachineVirtualCamera cinemachineCam; /** The cinemachine camera object*/
 
     [SerializeField]
-    private float rotationPower = 1f;
+    private float rotationPower = 1f; /**Rotation power */
 
     [SerializeField]
-    private float minCameraClamp = 50;
+    private float minCameraClamp = 50; /**Min camera clamp*/
 
     [SerializeField]
-    private float maxCameraClamp = 330;
+    private float maxCameraClamp = 330; /** Max camera clamp*/
 
 
     [Tooltip("Variable cannot be changed at runtime!")]
-    [SerializeField] private bool lockCursor = true;
+    [SerializeField] private bool lockCursor = true; /**Locks the cursor*/
 
     private void Start() {
         if (lockCursor) Cursor.lockState = CursorLockMode.Locked;
@@ -72,6 +72,10 @@ public class RM_CameraHandle : MonoBehaviour {
         }
     }
 
+    /**
+     * Rotates around the follow object
+     * @param Vector3
+     */
     private void RotateFollowObject(Vector3 angles) {
         //Set the player rotation based on the look transform
         followObjectRoot.rotation = Quaternion.Euler(0, followTarget.transform.rotation.eulerAngles.y, 0);

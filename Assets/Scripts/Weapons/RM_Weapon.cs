@@ -4,35 +4,32 @@ using UnityEngine;
 
 public class RM_Weapon : MonoBehaviour {
     [SerializeField]
-    private GameObject projectilePrefab;
+    private GameObject projectilePrefab; /** The prefab of the projectile **/
 
     [SerializeField]
-    protected Transform barrelEnd;
+    protected Transform barrelEnd; /** The barrelEnd transform, from here the projectile gets instantiated*/
 
     [SerializeField]
-    private int ammo;
+    private int ammo; /**Amount of ammo*/
 
     [SerializeField]
-    private float shootForce = 100f;
+    private float shootForce = 100f; /** Force amount for shot*/
 
-    protected bool canShoot;
+    protected bool canShoot; /** if true, a shot can be instantiated if false not*/
 
     [SerializeField]
-    private float timeBetweenShots = 1;
+    private float timeBetweenShots = 1; /** The time between shots*/
 
     [Range(0f, 100f)]
-    public int damage;
+    public int damage; /** The amount of damage to inflict on a RM_HealthComponent */
 
     private void Start() {
         canShoot = true;
     }
 
-    public void Update() {
-        if (Input.GetMouseButtonDown(0)) {
-            Shoot();
-        }
-    }
-
+    /**
+     * @brief Instantiates a projectile and fires it in the barrelend direction
+     * */
     public void Shoot() {
         if (ammo <= 0 || !canShoot) return;
 
@@ -45,17 +42,24 @@ public class RM_Weapon : MonoBehaviour {
         StartCoroutine(ResetShootTimer());
     }
 
+    /**
+     * Resets the shoot timer, then sets canshoot to true
+     */
     private IEnumerator ResetShootTimer() {
         yield return new WaitForSeconds(timeBetweenShots);
 
         canShoot = true;
     }
 
-
+    /**
+     * Adds ammo to the weapon
+     * @param int
+     */
     public void AddAmmo(int amount) {
         ammo += amount;
     }
 
+    //Editor methods
     private void OnDrawGizmos() {
         Debug.DrawLine(barrelEnd.position, barrelEnd.position + (barrelEnd.up * 5), Color.green);
     }

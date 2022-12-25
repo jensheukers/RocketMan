@@ -11,39 +11,39 @@ public enum RM_AiState {
 }
 
 public class RM_AICharacterController : RM_CharacterController {
-    private Transform target;
+    private Transform target; /** The target transform */
 
-    private Transform player;
+    private Transform player; /** The player transform*/
 
-    NavMeshAgent agent;
-
-    [SerializeField]
-    private float chaseDistance = 20f;
+    NavMeshAgent agent;/**NavmeshAgent refernce*/
 
     [SerializeField]
-    private float attackDistance = 2f;
+    private float chaseDistance = 20f; /** Chase Distance*/
 
     [SerializeField]
-    private float attackInterval = 5f;
+    private float attackDistance = 2f;/** Attack Distance*/
 
     [SerializeField]
-    protected List<Transform> partrolPoints;
+    private float attackInterval = 5f; /**Time between attacks*/
 
     [SerializeField]
-    protected UnityEvent<Transform> onAttack;
+    protected List<Transform> partrolPoints;/**All partrol points*/
 
     [SerializeField]
-    protected UnityEvent<Transform> onChase;
+    protected UnityEvent<Transform> onAttack; /**OnAttack event*/
 
     [SerializeField]
-    protected UnityEvent<Transform> onPatrol;
+    protected UnityEvent<Transform> onChase;/**OnChase event*/
 
     [SerializeField]
-    protected bool lookAtOnAttack = true;
+    protected UnityEvent<Transform> onPatrol;/**OnPatrol event*/
 
-    RM_AiState state;
+    [SerializeField]
+    protected bool lookAtOnAttack = true;/**If true the player looks towards the target when attacking*/
 
-    private bool canAttack;
+    RM_AiState state;/**OnAttack event*/
+
+    private bool canAttack; /** canAttack boolean*/
 
     private void Start() {
         agent = GetComponent<NavMeshAgent>();
@@ -56,6 +56,9 @@ public class RM_AICharacterController : RM_CharacterController {
         HandleMovement();
     }
 
+    /**
+     * @brief Overwritten method (ai behaviour)
+     */
     protected virtual void HandleMovement() {
         if (player && Vector3.Distance(player.position, transform.position) <= chaseDistance) {
             OnChase();
@@ -85,6 +88,9 @@ public class RM_AICharacterController : RM_CharacterController {
         }
     }
 
+    /**
+     * @brief Sets the patrolling state
+     */
     protected virtual void OnPatrolling() {
         state = RM_AiState.Patrolling;
         if (target == null || target == player) {
@@ -98,6 +104,9 @@ public class RM_AICharacterController : RM_CharacterController {
         onPatrol.Invoke(null);
     }
 
+    /**
+     * @brief Sets the chasing state
+     */
     protected virtual void OnChase() {
         state = RM_AiState.Chasing;
 
@@ -106,6 +115,10 @@ public class RM_AICharacterController : RM_CharacterController {
         onChase.Invoke(target);
     }
 
+
+    /**
+     * @brief Sets the attacking state
+     */
     protected virtual void OnAttack() {
         state = RM_AiState.Attacking;
 
@@ -132,6 +145,10 @@ public class RM_AICharacterController : RM_CharacterController {
     }
 
     //private methods
+
+    /**
+     * @brief Resets the attack
+     */
     private IEnumerator ResetAttack() {
         yield return new WaitForSeconds(attackInterval);
         canAttack = true;

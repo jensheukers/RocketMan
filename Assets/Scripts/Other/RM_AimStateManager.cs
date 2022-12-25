@@ -5,9 +5,6 @@ using Cinemachine;
 using UnityEngine.Animations.Rigging;
 
 public class RM_AimStateManager : MonoBehaviour {
-
-    [SerializeField]
-    private string aimAmountAnimatorFloatName = "aimAmount";
     private float aimAmount;
 
     [SerializeField]
