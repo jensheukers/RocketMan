@@ -179,6 +179,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: RM_GameStateObject
       objectReference: {fileID: 0}
+    - target: {fileID: 8425054618262417621, guid: 17054bba748185a49b8f12ce52cac397, type: 3}
+      propertyPath: missions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425054618262417621, guid: 17054bba748185a49b8f12ce52cac397, type: 3}
+      propertyPath: missions.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7777f77597d6dda4da14555cf26272d8, type: 2}
+    - target: {fileID: 8425054618262417621, guid: 17054bba748185a49b8f12ce52cac397, type: 3}
+      propertyPath: missions.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 44dcf324e3337d54095e5920d9b86c2d, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 17054bba748185a49b8f12ce52cac397, type: 3}

@@ -89,7 +89,7 @@ public class RM_GameState : MonoBehaviour {
      * @brief Returns the mission list
      * @return List<RM_MissionSO>
      */
-    public List<RM_MissionSO> GetMissions() {
-        return missions;
+    public static List<RM_MissionSO> GetMissions() {
+        return _instance.missions;
     }
 }
