@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class RM_Weapon : MonoBehaviour {
     [SerializeField]
+    private Transform RightHandPivot; /** The pivot where the right hand should attach to*/
+
+    [SerializeField]
+    private Transform LeftHandPivot; /** The pivot where the left hand should attach to*/
+
+    [SerializeField]
     private GameObject projectilePrefab; /** The prefab of the projectile **/
 
     [SerializeField]
@@ -66,6 +72,14 @@ public class RM_Weapon : MonoBehaviour {
      */
     public int GetAmmo() {
         return ammo;
+    }
+
+    public Transform GetRightHandPivot() {
+        return RightHandPivot;
+    }
+
+    public Transform GetLeftHandPivot() {
+        return LeftHandPivot;
     }
 
 

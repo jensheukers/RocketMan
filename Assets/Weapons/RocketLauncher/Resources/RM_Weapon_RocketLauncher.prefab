@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7890647002567247125}
   m_Layer: 0
-  m_Name: LeftHandTransform
+  m_Name: LeftHandPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,11 +162,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe09b35a2643a9749b9d4e1f1031e507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Rocket Launcher
+  RightHandPivot: {fileID: 3344095787682456428}
+  LeftHandPivot: {fileID: 7890647002567247125}
   projectilePrefab: {fileID: 7471077436232062337, guid: 27f54975fe63bd8438711f1d8c9955d9, type: 3}
   barrelEnd: {fileID: 1368776140637066189}
   ammo: 30
   shootForce: 50000
+  timeBetweenShots: 1
+  damage: 0
 --- !u!1 &4941829764231670136
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3344095787682456428}
   m_Layer: 0
-  m_Name: RightHandTransform
+  m_Name: RightHandPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

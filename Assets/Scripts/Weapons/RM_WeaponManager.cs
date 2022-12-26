@@ -9,6 +9,12 @@ public class RM_WeaponManager : MonoBehaviour {
     [SerializeField]
     private RM_WeaponDataSO currentWeaponData;
 
+    [SerializeField]
+    private Transform RightBoneIKConstraintTransform; /** Refernce to the right Two-IK Bone Constraint Target transform*/
+
+    [SerializeField]
+    private Transform LeftBoneIKConstraintTransform; /** Refernce to the left Two-IK Bone Constraint Target transform*/
+
     private RM_Weapon currentWeapon;
 
     private void Start() {
@@ -17,6 +23,14 @@ public class RM_WeaponManager : MonoBehaviour {
 
     private void Update() {
         if (Input.GetMouseButtonDown(0)) ShootCurrentWeapon();
+
+        if (currentWeapon) {
+            RightBoneIKConstraintTransform.position = currentWeapon.GetRightHandPivot().position;
+            RightBoneIKConstraintTransform.rotation = currentWeapon.GetRightHandPivot().rotation;
+
+            LeftBoneIKConstraintTransform.position = currentWeapon.GetLeftHandPivot().position;
+            LeftBoneIKConstraintTransform.rotation = currentWeapon.GetLeftHandPivot().rotation;
+        }
     }
 
     public RM_WeaponDataSO GetCurrentWeaponData() {
