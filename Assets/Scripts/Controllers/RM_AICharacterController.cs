@@ -41,6 +41,11 @@ public class RM_AICharacterController : RM_CharacterController {
     [SerializeField]
     protected bool lookAtOnAttack = true;/**If true the player looks towards the target when attacking*/
 
+    [SerializeField]
+    private bool applyDamageOnAttack = false; /**If true damage will be applied on attack instantly if target has healthcomponent*/
+    [SerializeField]
+    private int applyDamageOnAttack_Damage = 20;
+
     RM_AiState state;/**OnAttack event*/
 
     private bool canAttack; /** canAttack boolean*/
@@ -139,6 +144,13 @@ public class RM_AICharacterController : RM_CharacterController {
 
             onAttack.Invoke(target);
             canAttack = false;
+
+            if (applyDamageOnAttack) {
+                RM_HealthComponent healthComponent;
+                if (healthComponent = target.GetComponent<RM_HealthComponent>()) {
+                    healthComponent.Damage(applyDamageOnAttack_Damage);
+                }
+            }
 
             StartCoroutine(ResetAttack());
         }

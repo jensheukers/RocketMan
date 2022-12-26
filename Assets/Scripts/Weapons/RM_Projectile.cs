@@ -6,11 +6,8 @@ public class RM_Projectile : MonoBehaviour {
     [SerializeField]
     private GameObject hitParticlePrefab; /** The particle system prefab to spawn on hit*/
 
-    private int damage; /**Amount of damage this projectile inflicts, should be set directly after instantiating, default damage is 100% */
-
-    private void Awake() {
-        damage = 100; // Set default damage.
-    }
+    [Range(0f, 100f)]
+    public int damage = 100; /** The amount of damage to inflict on a RM_HealthComponent */
 
     public void OnCollisionEnter(Collision collision) {
         GameObject particleSystem = Instantiate(hitParticlePrefab, transform.position, transform.rotation);

@@ -921,6 +921,7 @@ GameObject:
   - component: {fileID: 8067923035290952350}
   - component: {fileID: 8067923035290952352}
   - component: {fileID: 2136487719735690305}
+  - component: {fileID: 7159118018332328654}
   m_Layer: 0
   m_Name: RM_Enemies_SpaceTech_Enforcer
   m_TagString: Untagged
@@ -999,6 +1000,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   lookAtOnAttack: 1
+  applyDamageOnAttack: 1
+  applyDamageOnAttack_Damage: 5
 --- !u!95 &8067923035290952352
 Animator:
   serializedVersion: 4
@@ -1036,3 +1039,16 @@ MonoBehaviour:
   onHealthZeroEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &7159118018332328654
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9221520379437638761}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3.6736548, z: 1}
+  m_Center: {x: 0, y: 1.3368272, z: 0}

@@ -20,7 +20,7 @@ public class RM_UIManager : MonoBehaviour {
     private void Update() {
         RM_HealthComponent healthComponent;
         if (healthComponent = GetComponent<RM_HealthComponent>()) {
-            healthBarSlider.value = healthComponent.GetHealth() / healthComponent.GetMaxHealth();
+            healthBarSlider.value = (float)healthComponent.GetHealth() / (float)healthComponent.GetMaxHealth();
         }
 
         RM_Jetpack jetpack;

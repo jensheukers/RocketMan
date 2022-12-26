@@ -29,8 +29,6 @@ public class RM_MissionSelectMenu : MonoBehaviour {
         List<RM_MissionSO> list = RM_GameState.GetMissions();
 
         if (currentMissionIndex + 1 != list.Count) {
-
-            Debug.Log("Test");
             currentMissionIndex++;
             OnChangeMission(list, currentMissionIndex);
         }

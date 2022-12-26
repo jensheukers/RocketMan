@@ -26,9 +26,6 @@ public class RM_Weapon : MonoBehaviour {
     [SerializeField]
     private float timeBetweenShots = 1; /** The time between shots*/
 
-    [Range(0f, 100f)]
-    public int damage; /** The amount of damage to inflict on a RM_HealthComponent */
-
     private void Start() {
         canShoot = true;
     }
@@ -42,7 +39,6 @@ public class RM_Weapon : MonoBehaviour {
 
         GameObject projectile = Instantiate(projectilePrefab, barrelEnd.position, barrelEnd.rotation);
         projectile.GetComponent<Rigidbody>().velocity = barrelEnd.up * (shootForce);
-        projectile.GetComponent<RM_Projectile>().SetDamage(damage);
 
         canShoot = false;
 
