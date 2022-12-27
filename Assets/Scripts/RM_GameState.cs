@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 /// <summary>
@@ -18,6 +19,13 @@ public class RM_GameState : MonoBehaviour {
 
     [SerializeField]
     private List<RM_MissionSO> missions; //* List of missions. */
+
+    //Notify events (Which objects can cling on to)
+    [SerializeField]
+    private UnityAction<GameObject> onPlayerKilledEvent; /** gets triggered when player dies*/
+
+    [SerializeField]
+    private UnityAction<GameObject> onEnemyKilledEvent; /** gets triggered when player dies*/
 
     /*
     * @brief Start Method, we make sure that this object will never be destroyed while running the program and set variables.
@@ -91,5 +99,42 @@ public class RM_GameState : MonoBehaviour {
      */
     public static List<RM_MissionSO> GetMissions() {
         return _instance.missions;
+    }
+
+    /*
+     * @brief Triggers onPlayerKilledEvent
+     */
+    public static void OnPlayerKilled(GameObject player) {
+        if (!_instance) return;
+        _instance.onPlayerKilledEvent(player);
+    }
+
+
+    /*
+     * @brief Triggers onEnemyKilledEvent
+     */
+    public static void OnEnemyKilled(GameObject enemy) {
+        if (!_instance) return;
+        _instance.onEnemyKilledEvent(enemy);
+    }
+
+
+    /*
+     * @brief Adds to  onPlayerKilledEvent
+     * @param UnityAction
+     */
+    public static void AddOnPlayerKilled(UnityAction<GameObject> action) {
+        if (!_instance) return;
+        _instance.onPlayerKilledEvent += action;
+    }
+
+
+    /*
+     * @brief Adds to onEnemyKilledEvent
+     * @param UnityAction
+     */
+    public static void AddOnEnemyKilled(UnityAction<GameObject> action) {
+        if (!_instance) return;
+        _instance.onEnemyKilledEvent += action;
     }
 }

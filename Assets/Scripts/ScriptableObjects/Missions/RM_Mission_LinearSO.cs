@@ -11,10 +11,16 @@ public class RM_Mission_LinearSO : RM_MissionSO {
     [SerializeField]
     private List<string> checkPointTriggerKeys; /** The trigger keys of checkpoint triggers*/
 
-    private GameObject playerPrefab; /** The prefab of the player to initiate*/
+    private string currentCheckpointTriggerKey;
 
     public override void OnStart() {
         base.OnStart();
+
+        //Set up gamestate events
+        RM_GameState.AddOnPlayerKilled((GameObject player) => {
+            RM_Trigger curCheckpoint = FindTriggerByName(currentCheckpointTriggerKey);
+            player.transform.position = curCheckpoint.transform.position;
+        });
 
         //Set up triggers
         for (int i = 0; i < checkPointTriggerKeys.Count; i++) {
@@ -28,5 +34,11 @@ public class RM_Mission_LinearSO : RM_MissionSO {
                 }
             });
         }
+
+        currentCheckpointTriggerKey = checkPointTriggerKeys[0];
+    }
+
+    private void OnCheckPointReached(string triggerKey) {
+        currentCheckpointTriggerKey = triggerKey;
     }
 }

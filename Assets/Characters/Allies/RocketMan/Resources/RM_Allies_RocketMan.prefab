@@ -280,7 +280,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2765386190243346648}
-  m_LocalRotation: {x: 0.028003765, y: 0.79811376, z: 0.021104587, w: 0.60148555}
+  m_LocalRotation: {x: -0.0010336498, y: -0.7111178, z: 0.0010219539, w: 0.7030714}
   m_LocalPosition: {x: 0.653, y: 2.735, z: 0.094}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1037,11 +1037,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  destroyOnHealthZero: 1
+  destroyOnHealthZero: 0
   onHealthZeroEvent:
     m_PersistentCalls:
-      m_Calls: []
-  debugEnabled: 1
+      m_Calls:
+      - m_Target: {fileID: 8425054618262417621, guid: 17054bba748185a49b8f12ce52cac397, type: 3}
+        m_TargetAssemblyTypeName: RM_GameState, Assembly-CSharp
+        m_MethodName: OnPlayerKilled
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5439533329924763095}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3843787778694593641
 MonoBehaviour:
   m_ObjectHideFlags: 0
