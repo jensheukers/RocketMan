@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 //Quest Scriptable Object
 [CreateAssetMenu(fileName = "New Quest", menuName = "Missions/Quest/Quest")]
@@ -11,6 +12,8 @@ public class RM_QuestSO : ScriptableObject {
     [SerializeField]
     private List<RM_QuestTaskSO> tasks;
     private bool completed;
+
+    private UnityEvent onQuestCompleted;
 
     public void OnStartQuest() {
         completed = false;
@@ -26,6 +29,7 @@ public class RM_QuestSO : ScriptableObject {
             if (currentTask.IsCompleted()) {
                 if (currentTaskId + 1 >= tasks.Count) {
                     completed = true;
+                    onQuestCompleted.Invoke();
                 }
             }
         }
@@ -37,6 +41,10 @@ public class RM_QuestSO : ScriptableObject {
 
     public void OnPlayerKilled(GameObject player) {
         if (currentTask != null) currentTask.OnPlayerKilled(player);
+    }
+
+    public void AddOnQuestCompleted(UnityAction action) {
+        onQuestCompleted.AddListener(action);
     }
 
     public bool IsComleted() {

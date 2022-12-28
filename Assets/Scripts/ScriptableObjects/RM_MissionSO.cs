@@ -45,8 +45,10 @@ public class RM_MissionSO : ScriptableObject {
         }
 
         //Start quest
-        if (quests.Count > 0) currentQuest = quests[0];
-        currentQuest.OnStartQuest();
+        if (quests.Count > 0) {
+            currentQuest = quests[0];
+            currentQuest.OnStartQuest();
+        }
 
         RM_GameState.AddOnEnemyKilled((GameObject enemy) => {
             if (currentQuest) currentQuest.OnEnemyKilled(enemy);
@@ -87,6 +89,10 @@ public class RM_MissionSO : ScriptableObject {
     }
     public RM_QuestSO GetCurrentQuest() {
         return currentQuest;
+    }
+
+    public RM_QuestSO GetQuest(int id) {
+        return quests[id]; 
     }
 
     /**

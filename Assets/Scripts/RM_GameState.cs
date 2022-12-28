@@ -139,6 +139,25 @@ public class RM_GameState : MonoBehaviour {
         _instance.onEnemyKilledEvent.AddListener(action);
     }
 
+    /**
+    * @brief Adds event to quest.
+    * @param int questId
+    * @param UnityAction function
+    **/
+    public static void AddOnQuestCompleted(int questId, UnityAction action) {
+        if (_instance.currentMission) {
+            if (_instance.currentMission.MissionData().GetQuest(questId)) {
+                _instance.currentMission.MissionData().GetQuest(questId).AddOnQuestCompleted(action);
+            }
+            else {
+                Debug.LogWarning("AddOnQuestCompleted: Quest not found");
+            }
+        }
+        else {
+            Debug.LogWarning("AddOnQuestCompleted: no currentMission present");
+        }
+    }
+
     /*
      * Retrieves the current mission
      * @return RM_Mission
@@ -146,5 +165,12 @@ public class RM_GameState : MonoBehaviour {
     public static RM_Mission GetCurrentMission() {
         if (!_instance) return null;
         return _instance.currentMission;
+    }
+
+    /**
+     * @brief returns if gamestate instance exists
+     */
+    public static bool InstanceExists() {
+        return _instance;
     }
 }
