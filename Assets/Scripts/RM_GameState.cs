@@ -65,6 +65,7 @@ public class RM_GameState : MonoBehaviour {
     public RM_Mission ChangeMission(RM_MissionSO data) {
         if (currentMission) {
             currentMission.StopMission();
+            Destroy(this.GetComponent<RM_Mission>());
         }
         currentMission = gameObject.AddComponent<RM_Mission>();
 
@@ -136,5 +137,14 @@ public class RM_GameState : MonoBehaviour {
     public static void AddOnEnemyKilled(UnityAction<GameObject> action) {
         if (!_instance) return;
         _instance.onEnemyKilledEvent.AddListener(action);
+    }
+
+    /*
+     * Retrieves the current mission
+     * @return RM_Mission
+     */
+    public static RM_Mission GetCurrentMission() {
+        if (!_instance) return null;
+        return _instance.currentMission;
     }
 }

@@ -16,6 +16,7 @@ public class RM_Mission_LinearSO : RM_MissionSO {
     public override void OnStart() {
         base.OnStart();
 
+       
         //Set up gamestate events
         RM_GameState.AddOnPlayerKilled((GameObject player) => {
             RM_Trigger curCheckpoint = FindTriggerByName(currentCheckpointTriggerKey);
@@ -37,6 +38,7 @@ public class RM_Mission_LinearSO : RM_MissionSO {
             });
         }
 
+        //Set checkpoint
         currentCheckpointTriggerKey = checkPointTriggerKeys[0];
     }
 

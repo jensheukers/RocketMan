@@ -17,6 +17,11 @@ public class RM_MissionSO : ScriptableObject {
 
     private bool done; /* Gets set to true in OnStart, and set to false in OnStop */
 
+    //Questing setup
+    [SerializeField]
+    private List<RM_QuestSO> quests;
+    private RM_QuestSO currentQuest;
+
     /*
      * @brief Gets called by RM_Mission class when mission data is to be started.
      */
@@ -38,8 +43,20 @@ public class RM_MissionSO : ScriptableObject {
                 }
             });
         }
+
+        //Start quest
+        if (quests.Count > 0) currentQuest = quests[0];
+        currentQuest.OnStartQuest();
+
+        RM_GameState.AddOnEnemyKilled((GameObject enemy) => {
+            if (currentQuest) currentQuest.OnEnemyKilled(enemy);
+        });
+
+        RM_GameState.AddOnPlayerKilled((GameObject player) => {
+            if (currentQuest) currentQuest.OnPlayerKilled(player);
+        });
     }
-    
+
     /**
     * @brief Gets called by default endMissionTrigger
     */
@@ -50,7 +67,16 @@ public class RM_MissionSO : ScriptableObject {
     /**
      * @brief Gets called every frame by RM_Mission
      */
-    public virtual void OnUpdate() { }
+    public virtual void OnUpdate() {
+        if (currentQuest) {
+            if (currentQuest.IsComleted()) {
+                //Start next quest
+            }
+            else {
+                currentQuest.OnQuestUpdate();
+            }
+        }
+    }
 
     /**
      * @brief Returns true if mission is done, else returns false
@@ -59,6 +85,10 @@ public class RM_MissionSO : ScriptableObject {
     public bool IsDone() {
         return done;
     }
+    public RM_QuestSO GetCurrentQuest() {
+        return currentQuest;
+    }
+
     /**
      * @brief Finds a trigger by keyname
      * @return RM_Trigger

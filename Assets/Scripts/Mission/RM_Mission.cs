@@ -39,4 +39,12 @@ public class RM_Mission : MonoBehaviour {
      * @brief Calls the OnUpdate function on mission data ScriptableObject 
      */
     public void Update() { data.OnUpdate(); }
+
+    /**
+     * Returns the mission data
+     */
+    public RM_MissionSO MissionData() {
+        return data;
+    }
+
 }

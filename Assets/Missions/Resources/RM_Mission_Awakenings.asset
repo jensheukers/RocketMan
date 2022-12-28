@@ -20,3 +20,5 @@ MonoBehaviour:
   checkPointTriggerKeys:
   - RM_Awakenings_Checkpoint_0
   - RM_Awakenings_Checkpoint_1
+  quests:
+  - {fileID: 11400000, guid: 9f381782389699a4f86c63ada37bda3e, type: 2}
