@@ -21,11 +21,8 @@ public class RM_GameState : MonoBehaviour {
     private List<RM_MissionSO> missions; //* List of missions. */
 
     //Notify events (Which objects can cling on to)
-    [SerializeField]
-    private UnityAction<GameObject> onPlayerKilledEvent; /** gets triggered when player dies*/
-
-    [SerializeField]
-    private UnityAction<GameObject> onEnemyKilledEvent; /** gets triggered when player dies*/
+    private UnityEvent<GameObject> onPlayerKilledEvent; /** gets triggered when player dies*/
+    private UnityEvent<GameObject> onEnemyKilledEvent; /** gets triggered when enemy dies*/
 
     /*
     * @brief Start Method, we make sure that this object will never be destroyed while running the program and set variables.
@@ -41,6 +38,9 @@ public class RM_GameState : MonoBehaviour {
         _instance = this;
 
         DontDestroyOnLoad(this.gameObject);
+        
+        onPlayerKilledEvent = new UnityEvent<GameObject>();
+        onEnemyKilledEvent = new UnityEvent<GameObject>();
 
         if (!mainMenu) Debug.LogError("RM_GameState: " + "main menu not set!");
         else ChangeMission(mainMenu);
@@ -106,7 +106,7 @@ public class RM_GameState : MonoBehaviour {
      */
     public static void OnPlayerKilled(GameObject player) {
         if (!_instance) return;
-        _instance.onPlayerKilledEvent(player);
+        _instance.onPlayerKilledEvent.Invoke(player);
     }
 
 
@@ -115,7 +115,7 @@ public class RM_GameState : MonoBehaviour {
      */
     public static void OnEnemyKilled(GameObject enemy) {
         if (!_instance) return;
-        _instance.onEnemyKilledEvent(enemy);
+        _instance.onEnemyKilledEvent.Invoke(enemy);
     }
 
 
@@ -125,7 +125,7 @@ public class RM_GameState : MonoBehaviour {
      */
     public static void AddOnPlayerKilled(UnityAction<GameObject> action) {
         if (!_instance) return;
-        _instance.onPlayerKilledEvent += action;
+        _instance.onPlayerKilledEvent.AddListener(action);
     }
 
 
@@ -135,6 +135,6 @@ public class RM_GameState : MonoBehaviour {
      */
     public static void AddOnEnemyKilled(UnityAction<GameObject> action) {
         if (!_instance) return;
-        _instance.onEnemyKilledEvent += action;
+        _instance.onEnemyKilledEvent.AddListener(action);
     }
 }

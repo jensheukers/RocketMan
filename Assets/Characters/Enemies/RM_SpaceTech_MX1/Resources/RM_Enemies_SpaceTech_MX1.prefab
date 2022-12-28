@@ -237,15 +237,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2009208648777091688, guid: 7119f20379485954192d35f02f6a6954, type: 3}
       propertyPath: gunRotateSpeed
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 2009208648777091688, guid: 7119f20379485954192d35f02f6a6954, type: 3}
       propertyPath: mountRotateSpeed
-      value: 100
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2009208648777091688, guid: 7119f20379485954192d35f02f6a6954, type: 3}
       propertyPath: timeBetweenShots
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7944612017370636606, guid: 7119f20379485954192d35f02f6a6954, type: 3}
       propertyPath: m_RootOrder

@@ -30,7 +30,9 @@ public class RM_Mission_LinearSO : RM_MissionSO {
 
             trigger.onTriggerEnterEvent.AddListener((Collider other) => {
                 if (other.tag == "RM_Player") {
-                    Debug.Log("Checkpoint Reached");
+                    Debug.Log("Checkpoint" + i + "Reached");
+                    RM_HealthComponent hc = other.GetComponent<RM_HealthComponent>();
+                    hc.Heal(hc.GetMaxHealth());
                 }
             });
         }

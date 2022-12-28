@@ -166,10 +166,9 @@ MonoBehaviour:
   LeftHandPivot: {fileID: 7890647002567247125}
   projectilePrefab: {fileID: 7471077436232062337, guid: 27f54975fe63bd8438711f1d8c9955d9, type: 3}
   barrelEnd: {fileID: 1368776140637066189}
-  ammo: 30
-  shootForce: 50000
+  ammo: 100
+  shootForce: 100
   timeBetweenShots: 1
-  damage: 0
 --- !u!1 &4941829764231670136
 GameObject:
   m_ObjectHideFlags: 0
