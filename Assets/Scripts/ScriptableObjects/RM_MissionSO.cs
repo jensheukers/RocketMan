@@ -21,6 +21,7 @@ public class RM_MissionSO : ScriptableObject {
     [SerializeField]
     private List<RM_QuestSO> quests;
     private RM_QuestSO currentQuest;
+    private int currentQuestIndex;
 
     /*
      * @brief Gets called by RM_Mission class when mission data is to be started.
@@ -46,8 +47,8 @@ public class RM_MissionSO : ScriptableObject {
 
         //Start quest
         if (quests.Count > 0) {
-            currentQuest = quests[0];
-            currentQuest.OnStartQuest();
+            currentQuestIndex = 0;
+            StartQuest(currentQuestIndex);
         }
 
         RM_GameState.AddOnEnemyKilled((GameObject enemy) => {
@@ -73,6 +74,10 @@ public class RM_MissionSO : ScriptableObject {
         if (currentQuest) {
             if (currentQuest.IsCompleted()) {
                 //Start next quest
+                if (currentQuestIndex + 1 < quests.Count) {
+                    currentQuestIndex++;
+                    StartQuest(currentQuestIndex);
+                }
             }
             else {
                 currentQuest.OnQuestUpdate();
@@ -109,5 +114,10 @@ public class RM_MissionSO : ScriptableObject {
         }
 
         return null;
+    }
+
+    private void StartQuest(int id) {
+        currentQuest = quests[id];
+        currentQuest.OnStartQuest();
     }
 }

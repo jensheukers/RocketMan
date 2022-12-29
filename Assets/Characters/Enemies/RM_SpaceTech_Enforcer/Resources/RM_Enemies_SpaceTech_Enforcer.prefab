@@ -944,7 +944,7 @@ Transform:
   - {fileID: 4099095403869888071}
   - {fileID: 3434973935630987672}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &8067923035290952351
 NavMeshAgent:
@@ -1001,7 +1001,7 @@ MonoBehaviour:
       m_Calls: []
   lookAtOnAttack: 1
   applyDamageOnAttack: 1
-  applyDamageOnAttack_Damage: 5
+  applyDamageOnAttack_Damage: 15
 --- !u!95 &8067923035290952352
 Animator:
   serializedVersion: 4

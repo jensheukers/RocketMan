@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26f2803bf4aa9f149bfcc753b45dc84b, type: 3}
-  m_Name: RM_QuestTask_Proceed
+  m_Name: RM_QuestTask_Proceed_Temple_Obstacle
   m_EditorClassIdentifier: 
-  taskName: MoveTowards
-  taskDescription: Move towards zone 1
+  taskName: Damn Pillars!
+  taskDescription: Complete the obstacle course.
   flagList:
   - flagName: RM_QuestFlag_CompleteTask
     flagValue: 0

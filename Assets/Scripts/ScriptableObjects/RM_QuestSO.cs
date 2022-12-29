@@ -31,7 +31,6 @@ public class RM_QuestSO : ScriptableObject {
 
             if (currentTask.IsCompleted()) {
                 if (currentTaskId + 1 >= tasks.Count) {
-                    Debug.Log("test");
                     completed = true;
                     onQuestCompleted.Invoke();
                 }
