@@ -12,13 +12,10 @@ public class RM_KillEnemiesQuestTaskSO : RM_QuestTaskSO {
     public override void OnTaskStart() {
         base.OnTaskStart();
         enemiesKilled = 0;
-
-        Debug.Log("Quest Task: " + taskName + " Started!");
     }
 
     protected override void OnTaskComplete() {
         base.OnTaskComplete();
-        Debug.Log("Quest Task: " + taskName + " Completed!");
     }
 
     public override void OnEnemyKilled(GameObject enemy) {

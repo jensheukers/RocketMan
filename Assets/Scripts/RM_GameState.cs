@@ -158,6 +158,20 @@ public class RM_GameState : MonoBehaviour {
         }
     }
 
+    public static void SetQuestTaskFlag(int questId, int taskId, string flagName, bool value) {
+        if (_instance.currentMission) {
+            if (_instance.currentMission.MissionData().GetQuest(questId)) {
+                _instance.currentMission.MissionData().GetQuest(questId).GetTask(taskId).SetFlag(flagName, value);
+            }
+            else {
+                Debug.LogWarning("AddOnQuestCompleted: Quest not found");
+            }
+        }
+        else {
+            Debug.LogWarning("AddOnQuestCompleted: no currentMission present");
+        }
+    }
+
     /*
      * Retrieves the current mission
      * @return RM_Mission

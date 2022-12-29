@@ -28,8 +28,12 @@ public class RM_QuestSO : ScriptableObject {
 
             if (currentTask.IsCompleted()) {
                 if (currentTaskId + 1 >= tasks.Count) {
+                    Debug.Log("test");
                     completed = true;
                     onQuestCompleted.Invoke();
+                }
+                else {
+                    SetTask(currentTaskId + 1);
                 }
             }
         }
@@ -47,7 +51,7 @@ public class RM_QuestSO : ScriptableObject {
         onQuestCompleted.AddListener(action);
     }
 
-    public bool IsComleted() {
+    public bool IsCompleted() {
         return completed;
     }
 
@@ -56,5 +60,9 @@ public class RM_QuestSO : ScriptableObject {
         currentTaskId = id;
 
         currentTask.OnTaskStart();
+    }
+
+    public RM_QuestTaskSO GetTask(int id) {
+        return tasks[id];
     }
 }

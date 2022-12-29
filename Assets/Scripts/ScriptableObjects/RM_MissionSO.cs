@@ -71,7 +71,7 @@ public class RM_MissionSO : ScriptableObject {
      */
     public virtual void OnUpdate() {
         if (currentQuest) {
-            if (currentQuest.IsComleted()) {
+            if (currentQuest.IsCompleted()) {
                 //Start next quest
             }
             else {

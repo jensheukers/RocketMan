@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ad34d1169693041805c847bde9e6b9, type: 3}
-  m_Name: RM_Quest_Awakenings_Zone_1
+  m_Script: {fileID: 11500000, guid: 26f2803bf4aa9f149bfcc753b45dc84b, type: 3}
+  m_Name: RM_QuestTask_Proceed
   m_EditorClassIdentifier: 
-  tasks:
-  - {fileID: 11400000, guid: ae7aff2a1c8f7704081c48a7e9863ea0, type: 2}
-  - {fileID: 11400000, guid: 832a6143321e34541897d61018410709, type: 2}
+  taskName: MoveTowards
+  taskDescription: Move towards zone 1
+  flagList:
+  - flagName: RM_QuestFlag_CompleteTask
+    flagValue: 0
