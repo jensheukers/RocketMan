@@ -17,6 +17,15 @@ public class RM_UIManager : MonoBehaviour {
     [SerializeField]
     private TMP_Text ammoAmount;
 
+    [SerializeField]
+    private TMP_Text questName;
+
+    [SerializeField]
+    private TMP_Text taskName;
+
+    [SerializeField]
+    private TMP_Text taskDescription;
+
     private void Update() {
         RM_HealthComponent healthComponent;
         if (healthComponent = GetComponent<RM_HealthComponent>()) {
@@ -32,6 +41,12 @@ public class RM_UIManager : MonoBehaviour {
         if (weaponManager = GetComponent<RM_WeaponManager>()) {
             if (weaponManager.GetCurrentWeapon()) weaponName.text = weaponManager.GetCurrentWeaponData().name;
             ammoAmount.text = weaponManager.GetCurrentWeapon().GetAmmo().ToString();
+        }
+
+        if (RM_GameState.InstanceExists()) {
+            questName.text = RM_GameState.GetCurrentMission().MissionData().GetCurrentQuest().GetQuestName();
+            taskName.text = RM_GameState.GetCurrentMission().MissionData().GetCurrentQuest().GetCurrentTask().GetTaskName();
+            taskDescription.text = RM_GameState.GetCurrentMission().MissionData().GetCurrentQuest().GetCurrentTask().GetTaskDescription();
         }
     }
 }

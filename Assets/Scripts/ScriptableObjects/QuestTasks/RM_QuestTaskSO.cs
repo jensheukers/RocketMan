@@ -11,10 +11,10 @@ public class RM_QuestTaskSO_QuestFlag {
 [CreateAssetMenu(fileName = "New Task", menuName = "Missions/Quest/QuestTask")]
 public class RM_QuestTaskSO : ScriptableObject {
     [SerializeField]
-    public string taskName;
+    private string taskName;
 
     [SerializeField]
-    public string taskDescription;
+    private string taskDescription;
 
     [SerializeField]
     private List<RM_QuestTaskSO_QuestFlag> flagList;
@@ -60,5 +60,13 @@ public class RM_QuestTaskSO : ScriptableObject {
         for (int i = 0; i < flagList.Count; i++) {
             if (flagList[i].flagName == flagName) flagList[i].flagValue = value;
         }
+    }
+
+    public string GetTaskName() {
+        return taskName;
+    }
+
+    public string GetTaskDescription() {
+        return taskDescription;
     }
 }

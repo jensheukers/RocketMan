@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ad34d1169693041805c847bde9e6b9, type: 3}
   m_Name: RM_Quest_Awakenings_Zone_1
   m_EditorClassIdentifier: 
+  questName: Into the temple!
   tasks:
   - {fileID: 11400000, guid: ae7aff2a1c8f7704081c48a7e9863ea0, type: 2}
   - {fileID: 11400000, guid: 832a6143321e34541897d61018410709, type: 2}

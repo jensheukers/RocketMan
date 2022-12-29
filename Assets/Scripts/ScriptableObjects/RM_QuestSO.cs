@@ -10,6 +10,9 @@ public class RM_QuestSO : ScriptableObject {
     private int currentTaskId;
 
     [SerializeField]
+    private string questName;
+
+    [SerializeField]
     private List<RM_QuestTaskSO> tasks;
     private bool completed;
 
@@ -64,5 +67,13 @@ public class RM_QuestSO : ScriptableObject {
 
     public RM_QuestTaskSO GetTask(int id) {
         return tasks[id];
+    }
+
+    public RM_QuestTaskSO GetCurrentTask() {
+        return currentTask;
+    }
+
+    public string GetQuestName() {
+        return questName;
     }
 }
