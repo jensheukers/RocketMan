@@ -23,3 +23,6 @@ MonoBehaviour:
   checkPointTriggerKeys:
   - RM_Awakenings_Checkpoint_0
   - RM_Awakenings_Checkpoint_1
+  - RM_Awakenings_Checkpoint_2
+  - RM_Awakenings_Checkpoint_3
+  - RM_Awakenings_Checkpoint_4

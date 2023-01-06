@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// RM_Mission holds all variables of the current mission, and also handles multiple events.
+/// RM_Mission acts as a sort of wrapper for the RM_MissionSO object. handles communication between gamestate and the current mission data
 /// </summary>
 public class RM_Mission : MonoBehaviour {
     private RM_MissionSO data; /** MissionDataSO Reference */

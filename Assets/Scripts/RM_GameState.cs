@@ -38,10 +38,7 @@ public class RM_GameState : MonoBehaviour {
         _instance = this;
 
         DontDestroyOnLoad(this.gameObject);
-        
-        onPlayerKilledEvent = new UnityEvent<GameObject>();
-        onEnemyKilledEvent = new UnityEvent<GameObject>();
-
+       
         if (!mainMenu) Debug.LogError("RM_GameState: " + "main menu not set!");
         else ChangeMission(mainMenu);
     }
@@ -52,6 +49,9 @@ public class RM_GameState : MonoBehaviour {
         //Check if mission is done if so return to main menu
         if (currentMission) {
             if (currentMission.IsDone()) {
+                currentMission.StopMission();
+                Destroy(this.GetComponent<RM_Mission>());
+
                 ChangeMission(mainMenu);
             }
         } 
@@ -67,7 +67,11 @@ public class RM_GameState : MonoBehaviour {
             currentMission.StopMission();
             Destroy(this.GetComponent<RM_Mission>());
         }
+
         currentMission = gameObject.AddComponent<RM_Mission>();
+
+        onPlayerKilledEvent = new UnityEvent<GameObject>();
+        onEnemyKilledEvent = new UnityEvent<GameObject>();
 
         StartCoroutine(currentMission.LoadAndStartMission(data));
         return currentMission;
@@ -119,6 +123,22 @@ public class RM_GameState : MonoBehaviour {
         _instance.onEnemyKilledEvent.Invoke(enemy);
     }
 
+
+    /**
+     * @brief Sets player healthcomponent health to zero
+     * @param GameObject
+     */
+    public static void KillPlayer() {
+        if (!_instance) return;
+
+        GameObject player = GameObject.FindGameObjectWithTag("RM_Player");
+
+        if (!player) return;
+
+        RM_HealthComponent healthComponent = player.GetComponent<RM_HealthComponent>();
+        if (healthComponent) healthComponent.Damage(healthComponent.GetMaxHealth());
+        
+    }
 
     /*
      * @brief Adds to  onPlayerKilledEvent

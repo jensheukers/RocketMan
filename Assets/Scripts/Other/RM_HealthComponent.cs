@@ -33,7 +33,7 @@ public class RM_HealthComponent : MonoBehaviour {
     public void Damage(int amount) {
         currentHealth -= amount;
 
-        if (currentHealth < 0) {
+        if (currentHealth <= 0) {
             onHealthZeroEvent.Invoke();
 
             if (destroyOnHealthZero) {

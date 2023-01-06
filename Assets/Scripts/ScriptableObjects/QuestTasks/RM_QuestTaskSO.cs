@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// QuestFlag wrapper
+/// </summary>
 [System.Serializable]
 public class RM_QuestTaskSO_QuestFlag {
     public string flagName;
     public bool flagValue;
 }
-
+/// <summary>
+/// Handles quest task
+/// </summary>
 [CreateAssetMenu(fileName = "New Task", menuName = "Missions/Quest/QuestTask")]
 public class RM_QuestTaskSO : ScriptableObject {
     [SerializeField]

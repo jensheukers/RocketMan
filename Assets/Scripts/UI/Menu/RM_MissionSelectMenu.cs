@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// Handles the mission select menu in the main menu
+/// </summary>
 public class RM_MissionSelectMenu : MonoBehaviour {
     private int currentMissionIndex;
 
@@ -25,6 +28,9 @@ public class RM_MissionSelectMenu : MonoBehaviour {
         }
     }
 
+    /*
+     * @brief Selects the next mission out of the list
+     */
     public void OnNext() {
         List<RM_MissionSO> list = RM_GameState.GetMissions();
 
@@ -34,6 +40,9 @@ public class RM_MissionSelectMenu : MonoBehaviour {
         }
     }
 
+    /*
+     * @brief Selects the previous mission out of the list
+     */
     public void OnPrevious() {
         List<RM_MissionSO> list = RM_GameState.GetMissions();
 
@@ -43,9 +52,20 @@ public class RM_MissionSelectMenu : MonoBehaviour {
         }
     }
 
+    /*
+     * @brief On Play button event
+     */
+    public void OnPlay() {
+        List<RM_MissionSO> list = RM_GameState.GetMissions();
+
+        RM_GameState.ChangeMissionStatic(list[currentMissionIndex]);
+    }
+
+    /*
+     * @brief On Change Mission event
+     */
     public void OnChangeMission(List<RM_MissionSO> list, int index) {
-        RM_MissionSO missionData = list[index];
-        missionText.text = missionData.missionName;
+        missionText.text = list[index].missionName;
 
         //TO:DO implement imgae
     }

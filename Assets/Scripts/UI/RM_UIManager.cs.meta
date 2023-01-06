@@ -3,7 +3,15 @@ guid: ca3a5606f17d0e747a3f45b230f7de81
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - healthBarSlider: {instanceID: 0}
+  - jetpackFuelSlider: {instanceID: 0}
+  - weaponName: {instanceID: 0}
+  - ammoAmount: {instanceID: 0}
+  - questName: {instanceID: 0}
+  - taskName: {instanceID: 0}
+  - taskDescription: {instanceID: 0}
+  - tempMainMissionData: {fileID: 11400000, guid: 7777f77597d6dda4da14555cf26272d8, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

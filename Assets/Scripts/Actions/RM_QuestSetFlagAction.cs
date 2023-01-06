@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Moves a object to desired offset position upon quest completion
+/// Sets a questflag
 /// </summary>
 public class RM_QuestSetFlagAction : MonoBehaviour {
     [SerializeField]
-    private int questId;
+    private int questId; /***The id of the quest*/
 
     [SerializeField]
-    private int taskId;
+    private int taskId; /**The id of the quest task*/
 
     [SerializeField]
-    private string flagName;
+    private string flagName; /**Name of the quest flag*/
 
     [SerializeField]
-    private bool value;
+    private bool value; /** Value to set*/
 
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "RM_Player") {

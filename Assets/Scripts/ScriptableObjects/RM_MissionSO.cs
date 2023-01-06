@@ -27,6 +27,7 @@ public class RM_MissionSO : ScriptableObject {
      * @brief Gets called by RM_Mission class when mission data is to be started.
      */
     public virtual void OnStart() {
+        currentQuest = null;
         done = false;
 
         if (unlockCursorInStart) Cursor.lockState = CursorLockMode.None;
@@ -116,6 +117,10 @@ public class RM_MissionSO : ScriptableObject {
         return null;
     }
 
+    /**
+     * @brief Starts a quest
+     * @param int id
+     */
     private void StartQuest(int id) {
         currentQuest = quests[id];
         currentQuest.OnStartQuest();

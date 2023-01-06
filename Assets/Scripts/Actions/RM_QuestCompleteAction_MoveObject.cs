@@ -7,10 +7,10 @@ using UnityEngine;
 /// </summary>
 public class RM_QuestCompleteAction_MoveObject : MonoBehaviour {
     [SerializeField]
-    private Vector3 desiredOffset = Vector3.up;
+    private Vector3 desiredOffset = Vector3.up; /**The desired offset to add to position upon quest completion*/
 
     [SerializeField]
-    private int questId;
+    private int questId; /** The id of the quest*/
 
     private void Start() {
         if (RM_GameState.InstanceExists()) {

@@ -7,6 +7,6 @@ using UnityEngine;
 /// </summary>
 [CreateAssetMenu(fileName = "New WeaponData", menuName = "Weapon/WeaponData")]
 public class RM_WeaponDataSO : ScriptableObject {
-    public string name;
-    public GameObject weaponPrefab;
+    public string weaponName; /** The name of the weapon*/
+    public GameObject weaponPrefab; /** reference to the weapon prefab*/
 }

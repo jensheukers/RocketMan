@@ -3,21 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-//Quest Scriptable Object
+/// <summary>
+/// Quest scriptable object
+/// </summary>
 [CreateAssetMenu(fileName = "New Quest", menuName = "Missions/Quest/Quest")]
 public class RM_QuestSO : ScriptableObject {
-    private RM_QuestTaskSO currentTask;
-    private int currentTaskId;
+    private RM_QuestTaskSO currentTask; /** The current task*/
+    private int currentTaskId; /** The current task id*/
 
     [SerializeField]
-    private string questName;
+    private string questName; /** The quest name*/
 
     [SerializeField]
-    private List<RM_QuestTaskSO> tasks;
-    private bool completed;
+    private List<RM_QuestTaskSO> tasks; /** The tasks of the quest*/
+    private bool completed; /** Gets set to true upon completion*/
 
-    private UnityEvent onQuestCompleted;
+    private UnityEvent onQuestCompleted; /**onQuestCompleted event*/
 
+
+    /**
+     * @brief Starts the quest
+     */
     public void OnStartQuest() {
         completed = false;
         if (tasks.Count > 0) {
@@ -25,6 +31,9 @@ public class RM_QuestSO : ScriptableObject {
         }
     }
 
+    /**
+     * @brief Updates the quest
+     */
     public void OnQuestUpdate() {
         if (currentTask) {
             currentTask.OnTaskUpdate();
@@ -41,22 +50,39 @@ public class RM_QuestSO : ScriptableObject {
         }
     }
 
+    /**
+     * @brief Gets called when a enemy is killed
+     * @param GameObject player
+     */
     public void OnEnemyKilled(GameObject enemy) {
         if (currentTask != null) currentTask.OnEnemyKilled(enemy);
     }
 
+    /**
+    * @brief Gets called when the player is killed
+    * @param GameObject player
+    */
     public void OnPlayerKilled(GameObject player) {
         if (currentTask != null) currentTask.OnPlayerKilled(player);
     }
 
+    /**
+     * @brief Adds on quest completion
+     */
     public void AddOnQuestCompleted(UnityAction action) {
         onQuestCompleted.AddListener(action);
     }
 
+    /**
+     * @brief Returns true if quest is completed
+     */
     public bool IsCompleted() {
         return completed;
     }
 
+    /**
+     * @brief Sets the current task
+     */
     private void SetTask(int id) {
         currentTask = tasks[id];
         currentTaskId = id;
@@ -64,14 +90,23 @@ public class RM_QuestSO : ScriptableObject {
         currentTask.OnTaskStart();
     }
 
+    /**
+     * @brief Gets task from list
+     */
     public RM_QuestTaskSO GetTask(int id) {
         return tasks[id];
     }
 
+    /**
+     * @brief Gets the current task
+     */
     public RM_QuestTaskSO GetCurrentTask() {
         return currentTask;
     }
 
+    /**
+     * @brief Gets the quest name
+     */ 
     public string GetQuestName() {
         return questName;
     }

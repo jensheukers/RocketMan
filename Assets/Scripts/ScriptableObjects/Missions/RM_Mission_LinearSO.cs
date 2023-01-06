@@ -21,6 +21,10 @@ public class RM_Mission_LinearSO : RM_MissionSO {
         RM_GameState.AddOnPlayerKilled((GameObject player) => {
             RM_Trigger curCheckpoint = FindTriggerByName(currentCheckpointTriggerKey);
             player.transform.position = curCheckpoint.transform.position;
+
+            //Reset health
+            RM_HealthComponent hc = player.GetComponent<RM_HealthComponent>();
+            hc.Heal(hc.GetMaxHealth());
         });
 
         //Set up triggers
@@ -31,9 +35,11 @@ public class RM_Mission_LinearSO : RM_MissionSO {
 
             trigger.onTriggerEnterEvent.AddListener((Collider other) => {
                 if (other.tag == "RM_Player") {
-                    Debug.Log("Checkpoint" + i + "Reached");
+                    Debug.Log("Checkpoint Reached!");
                     RM_HealthComponent hc = other.GetComponent<RM_HealthComponent>();
                     hc.Heal(hc.GetMaxHealth());
+
+                    OnCheckPointReached(trigger.GetTriggerKey());
                 }
             });
         }
