@@ -24,6 +24,10 @@ public class RM_GameState : MonoBehaviour {
     private UnityEvent<GameObject> onPlayerKilledEvent; /** gets triggered when player dies*/
     private UnityEvent<GameObject> onEnemyKilledEvent; /** gets triggered when enemy dies*/
 
+    private UnityEvent<int> onQuestCompleted; /**onQuestCompleted event, gets triggered when a quest of int id is completed*/
+
+
+
     /*
     * @brief Start Method, we make sure that this object will never be destroyed while running the program and set variables.
     * @return void
@@ -54,6 +58,13 @@ public class RM_GameState : MonoBehaviour {
 
                 ChangeMission(mainMenu);
             }
+            else {
+                if (currentMission.MissionData().GetCurrentQuest()) {
+                    if (currentMission.MissionData().GetCurrentQuest().IsCompleted()) {
+                        onQuestCompleted.Invoke(currentMission.MissionData().GetCurrentQuestID());
+                    }
+                }
+            } 
         } 
     }
 
@@ -72,6 +83,8 @@ public class RM_GameState : MonoBehaviour {
 
         onPlayerKilledEvent = new UnityEvent<GameObject>();
         onEnemyKilledEvent = new UnityEvent<GameObject>();
+
+        onQuestCompleted = new UnityEvent<int>();
 
         StartCoroutine(currentMission.LoadAndStartMission(data));
         return currentMission;
@@ -160,22 +173,12 @@ public class RM_GameState : MonoBehaviour {
     }
 
     /**
-    * @brief Adds event to quest.
+    * @brief Adds event to onquestcompleted
     * @param int questId
-    * @param UnityAction function
+    * @param UnityAction function, param will be the quest id
     **/
-    public static void AddOnQuestCompleted(int questId, UnityAction action) {
-        if (_instance.currentMission) {
-            if (_instance.currentMission.MissionData().GetQuest(questId)) {
-                _instance.currentMission.MissionData().GetQuest(questId).AddOnQuestCompleted(action);
-            }
-            else {
-                Debug.LogWarning("AddOnQuestCompleted: Quest not found");
-            }
-        }
-        else {
-            Debug.LogWarning("AddOnQuestCompleted: no currentMission present");
-        }
+    public static void AddOnQuestCompleted(int questId, UnityAction<int> action) {
+        _instance.onQuestCompleted.AddListener(action);
     }
 
     public static void SetQuestTaskFlag(int questId, int taskId, string flagName, bool value) {
@@ -206,5 +209,11 @@ public class RM_GameState : MonoBehaviour {
      */
     public static bool InstanceExists() {
         return _instance;
+    }
+    /**
+     * Quits the application
+     */ 
+    public static void QuitApplication() {
+        Application.Quit();
     }
 }

@@ -2357,11 +2357,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8425054618262417621, guid: 17054bba748185a49b8f12ce52cac397, type: 3}
         m_TargetAssemblyTypeName: RM_GameState, Assembly-CSharp
-        m_MethodName: ChangeMissionStatic
-        m_Mode: 2
+        m_MethodName: QuitApplication
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 44dcf324e3337d54095e5920d9b86c2d, type: 2}
-          m_ObjectArgumentAssemblyTypeName: RM_MissionSO, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

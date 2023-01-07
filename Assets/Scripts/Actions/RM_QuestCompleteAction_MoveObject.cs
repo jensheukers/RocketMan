@@ -14,8 +14,10 @@ public class RM_QuestCompleteAction_MoveObject : MonoBehaviour {
 
     private void Start() {
         if (RM_GameState.InstanceExists()) {
-            RM_GameState.AddOnQuestCompleted(questId, () => {
-                transform.position = transform.position + desiredOffset;
+            RM_GameState.AddOnQuestCompleted(questId, (int qId) => {
+                if (qId == questId) {
+                    transform.position = transform.position + desiredOffset;
+                }
             });
         }
         else {

@@ -101,6 +101,10 @@ public class RM_MissionSO : ScriptableObject {
         return quests[id]; 
     }
 
+    public int GetCurrentQuestID() {
+        return currentQuestIndex;
+    }
+
     /**
      * @brief Finds a trigger by keyname
      * @return RM_Trigger

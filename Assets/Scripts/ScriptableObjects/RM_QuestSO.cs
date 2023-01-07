@@ -18,14 +18,14 @@ public class RM_QuestSO : ScriptableObject {
     private List<RM_QuestTaskSO> tasks; /** The tasks of the quest*/
     private bool completed; /** Gets set to true upon completion*/
 
-    private UnityEvent onQuestCompleted; /**onQuestCompleted event*/
-
+    private void OnEnable() {
+        completed = false;
+    }
 
     /**
      * @brief Starts the quest
      */
     public void OnStartQuest() {
-        completed = false;
         if (tasks.Count > 0) {
             SetTask(0);
         }
@@ -41,7 +41,6 @@ public class RM_QuestSO : ScriptableObject {
             if (currentTask.IsCompleted()) {
                 if (currentTaskId + 1 >= tasks.Count) {
                     completed = true;
-                    onQuestCompleted.Invoke();
                 }
                 else {
                     SetTask(currentTaskId + 1);
@@ -64,13 +63,6 @@ public class RM_QuestSO : ScriptableObject {
     */
     public void OnPlayerKilled(GameObject player) {
         if (currentTask != null) currentTask.OnPlayerKilled(player);
-    }
-
-    /**
-     * @brief Adds on quest completion
-     */
-    public void AddOnQuestCompleted(UnityAction action) {
-        onQuestCompleted.AddListener(action);
     }
 
     /**
