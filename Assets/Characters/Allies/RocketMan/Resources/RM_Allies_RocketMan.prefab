@@ -1207,6 +1207,7 @@ MonoBehaviour:
   questName: {fileID: 3315571202316952303}
   taskName: {fileID: 7339128398630885631}
   taskDescription: {fileID: 7389481072959022453}
+  tempMainMissionData: {fileID: 0}
 --- !u!114 &4143220589334112760
 MonoBehaviour:
   m_ObjectHideFlags: 0

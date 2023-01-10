@@ -178,10 +178,12 @@ public class RM_GameState : MonoBehaviour {
     * @param UnityAction function, param will be the quest id
     **/
     public static void AddOnQuestCompleted(int questId, UnityAction<int> action) {
+        if (!_instance) return;
         _instance.onQuestCompleted.AddListener(action);
     }
 
     public static void SetQuestTaskFlag(int questId, int taskId, string flagName, bool value) {
+        if (!_instance) return;
         if (_instance.currentMission) {
             if (_instance.currentMission.MissionData().GetQuest(questId)) {
                 _instance.currentMission.MissionData().GetQuest(questId).GetTask(taskId).SetFlag(flagName, value);

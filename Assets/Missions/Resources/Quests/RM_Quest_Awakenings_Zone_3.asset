@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06ad34d1169693041805c847bde9e6b9, type: 3}
-  m_Name: RM_Quest_Awakenings_Zone_2
+  m_Name: RM_Quest_Awakenings_Zone_3
   m_EditorClassIdentifier: 
-  questName: A light in the horizon
+  questName: The final stand
   tasks:
-  - {fileID: 11400000, guid: ca0a23d6d3093bb4ea2cd9932a4757f6, type: 2}
-  - {fileID: 11400000, guid: 832a6143321e34541897d61018410709, type: 2}
-  - {fileID: 11400000, guid: 6e86354805b77994bb5cb99a11f40ce9, type: 2}
+  - {fileID: 11400000, guid: fb7d34c3c513a6547a6c5c11ad5b3491, type: 2}
+  - {fileID: 11400000, guid: 943ec452de5e9394784d1ccc6628ec43, type: 2}
