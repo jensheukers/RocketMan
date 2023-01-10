@@ -93,14 +93,28 @@ public class RM_MissionSO : ScriptableObject {
     public bool IsDone() {
         return done;
     }
+
+    /**
+     * @brief Gets the current quest
+     * @return quest
+     */
     public RM_QuestSO GetCurrentQuest() {
         return currentQuest;
     }
 
+      /**
+     * @brief Gets a quest from quests lists using id   
+     * @param id
+     * @return quest
+     */
     public RM_QuestSO GetQuest(int id) {
         return quests[id]; 
     }
 
+    /**
+     * Returns the current quest id
+     * @return int
+     */
     public int GetCurrentQuestID() {
         return currentQuestIndex;
     }

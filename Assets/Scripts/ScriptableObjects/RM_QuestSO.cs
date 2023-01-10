@@ -20,6 +20,7 @@ public class RM_QuestSO : ScriptableObject {
 
     private void OnEnable() {
         completed = false;
+        currentTaskId = 0;
     }
 
     /**

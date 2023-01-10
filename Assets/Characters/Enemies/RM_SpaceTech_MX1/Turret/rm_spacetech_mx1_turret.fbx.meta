@@ -3,7 +3,27 @@ guid: 76c2f9fa064923a48b283b8f9413b419
 ModelImporter:
   serializedVersion: 22103
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RM_MX1_Turrent_Mount_Metal_Mat
+    second: {fileID: 2100000, guid: a3b84622d4eead14cad7406066b4b7ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RM_MX1_Turrent_Stand_Metal
+    second: {fileID: 2100000, guid: c44db6ec0cde55c4cad6c651e4073d9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RM_MX1_Turret_Gun_Metal_Mat
+    second: {fileID: 2100000, guid: fb39919c627d6f244b1e276c2a023e70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RM_MX1_Turret_Gun_Plastic_Mat
+    second: {fileID: 2100000, guid: 723e461359956da43b99d989568657c8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
