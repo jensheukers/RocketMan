@@ -135,6 +135,6 @@ MonoBehaviour:
   followTarget: {fileID: 0}
   followObjectRoot: {fileID: 0}
   rotationPower: 1
-  minCameraClamp: 25
-  maxCameraClamp: 320
+  minCameraClamp: 35
+  maxCameraClamp: 330
   lockCursor: 1

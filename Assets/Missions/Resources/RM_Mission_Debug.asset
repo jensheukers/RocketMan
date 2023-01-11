@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8978cd56f6217e46bdd4b87b880fb77, type: 3}
+  m_Name: RM_Mission_Debug
+  m_EditorClassIdentifier: 
+  missionName: Debug Mission
+  missionSceneName: RM_Scene_Debug
+  endMissionTriggerKey: RM_Trigger_Mission_End
+  missionHasEnd: 1
+  unlockCursorInStart: 0
+  quests: []
+  checkPointTriggerKeys:
+  - RM_Trigger_Mission_Checkpoint_0
+  - RM_Trigger_Mission_Checkpoint_1
+  - RM_Trigger_Mission_Checkpoint_2
+  - RM_Trigger_Mission_Checkpoint_3

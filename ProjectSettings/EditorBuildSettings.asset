@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Missions/Scenes/RM_Scene_Awakenings.unity
     guid: 0a40c8cd5bac5b1439c60888bef12042
+  - enabled: 1
+    path: Assets/Missions/Scenes/RM_Scene_Debug.unity
+    guid: 7ffad98d2e09f1442a62457978ca6d80
   m_configObjects: {}

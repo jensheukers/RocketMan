@@ -15,18 +15,27 @@ public class RM_Trigger : MonoBehaviour {
     public UnityEvent<Collider> onTriggerEnterEvent; /** OnTriggerEnter action event listener. */
     public UnityEvent<Collider> onTriggerStayEvent; /** OnTriggerStay action event listener. */
     public UnityEvent<Collider> onTriggerExitEvent; /** OnTriggerExit action event listener. */
-   
+
+    public List<string> allowedTags = new List<string> { "RM_Player" };
+
     //Unity automated events
     private void OnTriggerEnter(Collider other) {
-        onTriggerEnterEvent.Invoke(other);
+        if (allowedTags.Contains(other.tag)) {
+            onTriggerEnterEvent.Invoke(other);
+        }
     }
 
     private void OnTriggerStay(Collider other) {
-        onTriggerStayEvent.Invoke(other);
+        if (allowedTags.Contains(other.tag)) {
+            onTriggerStayEvent.Invoke(other);
+        }
+
     }
 
     private void OnTriggerExit(Collider other) {
-        onTriggerExitEvent.Invoke(other);
+        if (allowedTags.Contains(other.tag)) {
+            onTriggerExitEvent.Invoke(other);
+        }
     }
 
     /**
