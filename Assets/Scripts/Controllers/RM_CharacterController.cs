@@ -39,8 +39,12 @@ public class RM_CharacterController : MonoBehaviour {
      * @param Vector2 input
      */
     protected virtual void HandleMovement(Vector2 input) {
-        transform.position += (transform.forward * input.y) * horizontalSpeed * Time.deltaTime;
-        transform.position += (transform.right * input.x) * verticalSpeed * Time.deltaTime;
+        Vector3 targetPos;
+
+        targetPos = (transform.forward * input.y) * horizontalSpeed;
+        targetPos += (transform.right * input.x) * verticalSpeed;
+
+        transform.position = Vector3.Lerp(transform.position, transform.position + targetPos, Time.deltaTime);
 
         isMoving = true;
     }
