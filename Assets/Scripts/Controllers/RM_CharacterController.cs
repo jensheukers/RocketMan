@@ -9,7 +9,7 @@ using UnityEngine;
 public class RM_CharacterController : MonoBehaviour {
 
     protected bool isMoving; /** True if character is moving*/
-    protected float distToGround;
+    protected bool isGrounded;
 
     [SerializeField]
     private float horizontalSpeed = 5f; /** The horizontal movement speed*/
@@ -23,16 +23,12 @@ public class RM_CharacterController : MonoBehaviour {
     [SerializeField]
     private RM_Jetpack jetPack; /** Jetpack reference */
 
-    void Start() {
-        distToGround = GetComponent<Collider>().bounds.extents.y;
-    }
-
     protected virtual void LateUpdate() {
         isMoving = false;
         Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-
+        
         bool roll = false;
-        if (Input.GetKeyDown(KeyCode.C)) { roll = true; }
+        if (Input.GetKeyDown(KeyCode.C) && IsGrounded()) { roll = true; }
 
         if (input.x != 0 || input.y != 0) {
             HandleMovement(input, roll);
@@ -91,8 +87,7 @@ public class RM_CharacterController : MonoBehaviour {
      * @return bool
      */
     public bool IsGrounded() {
-        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
-
+        return isGrounded;
     }
 
 
@@ -101,5 +96,19 @@ public class RM_CharacterController : MonoBehaviour {
      */
     public RM_Jetpack GetJetpack() {
         return jetPack;
+    }
+
+    public void OnCollisionEnter(Collision collision) {
+        if (collision.transform.tag == "RM_Ground") {
+            isGrounded = true;
+            Debug.Log("Grounded");
+        }
+;    }
+
+    public void OnCollisionExit(Collision collision) {
+        if (collision.transform.tag == "RM_Ground") {
+            isGrounded = false;
+            Debug.Log("Not Grounded");
+        }
     }
 }
