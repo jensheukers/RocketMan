@@ -29,11 +29,6 @@ public class RM_UIManager : MonoBehaviour {
     [SerializeField]
     private TMP_Text taskDescription; /*** Reference to the task description text */
 
-    //TEMPORARY
-    [SerializeField]
-    private RM_MissionSO tempMainMissionData;
-    //!TEMPORARY
-
     private void Update() {
         //TEMPORARY
         if (Input.GetKeyDown(KeyCode.P)) RM_GameState.GetCurrentMission().StopMission();
@@ -52,8 +47,10 @@ public class RM_UIManager : MonoBehaviour {
 
         RM_WeaponManager weaponManager;
         if (weaponManager = GetComponent<RM_WeaponManager>()) {
-            if (weaponManager.GetCurrentWeapon()) weaponName.text = weaponManager.GetCurrentWeaponData().name;
-            ammoAmount.text = weaponManager.GetCurrentWeapon().GetAmmo().ToString();
+            if (weaponManager.GetCurrentWeapon()) {
+                weaponName.text = weaponManager.GetCurrentWeaponData().name;
+                ammoAmount.text = weaponManager.GetCurrentWeapon().GetAmmo().ToString();
+            }
         }
 
         if (RM_GameState.InstanceExists() && RM_GameState.GetCurrentMission().MissionData().GetCurrentQuest()) {

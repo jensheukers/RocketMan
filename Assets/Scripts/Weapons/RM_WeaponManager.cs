@@ -18,6 +18,7 @@ public class RM_WeaponManager : MonoBehaviour {
     private RM_Weapon currentWeapon;
 
     private void Start() {
+        currentWeapon = null;
         SetCurrentWeapon(currentWeaponData);
     }
 
@@ -42,6 +43,7 @@ public class RM_WeaponManager : MonoBehaviour {
     }
 
     public void SetCurrentWeapon(RM_WeaponDataSO weaponData) {
+        if (!weaponData) return;
         if (currentWeapon) Destroy(currentWeapon);
         GameObject _spawned = Instantiate(weaponData.weaponPrefab, weaponPivot.position, weaponPivot.rotation, weaponPivot);
         currentWeapon = _spawned.GetComponent<RM_Weapon>();
