@@ -37,7 +37,7 @@ Transform:
   - {fileID: 1789760217556429499}
   - {fileID: 4700203056651162153}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5806703067744800103
 MonoBehaviour:
@@ -355,6 +355,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: RM_SpaceTech_MX1_Base
       objectReference: {fileID: 0}
+    - target: {fileID: 4529458288293016702, guid: 5e8bc0707bf27ae40b18f53a1c37152b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 530c5d59545922e4e8a5b947b9fc9173, type: 2}
+    - target: {fileID: 4529458288293016702, guid: 5e8bc0707bf27ae40b18f53a1c37152b, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 995f7e26ee8278749b69a469fc03bdd4, type: 2}
+    - target: {fileID: 4529458288293016702, guid: 5e8bc0707bf27ae40b18f53a1c37152b, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7f84a6b7cdd862940a2394ba1c1aea65, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e8bc0707bf27ae40b18f53a1c37152b, type: 3}
