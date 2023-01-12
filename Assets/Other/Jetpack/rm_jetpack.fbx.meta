@@ -3,7 +3,22 @@ guid: 4a26f74238a4e7a46ac6107b9d73e48a
 ModelImporter:
   serializedVersion: 22103
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RM_Jetpack_Mat
+    second: {fileID: 2100000, guid: 9fac914b86ff24b46b681c35cb853ab8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RM_Jetpack_Rocket_Metal
+    second: {fileID: 2100000, guid: 22c89afa072846349a27049ed6244d3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RM_Jetpack_Rocket_Tip
+    second: {fileID: 2100000, guid: 903a1823c72b3754191fcb48c18e6aff, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

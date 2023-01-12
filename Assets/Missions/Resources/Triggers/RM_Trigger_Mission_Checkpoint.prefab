@@ -56,6 +56,8 @@ MonoBehaviour:
   onTriggerExitEvent:
     m_PersistentCalls:
       m_Calls: []
+  allowedTags:
+  - RM_Player
 --- !u!65 &2612006411058385094
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -984,6 +984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSpeed: 5
   verticalSpeed: 5
+  rollIncrement: 1
   jetPack: {fileID: 0}
   chaseDistance: 20
   attackDistance: 2
