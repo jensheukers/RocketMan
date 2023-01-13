@@ -10,6 +10,7 @@ public class RM_CharacterController : MonoBehaviour {
 
     protected bool isMoving; /** True if character is moving*/
     protected bool isGrounded;
+    protected bool canRoll;
 
     [SerializeField]
     private float horizontalSpeed = 5f; /** The horizontal movement speed*/
@@ -21,14 +22,28 @@ public class RM_CharacterController : MonoBehaviour {
     private float rollIncrement = 1f;
 
     [SerializeField]
+    private float rollCooldown = 1f;
+
+    [SerializeField]
     private RM_Jetpack jetPack; /** Jetpack reference */
 
+    private void Start() {
+        canRoll = true;
+    }
+
+    //Input should eventually be called from a different class
     protected virtual void LateUpdate() {
         isMoving = false;
         Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        
+
+        //Handle rolling input
         bool roll = false;
-        if (Input.GetKeyDown(KeyCode.C) && IsGrounded()) { roll = true; }
+        if (Input.GetKeyDown(KeyCode.C) && IsGrounded() && canRoll && input.y > 0) { 
+            roll = true;
+            canRoll = false;
+
+            StartCoroutine("ResetCanRoll");
+        }
 
         if (input.x != 0 || input.y != 0) {
             HandleMovement(input, roll);
@@ -74,6 +89,11 @@ public class RM_CharacterController : MonoBehaviour {
         if (roll) animator.SetTrigger("Roll");
     }
 
+    private IEnumerator ResetCanRoll() {
+        yield return new WaitForSeconds(rollCooldown);
+        canRoll = true;
+    }
+
     /**
      * @brief Returns true if character is moving
      * @return bool
@@ -101,14 +121,13 @@ public class RM_CharacterController : MonoBehaviour {
     public void OnCollisionEnter(Collision collision) {
         if (collision.transform.tag == "RM_Ground") {
             isGrounded = true;
-            Debug.Log("Grounded");
         }
 ;    }
 
     public void OnCollisionExit(Collision collision) {
         if (collision.transform.tag == "RM_Ground") {
             isGrounded = false;
-            Debug.Log("Not Grounded");
         }
     }
+
 }
