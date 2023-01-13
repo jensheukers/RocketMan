@@ -29,12 +29,16 @@ public class RM_UIManager : MonoBehaviour {
     [SerializeField]
     private TMP_Text taskDescription; /*** Reference to the task description text */
 
+    [SerializeField]
+    private GameObject escapeMenu; /** Reference to the escape menu */
+
+    private bool escapeMenuActive;
+
+    private void Start() {
+        escapeMenu.SetActive(false);
+    }
+
     private void Update() {
-        //TEMPORARY
-        if (Input.GetKeyDown(KeyCode.P)) RM_GameState.GetCurrentMission().StopMission();
-
-        //!TEMPORARy
-
         RM_HealthComponent healthComponent;
         if (healthComponent = GetComponent<RM_HealthComponent>()) {
             healthBarSlider.value = (float)healthComponent.GetHealth() / (float)healthComponent.GetMaxHealth();
@@ -58,5 +62,32 @@ public class RM_UIManager : MonoBehaviour {
             taskName.text = RM_GameState.GetCurrentMission().MissionData().GetCurrentQuest().GetCurrentTask().GetTaskName();
             taskDescription.text = RM_GameState.GetCurrentMission().MissionData().GetCurrentQuest().GetCurrentTask().GetTaskDescription();
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (!escapeMenuActive) {
+                escapeMenuActive = true;
+                escapeMenu.SetActive(true);
+
+                //Unlock cursor
+                Cursor.lockState = CursorLockMode.None;
+
+                //Set Timescale
+                Time.timeScale = 0;
+            }
+            else {
+                escapeMenuActive = false;
+                escapeMenu.SetActive(false);
+
+                //Lock Cursor again
+                Cursor.lockState = CursorLockMode.Locked;
+
+                //Set Timescale back
+                Time.timeScale = 1;
+            }
+        }
+    }
+
+    public bool EscapeMenuActive() {
+        return escapeMenuActive;
     }
 }

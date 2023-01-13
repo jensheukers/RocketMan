@@ -44,6 +44,7 @@ public class RM_CameraHandle : MonoBehaviour {
     }
 
     private void Update() {
+        if (Time.timeScale == 0) return;
         if (!followTarget) return; 
 
         //Rotate the Follow Target transform based on the input

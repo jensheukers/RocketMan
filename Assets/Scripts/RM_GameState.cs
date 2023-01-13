@@ -218,4 +218,8 @@ public class RM_GameState : MonoBehaviour {
     public static void QuitApplication() {
         Application.Quit();
     }
+
+    public static void ReturnToMainMenu() {
+        if (_instance.mainMenu) _instance.ChangeMission(_instance.mainMenu);
+    }
 }

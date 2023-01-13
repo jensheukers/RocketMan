@@ -23,7 +23,7 @@ public class RM_WeaponManager : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetMouseButtonDown(0)) ShootCurrentWeapon();
+        if (Input.GetMouseButtonDown(0) && Time.timeScale != 0) ShootCurrentWeapon();
 
         if (currentWeapon) {
             RightBoneIKConstraintTransform.position = currentWeapon.GetRightHandPivot().position;

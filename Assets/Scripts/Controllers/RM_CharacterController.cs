@@ -33,6 +33,8 @@ public class RM_CharacterController : MonoBehaviour {
 
     //Input should eventually be called from a different class
     protected virtual void LateUpdate() {
+        if (Time.timeScale == 0) return;
+
         isMoving = false;
         Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
