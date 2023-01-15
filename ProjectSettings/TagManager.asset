@@ -8,6 +8,8 @@ TagManager:
   - RM_World
   - CinemachineCam
   - RM_Player
+  - RM_Ground
+  - RM_GameStateObject
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - PlayerIgnore
   - Water
   - UI
-  - 
+  - Inside
   - 
   - 
   - 
