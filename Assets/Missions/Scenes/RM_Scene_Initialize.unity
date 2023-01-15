@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -198,6 +198,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 453551888, guid: 17054bba748185a49b8f12ce52cac397, type: 3}
+      propertyPath: m_text
+      value: RocketMan v0.76 - Alpha build
+      objectReference: {fileID: 0}
     - target: {fileID: 5527977325101203804, guid: 17054bba748185a49b8f12ce52cac397, type: 3}
       propertyPath: m_RootOrder
       value: 0
