@@ -19,6 +19,9 @@ MonoBehaviour:
   unlockCursorInStart: 0
   quests:
   - {fileID: 11400000, guid: 9f381782389699a4f86c63ada37bda3e, type: 2}
+  - {fileID: 11400000, guid: f90c3793712de974c963ae5eb4c435a5, type: 2}
   checkPointTriggerKeys:
   - RM_Awakenings_Checkpoint_0
   - RM_Awakenings_Checkpoint_1
+  - RM_Awakenings_Checkpoint_2
+  - RM_Awakenings_Checkpoint_3

@@ -15,5 +15,5 @@ MonoBehaviour:
   questName: A light in the horizon
   tasks:
   - {fileID: 11400000, guid: ca0a23d6d3093bb4ea2cd9932a4757f6, type: 2}
-  - {fileID: 11400000, guid: 832a6143321e34541897d61018410709, type: 2}
+  - {fileID: 11400000, guid: fb7d34c3c513a6547a6c5c11ad5b3491, type: 2}
   - {fileID: 11400000, guid: 6e86354805b77994bb5cb99a11f40ce9, type: 2}
