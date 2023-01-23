@@ -32,10 +32,18 @@ public class RM_UIManager : MonoBehaviour {
     [SerializeField]
     private GameObject escapeMenu; /** Reference to the escape menu */
 
+    [SerializeField]
+    private GameObject notificationObject;
+
+    [SerializeField]
+    private TMP_Text notificationText;
+
     private bool escapeMenuActive;
 
     private void Start() {
         escapeMenu.SetActive(false);
+
+        HideNotification();
     }
 
     private void Update() {
@@ -89,5 +97,21 @@ public class RM_UIManager : MonoBehaviour {
 
     public bool EscapeMenuActive() {
         return escapeMenuActive;
+    }
+
+    public bool notificationActive() {
+        return notificationObject.activeSelf;
+    }
+
+    public void ShowNotification() {
+        notificationObject.SetActive(true);
+    }
+
+    public void HideNotification() {
+        notificationObject.SetActive(false);
+    }
+
+    public void SetNotificationText(string text) {
+        notificationText.text = text;
     }
 }

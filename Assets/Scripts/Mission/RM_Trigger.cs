@@ -12,6 +12,18 @@ public class RM_Trigger : MonoBehaviour {
     [SerializeField]
     private string triggerKey = "RM_Trigger"; /**Key of the trigger*/
 
+    [SerializeField]
+    private KeyCode activateKeyCode = KeyCode.F;
+
+    [SerializeField]
+    private bool usingKeycode = false;
+
+    [SerializeField]
+    private string activeKeyCodeActionText = "interact";
+
+    [SerializeField]
+    private bool destroyOnInteract = false;
+
     public UnityEvent<Collider> onTriggerEnterEvent; /** OnTriggerEnter action event listener. */
     public UnityEvent<Collider> onTriggerStayEvent; /** OnTriggerStay action event listener. */
     public UnityEvent<Collider> onTriggerExitEvent; /** OnTriggerExit action event listener. */
@@ -22,12 +34,34 @@ public class RM_Trigger : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (allowedTags.Contains(other.tag)) {
             onTriggerEnterEvent.Invoke(other);
+
+            if (usingKeycode) {
+                RM_UIManager um = other.GetComponent<RM_UIManager>();
+                if (um) {
+                    um.ShowNotification();
+                    um.SetNotificationText("Press " + activateKeyCode.ToString() + " to " + activeKeyCodeActionText + ".");
+                }
+            }
         }
     }
 
     private void OnTriggerStay(Collider other) {
         if (allowedTags.Contains(other.tag)) {
-            onTriggerStayEvent.Invoke(other);
+            if (usingKeycode) {
+                if (Input.GetKeyDown(activateKeyCode)) {
+                    onTriggerStayEvent.Invoke(other);
+
+                    if (destroyOnInteract) {
+                        RM_UIManager um = other.GetComponent<RM_UIManager>();
+                        um.HideNotification();
+                        Destroy(this.gameObject);
+                    }
+                }
+            }
+            else {
+                onTriggerStayEvent.Invoke(other);
+            }
+
         }
 
     }
@@ -35,6 +69,13 @@ public class RM_Trigger : MonoBehaviour {
     private void OnTriggerExit(Collider other) {
         if (allowedTags.Contains(other.tag)) {
             onTriggerExitEvent.Invoke(other);
+
+            if (usingKeycode) {
+                RM_UIManager um = other.GetComponent<RM_UIManager>();
+                if (um) {
+                    um.HideNotification();
+                }
+            }
         }
     }
 
