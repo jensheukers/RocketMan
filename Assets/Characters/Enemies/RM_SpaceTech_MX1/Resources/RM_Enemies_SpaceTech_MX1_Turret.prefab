@@ -57,12 +57,12 @@ Transform:
   m_GameObject: {fileID: 387601354649539156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.5518494, y: 3.8902051, z: 14.833753}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.16666667, y: 0.5, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8396798083609079880}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2009208648777091688
 MonoBehaviour:
@@ -76,18 +76,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe50489abc9ba4e45a968d8bd4efb1cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 7471077436232062337, guid: 27f54975fe63bd8438711f1d8c9955d9, type: 3}
+  RightHandPivot: {fileID: 0}
+  LeftHandPivot: {fileID: 0}
+  projectilePrefab: {fileID: 7471077436232062337, guid: 09ffed32886ada34eb65480c3a92a818, type: 3}
   barrelEnd: {fileID: 288234868}
-  ammo: 9999
+  ammo: 50
   shootForce: 100
+  timeBetweenShots: 3
   mount: {fileID: 5043381119540777735}
-  mountRotateSpeed: 500
+  mountRotateSpeed: 350
   gun: {fileID: 1779176820018731344}
-  gunRotateSpeed: 250
-  minGunRotateAmount: 75
-  maxGunRotateAmount: -40
+  gunRotateSpeed: 75
   target: {fileID: 0}
-  timeBetweenShots: 1
   aimDistance: 100
 --- !u!1 &2079218309806824047
 GameObject:
@@ -151,8 +151,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5551221964770611338, guid: 76c2f9fa064923a48b283b8f9413b419, type: 3}
-  - {fileID: 890960190174234644, guid: 76c2f9fa064923a48b283b8f9413b419, type: 3}
+  - {fileID: 2100000, guid: fb39919c627d6f244b1e276c2a023e70, type: 2}
+  - {fileID: 2100000, guid: 723e461359956da43b99d989568657c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -236,7 +236,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2426519515194165398, guid: 76c2f9fa064923a48b283b8f9413b419, type: 3}
+  - {fileID: 2100000, guid: a3b84622d4eead14cad7406066b4b7ed, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -320,7 +320,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8653329200106490200, guid: 76c2f9fa064923a48b283b8f9413b419, type: 3}
+  - {fileID: 2100000, guid: c44db6ec0cde55c4cad6c651e4073d9e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

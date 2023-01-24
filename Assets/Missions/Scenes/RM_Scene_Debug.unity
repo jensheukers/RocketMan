@@ -495,6 +495,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8067923035290952350, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
+      propertyPath: chaseDistance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8067923035290952350, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
       propertyPath: partrolPoints.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -526,6 +530,10 @@ PrefabInstance:
       propertyPath: partrolPoints.Array.data[6]
       value: 
       objectReference: {fileID: 387014509}
+    - target: {fileID: 8067923035290952351, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
+      propertyPath: m_Speed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8408989346192408275, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4320,6 +4328,14 @@ PrefabInstance:
       value: RM_Enemies_SpaceTech_MX1 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 5806703067744800103, guid: 555089565c48b07409d6310a287456db, type: 3}
+      propertyPath: chaseDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806703067744800103, guid: 555089565c48b07409d6310a287456db, type: 3}
+      propertyPath: attackDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806703067744800103, guid: 555089565c48b07409d6310a287456db, type: 3}
       propertyPath: partrolPoints.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -4379,6 +4395,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8067923035290952350, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
+      propertyPath: chaseDistance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8067923035290952350, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
       propertyPath: partrolPoints.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -4410,6 +4430,10 @@ PrefabInstance:
       propertyPath: partrolPoints.Array.data[6]
       value: 
       objectReference: {fileID: 387014509}
+    - target: {fileID: 8067923035290952351, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
+      propertyPath: m_Speed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8408989346192408275, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4897,6 +4921,14 @@ PrefabInstance:
     - target: {fileID: 5806703067744800102, guid: 555089565c48b07409d6310a287456db, type: 3}
       propertyPath: m_Name
       value: RM_Enemies_SpaceTech_MX1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806703067744800103, guid: 555089565c48b07409d6310a287456db, type: 3}
+      propertyPath: chaseDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806703067744800103, guid: 555089565c48b07409d6310a287456db, type: 3}
+      propertyPath: attackDistance
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5806703067744800103, guid: 555089565c48b07409d6310a287456db, type: 3}
       propertyPath: partrolPoints.Array.size
@@ -7050,6 +7082,14 @@ PrefabInstance:
       value: RM_Enemies_SpaceTech_MX1 (4)
       objectReference: {fileID: 0}
     - target: {fileID: 5806703067744800103, guid: 555089565c48b07409d6310a287456db, type: 3}
+      propertyPath: chaseDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806703067744800103, guid: 555089565c48b07409d6310a287456db, type: 3}
+      propertyPath: attackDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806703067744800103, guid: 555089565c48b07409d6310a287456db, type: 3}
       propertyPath: partrolPoints.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -7453,6 +7493,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8067923035290952350, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
+      propertyPath: chaseDistance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8067923035290952350, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
       propertyPath: partrolPoints.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -7484,6 +7528,10 @@ PrefabInstance:
       propertyPath: partrolPoints.Array.data[6]
       value: 
       objectReference: {fileID: 387014509}
+    - target: {fileID: 8067923035290952351, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
+      propertyPath: m_Speed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8408989346192408275, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -7960,6 +8008,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8067923035290952350, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
+      propertyPath: chaseDistance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8067923035290952350, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
       propertyPath: partrolPoints.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -7991,6 +8043,10 @@ PrefabInstance:
       propertyPath: partrolPoints.Array.data[6]
       value: 
       objectReference: {fileID: 387014509}
+    - target: {fileID: 8067923035290952351, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
+      propertyPath: m_Speed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8408989346192408275, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -8860,6 +8916,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8067923035290952350, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
+      propertyPath: chaseDistance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8067923035290952350, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
       propertyPath: partrolPoints.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -8891,6 +8951,10 @@ PrefabInstance:
       propertyPath: partrolPoints.Array.data[6]
       value: 
       objectReference: {fileID: 387014509}
+    - target: {fileID: 8067923035290952351, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
+      propertyPath: m_Speed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8408989346192408275, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -10220,6 +10284,14 @@ PrefabInstance:
       value: RM_Enemies_SpaceTech_MX1 (3)
       objectReference: {fileID: 0}
     - target: {fileID: 5806703067744800103, guid: 555089565c48b07409d6310a287456db, type: 3}
+      propertyPath: chaseDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806703067744800103, guid: 555089565c48b07409d6310a287456db, type: 3}
+      propertyPath: attackDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806703067744800103, guid: 555089565c48b07409d6310a287456db, type: 3}
       propertyPath: partrolPoints.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -11351,6 +11423,14 @@ PrefabInstance:
       value: RM_Enemies_SpaceTech_MX1 (5)
       objectReference: {fileID: 0}
     - target: {fileID: 5806703067744800103, guid: 555089565c48b07409d6310a287456db, type: 3}
+      propertyPath: chaseDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806703067744800103, guid: 555089565c48b07409d6310a287456db, type: 3}
+      propertyPath: attackDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806703067744800103, guid: 555089565c48b07409d6310a287456db, type: 3}
       propertyPath: partrolPoints.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -11410,6 +11490,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8067923035290952350, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
+      propertyPath: chaseDistance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8067923035290952350, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
       propertyPath: partrolPoints.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -11441,6 +11525,10 @@ PrefabInstance:
       propertyPath: partrolPoints.Array.data[6]
       value: 
       objectReference: {fileID: 387014509}
+    - target: {fileID: 8067923035290952351, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
+      propertyPath: m_Speed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8408989346192408275, guid: 3b0cac3e3ea81804dbfc91a0a65f18b4, type: 3}
       propertyPath: m_RootOrder
       value: -1
