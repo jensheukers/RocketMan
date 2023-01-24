@@ -107,6 +107,11 @@ public class RM_UIManager : MonoBehaviour {
         notificationObject.SetActive(true);
     }
 
+    public void ShowNotificationTime(int time) {
+        ShowNotification();
+        StartCoroutine("HideNotification", time);
+    }
+
     public void HideNotification() {
         notificationObject.SetActive(false);
     }

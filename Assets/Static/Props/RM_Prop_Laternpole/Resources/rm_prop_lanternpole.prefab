@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4078971133876011968}
   - component: {fileID: 8312420337891845786}
   - component: {fileID: 2964384823540935338}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RM_Prop_Lantern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5980485046836050298}
   - component: {fileID: 881282924143649492}
   - component: {fileID: 2304106129948448862}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RM_Prop_Pole_Chains
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 3584456295335809398}
   - component: {fileID: 5310298422499563155}
   - component: {fileID: 5079905648247539506}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RM_Prop_Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6832897741217029744}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rm_prop_lanternpole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ Transform:
   m_Children:
   - {fileID: 3584456295335809398}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7317466134755283495
 GameObject:
@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 5825214669138605211}
   - component: {fileID: 6128391208308162809}
   - component: {fileID: 9036432737548270313}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
