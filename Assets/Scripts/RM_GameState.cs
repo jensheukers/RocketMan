@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+using UnityEngine.UI;
 
 /// <summary>
 /// RM_GameState is the main gamestate class for RocketMan, it must never be destroyed during the whole instance of the program.
@@ -26,7 +26,8 @@ public class RM_GameState : MonoBehaviour {
 
     private UnityEvent<int> onQuestCompleted; /**onQuestCompleted event, gets triggered when a quest of int id is completed*/
 
-
+    [SerializeField]
+    private Image fadeImage; /**Image reference that is used to be able to fade between scenes*/
 
     /*
     * @brief Start Method, we make sure that this object will never be destroyed while running the program and set variables.
@@ -240,4 +241,18 @@ public class RM_GameState : MonoBehaviour {
 
         cutscene.Play();
     }
+
+    /**
+    * Fades to screen to black
+    */
+    private IEnumerator FadeScreenInternal(Color from, Color to, float fadeDuration) {
+        float elapsedTime = 0f;
+        while (elapsedTime < fadeDuration) {
+            elapsedTime += Time.deltaTime;
+            _instance.fadeImage.color = Color.Lerp(from, to, elapsedTime / fadeDuration);
+            yield return null;
+        }
+    }
+
+    public static void FadeScreen(Color from, Color to, float fadeDuration) { _instance.StartCoroutine(_instance.FadeScreenInternal(from, to, fadeDuration)); }
 }

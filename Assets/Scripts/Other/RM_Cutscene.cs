@@ -18,6 +18,9 @@ public class RM_Cutscene : MonoBehaviour {
 
     [SerializeField]
     private float animationLenght = 5;
+
+    [SerializeField]
+    private float fadeOutDuration = 2;
     
     private void Start() {
         if (!cam) Debug.LogError("Camera needs to be set in order for cutscene to work");
@@ -48,6 +51,9 @@ public class RM_Cutscene : MonoBehaviour {
         cam.depth = mainCam.depth - 1;
 
         onCutsceneStop.Invoke();
+
+        //Fade out to scene
+        RM_GameState.FadeScreen(new Color(0,0,0,1), new Color(0,0,0,0), fadeOutDuration);
     }
 
     public void AddOnCutsceneStop(UnityAction func) {

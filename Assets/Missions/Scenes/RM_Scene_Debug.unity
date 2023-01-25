@@ -3570,22 +3570,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RM_Allies_RocketMan
       objectReference: {fileID: 0}
-    - target: {fileID: 6531582190929723254, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.5784485
-      objectReference: {fileID: 0}
-    - target: {fileID: 6531582190929723254, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.034175415
-      objectReference: {fileID: 0}
-    - target: {fileID: 6531582190929723254, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.81464136
-      objectReference: {fileID: 0}
-    - target: {fileID: 6531582190929723254, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.024266776
-      objectReference: {fileID: 0}
     - target: {fileID: 6950815036630311609, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

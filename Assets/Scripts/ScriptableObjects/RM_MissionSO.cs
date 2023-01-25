@@ -14,6 +14,7 @@ public class RM_MissionSO : ScriptableObject {
     public string endMissionTriggerKey = "RM_Trigger_Mission_End"; /* The key of the trigger that marks the end of the mission */
     public bool missionHasEnd = true;
     public bool unlockCursorInStart = true;
+    public float screenFadeTime = 2f; /** Time to fade between scenes*/
 
     private bool done; /* Gets set to true in OnStart, and set to false in OnStop */
 
@@ -59,6 +60,9 @@ public class RM_MissionSO : ScriptableObject {
         RM_GameState.AddOnPlayerKilled((GameObject player) => {
             if (currentQuest) currentQuest.OnPlayerKilled(player);
         });
+
+        //Tell gamestate to unfade from black
+        RM_GameState.FadeScreen(new Color(0,0,0,1), new Color(0,0,0,0), screenFadeTime);
     }
 
     /**
