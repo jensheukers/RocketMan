@@ -258,5 +258,8 @@ public class RM_GameState : MonoBehaviour {
         }
     }
 
-    public static void FadeScreen(Color from, Color to, float fadeDuration) { _instance.StartCoroutine(_instance.FadeScreenInternal(from, to, fadeDuration)); }
+    public static void FadeScreen(Color from, Color to, float fadeDuration) {
+        if (!_instance) return;
+        _instance.StartCoroutine(_instance.FadeScreenInternal(from, to, fadeDuration)); 
+    }
 }
