@@ -9,6 +9,10 @@ using TMPro;
 /// </summary>
 public class RM_UIManager : MonoBehaviour {
     [SerializeField]
+    private Canvas canvasObject; /** The canvas object*/
+    private bool canvasActive; /**Canvas active boolean*/
+
+    [SerializeField]
     private Slider healthBarSlider; /*** Reference to the healthbar slider*/
 
     [SerializeField]
@@ -41,12 +45,14 @@ public class RM_UIManager : MonoBehaviour {
     private bool escapeMenuActive;
 
     private void Start() {
+        EnableUI();
         escapeMenu.SetActive(false);
 
         HideNotification();
     }
 
     private void Update() {
+        if (!canvasActive) return;
         RM_HealthComponent healthComponent;
         if (healthComponent = GetComponent<RM_HealthComponent>()) {
             healthBarSlider.value = (float)healthComponent.GetHealth() / (float)healthComponent.GetMaxHealth();
@@ -118,5 +124,15 @@ public class RM_UIManager : MonoBehaviour {
 
     public void SetNotificationText(string text) {
         notificationText.text = text;
+    }
+
+    public void DisableUI() {
+        canvasObject.gameObject.SetActive(false);
+        canvasActive = false;
+    }
+
+    public void EnableUI() {
+        canvasObject.gameObject.SetActive(true);
+        canvasActive = true;
     }
 }

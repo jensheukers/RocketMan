@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.Events;
+using UnityEditor.Events;
 
 /// <summary>
 /// Main trigger component, has multiple events that can be read and attached to.
@@ -79,9 +80,40 @@ public class RM_Trigger : MonoBehaviour {
         }
     }
 
+    private void ClearPersistantEvents(UnityEvent<Collider> e) {
+        Debug.Log(e.GetPersistentEventCount());
+        for (int i = e.GetPersistentEventCount() - 1; i > -1 ; i--) {
+            UnityEventTools.RemovePersistentListener(e, i);
+        }
+    }
+
     /**
      * @brief Returns the trigger name
      * @return string
      */
     public string GetTriggerKey() { return this.triggerKey; }
+
+    /**
+     * @brief clears the onTriggerEnter event
+     */
+    public void ClearOnTriggerEnterEvent() { 
+        ClearPersistantEvents(onTriggerEnterEvent);
+        onTriggerEnterEvent.RemoveAllListeners(); 
+    }
+
+    /**
+     * @brief clears the onTriggerStay event
+     */
+    public void ClearOnTriggerStayEvent() {
+        ClearPersistantEvents(onTriggerStayEvent);
+        onTriggerStayEvent.RemoveAllListeners();
+    }
+
+    /**
+     * @brief clears the onTriggerExit event
+     */
+    public void ClearOnTriggerExitEvent() {
+        ClearPersistantEvents(onTriggerExitEvent);
+        onTriggerExitEvent.RemoveAllListeners();
+    }
 }

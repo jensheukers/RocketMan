@@ -222,4 +222,22 @@ public class RM_GameState : MonoBehaviour {
     public static void ReturnToMainMenu() {
         if (_instance.mainMenu) _instance.ChangeMission(_instance.mainMenu);
     }
+
+    /*
+     * @brief Plays a cutscene
+     */
+    public static void PlayCutscene(RM_Cutscene cutscene) {
+
+        GameObject player = GameObject.FindGameObjectWithTag("RM_Player");
+
+        if (player) {
+            player.GetComponent<RM_UIManager>().DisableUI(); //Disable UI
+
+            cutscene.AddOnCutsceneStop(() => {
+                player.GetComponent<RM_UIManager>().EnableUI(); //Re Enable UI
+            });
+        }
+
+        cutscene.Play();
+    }
 }

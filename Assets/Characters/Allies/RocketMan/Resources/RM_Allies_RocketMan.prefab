@@ -876,7 +876,7 @@ Transform:
   - {fileID: 6531582190929723254}
   - {fileID: 7460419520060221102}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &7966171893113853928
 Rigidbody:
@@ -1091,6 +1091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3a5606f17d0e747a3f45b230f7de81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasObject: {fileID: 4703469398848083681}
   healthBarSlider: {fileID: 396163983379594251}
   jetpackFuelSlider: {fileID: 2375083517500585369}
   weaponName: {fileID: 6390123907148821552}
@@ -2044,6 +2045,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!223 &4703469398848083681 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 7269982703417658247, guid: 975295c6c145ce04f99f6a7e9e49a1df, type: 3}
+  m_PrefabInstance: {fileID: 2711798918814047590}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6390123907148821552 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9010710450339653974, guid: 975295c6c145ce04f99f6a7e9e49a1df, type: 3}
