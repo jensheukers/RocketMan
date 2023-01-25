@@ -233,9 +233,13 @@ public class RM_GameState : MonoBehaviour {
 
         if (player) {
             player.GetComponent<RM_UIManager>().DisableUI(); //Disable UI
+            player.GetComponent<RM_CharacterController>().enabled = false;
+            player.GetComponent<RM_WeaponManager>().enabled = false;
 
             cutscene.AddOnCutsceneStop(() => {
                 player.GetComponent<RM_UIManager>().EnableUI(); //Re Enable UI
+                player.GetComponent<RM_CharacterController>().enabled = true;
+                player.GetComponent<RM_WeaponManager>().enabled = true;
             });
         }
 
