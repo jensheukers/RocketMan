@@ -3,7 +3,17 @@ guid: 8fdda7c272ef0154e90129c1623ddc19
 ModelImporter:
   serializedVersion: 22103
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RM_Bridge_Platform_Mat
+    second: {fileID: 2100000, guid: 4b67248be49752546b29be693a615214, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RM_Bridge_Supports_Mat
+    second: {fileID: 2100000, guid: bbe433a8e8308454db87dfac0a3899c9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
