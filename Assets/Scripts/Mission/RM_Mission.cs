@@ -9,15 +9,17 @@ using UnityEngine.SceneManagement;
 public class RM_Mission : MonoBehaviour {
     private RM_MissionSO data; /** MissionDataSO Reference */
 
+    private AsyncOperation operation; /** The coroutine operation*/
+
     /**
      * @brief  Loads and start the mission, should be called first before any other runtime action is performed on the mission
      */
     public IEnumerator LoadAndStartMission(RM_MissionSO data) {
         this.data = data;
 
-        AsyncOperation async = SceneManager.LoadSceneAsync(data.missionSceneName);
+        operation = SceneManager.LoadSceneAsync(data.missionSceneName);
 
-        while (!async.isDone) {
+        while (!IsLoaded()) {
             yield return 0;
         }
 
@@ -47,4 +49,10 @@ public class RM_Mission : MonoBehaviour {
         return data;
     }
 
+    /*
+     * Returns true if async loading operation is done
+     */
+    public bool IsLoaded() {
+        return operation.isDone;
+    }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using TMPro;
 
 /// <summary>
 /// RM_GameState is the main gamestate class for RocketMan, it must never be destroyed during the whole instance of the program.
@@ -29,6 +30,12 @@ public class RM_GameState : MonoBehaviour {
     [SerializeField]
     private Image fadeImage; /**Image reference that is used to be able to fade between scenes*/
 
+    [SerializeField]
+    private Canvas timescoreCanvas;
+
+    [SerializeField]
+    private TMP_Text timeScoreText; /** Text reference to highscore text object*/
+
     private Transform pickupSpawnerTransform; /** We hold a spawning position for the SpawnPickup(RM_PickupSO data) method, we can set this in SetPickupSpawnPosition(Vector3 position) */
 
     /*
@@ -51,15 +58,23 @@ public class RM_GameState : MonoBehaviour {
     }
 
 
-    private void Update() {
+    private void LateUpdate() {
+        if (timescoreCanvas.isActiveAndEnabled) {
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+                timescoreCanvas.enabled = false;
+            }
+        }
 
         //Check if mission is done if so return to main menu
-        if (currentMission) {
-            if (currentMission.IsDone()) {
-                currentMission.StopMission();
+        if (currentMission != null) {
+            if (currentMission.IsLoaded() && currentMission.IsDone()) {
                 Destroy(this.GetComponent<RM_Mission>());
-
                 ChangeMission(mainMenu);
+
+                //Set highscore
+                timeScoreText.text = Time.timeSinceLevelLoad.ToString();
+                timescoreCanvas.enabled = true;
+
             }
             else {
                 if (currentMission.MissionData().GetCurrentQuest()) {
@@ -80,6 +95,8 @@ public class RM_GameState : MonoBehaviour {
         if (currentMission) {
             currentMission.StopMission();
             Destroy(this.GetComponent<RM_Mission>());
+
+            currentMission = null;
         }
 
         currentMission = gameObject.AddComponent<RM_Mission>();
@@ -120,6 +137,15 @@ public class RM_GameState : MonoBehaviour {
      */
     public static List<RM_MissionSO> GetMissions() {
         return _instance.missions;
+    }
+
+    /*
+     * @brief Stop the current mission
+     * */
+    public static void StopCurrentMission() {
+        if (GetCurrentMission()) {
+            GetCurrentMission().StopMission();
+        }
     }
 
     /*

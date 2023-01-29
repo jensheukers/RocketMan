@@ -1845,7 +1845,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2612006411058385093, guid: 8f8d2b24f5b41be4e981cba0bd145690, type: 3}
       propertyPath: triggerKey
-      value: RM_Trigger_Mission_End
+      value: RM_Trigger_Mission_EndMission
+      objectReference: {fileID: 0}
+    - target: {fileID: 2612006411058385093, guid: 8f8d2b24f5b41be4e981cba0bd145690, type: 3}
+      propertyPath: onTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2612006411058385093, guid: 8f8d2b24f5b41be4e981cba0bd145690, type: 3}
+      propertyPath: onTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2612006411058385093, guid: 8f8d2b24f5b41be4e981cba0bd145690, type: 3}
+      propertyPath: onTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8425054618262417621, guid: 17054bba748185a49b8f12ce52cac397, type: 3}
+    - target: {fileID: 2612006411058385093, guid: 8f8d2b24f5b41be4e981cba0bd145690, type: 3}
+      propertyPath: onTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2612006411058385093, guid: 8f8d2b24f5b41be4e981cba0bd145690, type: 3}
+      propertyPath: onTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StopCurrentMission
+      objectReference: {fileID: 0}
+    - target: {fileID: 2612006411058385093, guid: 8f8d2b24f5b41be4e981cba0bd145690, type: 3}
+      propertyPath: onTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RM_GameState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2612006411058385093, guid: 8f8d2b24f5b41be4e981cba0bd145690, type: 3}
+      propertyPath: onTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2612006411058385095, guid: 8f8d2b24f5b41be4e981cba0bd145690, type: 3}
       propertyPath: m_RootOrder

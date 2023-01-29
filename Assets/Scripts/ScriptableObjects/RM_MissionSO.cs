@@ -24,6 +24,10 @@ public class RM_MissionSO : ScriptableObject {
     private RM_QuestSO currentQuest;
     private int currentQuestIndex;
 
+    private void OnEnable() {
+        done = false;
+    }
+
     /*
      * @brief Gets called by RM_Mission class when mission data is to be started.
      */
