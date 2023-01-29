@@ -55,13 +55,15 @@ public class RM_GameState : MonoBehaviour {
        
         if (!mainMenu) Debug.LogError("RM_GameState: " + "main menu not set!");
         else ChangeMission(mainMenu);
+
+        timescoreCanvas.gameObject.SetActive(false);
     }
 
 
     private void LateUpdate() {
         if (timescoreCanvas.isActiveAndEnabled) {
             if (Input.GetKeyDown(KeyCode.Escape)) {
-                timescoreCanvas.enabled = false;
+                timescoreCanvas.gameObject.SetActive(false);
             }
         }
 
@@ -69,11 +71,11 @@ public class RM_GameState : MonoBehaviour {
         if (currentMission != null) {
             if (currentMission.IsLoaded() && currentMission.IsDone()) {
                 Destroy(this.GetComponent<RM_Mission>());
-                ChangeMission(mainMenu);
+                RM_Mission m = ChangeMission(mainMenu);
 
                 //Set highscore
                 timeScoreText.text = Time.timeSinceLevelLoad.ToString();
-                timescoreCanvas.enabled = true;
+                timescoreCanvas.gameObject.SetActive(true);
 
             }
             else {

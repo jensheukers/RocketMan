@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 /// <summary>
 /// RM_Mission acts as a sort of wrapper for the RM_MissionSO object. handles communication between gamestate and the current mission data
