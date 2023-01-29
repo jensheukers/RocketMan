@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questName: The final stand
   tasks:
-  - {fileID: 11400000, guid: e4835606be4e8bf46827d3b83d855a02, type: 2}
+  - {fileID: 11400000, guid: e812edd58855d0d4a8e496c73305cee3, type: 2}
   - {fileID: 11400000, guid: 943ec452de5e9394784d1ccc6628ec43, type: 2}

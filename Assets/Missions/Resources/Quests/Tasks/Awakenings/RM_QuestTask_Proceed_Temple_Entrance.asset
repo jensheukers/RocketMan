@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: RM_QuestTask_Proceed_Temple_Entrance
   m_EditorClassIdentifier: 
   taskName: Moving Through
-  taskDescription: Follow the path to the inside of the temple
+  taskDescription: Follow the path inside the temple, make sure to use your boost
+    wisely
   flagList:
   - flagName: RM_QuestFlag_CompleteTask
     flagValue: 0
