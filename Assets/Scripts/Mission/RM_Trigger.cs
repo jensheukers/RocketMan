@@ -33,8 +33,15 @@ public class RM_Trigger : MonoBehaviour {
 
     public List<string> allowedTags = new List<string> { "RM_Player" };
 
-    private void Start() {
+    public RM_PickupSO requiredItem;
+
+    protected virtual void Start() {
         triggeredOnce = false;
+
+        //Check if events have been initialized if not initialize them
+        if (onTriggerEnterEvent == null) onTriggerEnterEvent = new UnityEvent<Collider>();
+        if (onTriggerStayEvent == null) onTriggerStayEvent = new UnityEvent<Collider>();
+        if (onTriggerExitEvent == null) onTriggerExitEvent = new UnityEvent<Collider>();
     }
 
     //Unity automated events
@@ -43,6 +50,22 @@ public class RM_Trigger : MonoBehaviour {
 
         if (allowedTags.Contains(other.tag)) {
             onTriggerEnterEvent.Invoke(other);
+
+            if (requiredItem) {
+                if (other.GetComponent<RM_Inventory>()) {
+                    if (!other.GetComponent<RM_Inventory>().HasItem(requiredItem.GetType().Name)) {
+                        if (usingKeycode) {
+                            RM_UIManager um = other.GetComponent<RM_UIManager>();
+                            if (um) {
+                                um.ShowNotification();
+                                um.SetNotificationText("You require a " + requiredItem.name);
+                            }
+                        }
+
+                        return;
+                    }
+                }
+            }
 
             if (usingKeycode) {
                 RM_UIManager um = other.GetComponent<RM_UIManager>();
@@ -56,7 +79,16 @@ public class RM_Trigger : MonoBehaviour {
 
     private void OnTriggerStay(Collider other) {
         if (triggeredOnce && triggerOnce) return;
+
         if (allowedTags.Contains(other.tag)) {
+            if (requiredItem) {
+                if (other.GetComponent<RM_Inventory>()) {
+                    if (!other.GetComponent<RM_Inventory>().HasItem(requiredItem.GetType().Name)) {
+                        return;
+                    }
+                }
+            }
+
             if (usingKeycode) {
                 if (Input.GetKeyDown(activateKeyCode)) {
                     onTriggerStayEvent.Invoke(other);
@@ -78,6 +110,7 @@ public class RM_Trigger : MonoBehaviour {
 
     private void OnTriggerExit(Collider other) {
         if (triggeredOnce && triggerOnce) return;
+
         if (allowedTags.Contains(other.tag)) {
             onTriggerExitEvent.Invoke(other);
 
@@ -91,6 +124,7 @@ public class RM_Trigger : MonoBehaviour {
             triggeredOnce = true;
         }
     }
+
     /**
      * @brief Returns the trigger name
      * @return string

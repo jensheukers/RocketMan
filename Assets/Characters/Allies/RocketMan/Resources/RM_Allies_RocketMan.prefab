@@ -850,6 +850,7 @@ GameObject:
   - component: {fileID: 4627107849343354511}
   - component: {fileID: 3843787778694593641}
   - component: {fileID: 4143220589334112760}
+  - component: {fileID: 4627107849343354504}
   m_Layer: 3
   m_Name: RM_Allies_RocketMan
   m_TagString: RM_Player
@@ -1118,6 +1119,18 @@ MonoBehaviour:
   currentWeaponData: {fileID: 11400000, guid: 838211642d73b5c4b80c1340ec53a607, type: 2}
   RightBoneIKConstraintTransform: {fileID: 1489719126}
   LeftBoneIKConstraintTransform: {fileID: 1283827341}
+--- !u!114 &4627107849343354504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439533329924763095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c59c823631f44da41a14e2f3e5b2d57f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5910161428048641085
 GameObject:
   m_ObjectHideFlags: 0

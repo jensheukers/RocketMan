@@ -29,6 +29,8 @@ public class RM_GameState : MonoBehaviour {
     [SerializeField]
     private Image fadeImage; /**Image reference that is used to be able to fade between scenes*/
 
+    private Transform pickupSpawnerTransform; /** We hold a spawning position for the SpawnPickup(RM_PickupSO data) method, we can set this in SetPickupSpawnPosition(Vector3 position) */
+
     /*
     * @brief Start Method, we make sure that this object will never be destroyed while running the program and set variables.
     * @return void
@@ -261,5 +263,29 @@ public class RM_GameState : MonoBehaviour {
     public static void FadeScreen(Color from, Color to, float fadeDuration) {
         if (!_instance) return;
         _instance.StartCoroutine(_instance.FadeScreenInternal(from, to, fadeDuration)); 
+    }
+
+    /*
+     * @brief Method to set _instance.pickupSpawnerTransform position, this position is used for spawning pickups through gamestate, because our events can only handle 1 parameter
+     * @param Vector3 position
+     */
+    public static void SetPickupSpawnerTransform(Transform t) {
+        _instance.pickupSpawnerTransform = t;
+    }
+
+    /*
+     * @brief Spawns pickup using RM_PickupSO data, spawns it at the last set _instance.pickupSpawnerTransform, make sure to call SetPickupSpawnerTransform() first
+     * @param RM_PickupSO data
+     */
+    public static void SpawnPickup(RM_PickupSO data) {
+        if (!_instance.pickupSpawnerTransform) return;
+        GameObject g = new GameObject();
+        g.transform.position = _instance.pickupSpawnerTransform.position;
+
+        BoxCollider bc = g.AddComponent<BoxCollider>();
+        bc.isTrigger = true;
+
+        RM_Pickup p = g.AddComponent<RM_Pickup>();
+        p.SetPickupScriptableObject(data);
     }
 }

@@ -7,21 +7,32 @@ public class RM_Pickup : RM_Trigger {
     private RM_PickupSO pickupScriptableObject;
 
     [SerializeField]
-    private float rotateSpeed = 5f;
+    private float rotateSpeed = 100f;
 
-    protected virtual void Start() {
+    protected override void Start() {
+        base.Start();
         onTriggerEnterEvent.AddListener(OnPickup);
 
-        //Spawn pickup prefab
-        Instantiate(pickupScriptableObject.GetPrefab(), transform);
+        //Spawn pickup prefab 
+        SpawnPickupSOPrefab();
     }
 
     protected virtual void Update() {
         transform.Rotate(new Vector3(0, rotateSpeed * Time.deltaTime, 0));
     }
 
+    protected virtual void SpawnPickupSOPrefab() {
+        if (!pickupScriptableObject) return;
+        Instantiate(pickupScriptableObject.GetPrefab(), transform);
+    }
+
     protected virtual void OnPickup(Collider collider) {
-        Destroy(this.gameObject); 
+        Destroy(this.gameObject);
         pickupScriptableObject.OnPickup(collider);
+    }
+
+    public void SetPickupScriptableObject(RM_PickupSO data) {
+        pickupScriptableObject = data;
+        SpawnPickupSOPrefab();
     }
 }
