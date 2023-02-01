@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaa2bcaedcc21664cab508e1cfb5d14f, type: 3}
   m_Name: RM_Health_Pickup_20
   m_EditorClassIdentifier: 
+  pickupName: Health
   prefab: {fileID: 2389171957422537105, guid: 2c7988c969e90ec4fb0c33ff341f833a, type: 3}
   healingAmount: 20

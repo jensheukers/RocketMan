@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0487ac114033e524f8777ea42dc94a14, type: 3}
   m_Name: RM_Rocket_Pickup
   m_EditorClassIdentifier: 
+  pickupName: Rocket
   prefab: {fileID: 8618205032652323178, guid: 9ce3b12580ef3454c982b3a062059189, type: 3}
   ammoAmount: 20

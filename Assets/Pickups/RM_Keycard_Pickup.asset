@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3fe892e71f66284ab6a67e1cc29a019, type: 3}
   m_Name: RM_Keycard_Pickup
   m_EditorClassIdentifier: 
+  pickupName: Keycard
   prefab: {fileID: 3998328459140527952, guid: 7c297819ee4834f4ba0fedeb8c86a133, type: 3}

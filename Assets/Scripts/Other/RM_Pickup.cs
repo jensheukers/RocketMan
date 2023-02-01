@@ -27,6 +27,10 @@ public class RM_Pickup : RM_Trigger {
     }
 
     protected virtual void OnPickup(Collider collider) {
+        //Log to headup that we picked up item
+        RM_UIManager um = collider.GetComponent<RM_UIManager>();
+        if (um) um.ShowHeadupNotification("Picked up: " + pickupScriptableObject.GetPickupName(), 2); //Kinda hard coded the time but its fine :)
+
         Destroy(this.gameObject);
         pickupScriptableObject.OnPickup(collider);
     }

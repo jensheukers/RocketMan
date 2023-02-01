@@ -42,6 +42,12 @@ public class RM_UIManager : MonoBehaviour {
     [SerializeField]
     private TMP_Text notificationText;
 
+    [SerializeField]
+    private GameObject headupNotifictionObject;
+
+    [SerializeField]
+    private TMP_Text headupNotifictionText;
+
     private bool escapeMenuActive;
 
     private void Start() {
@@ -49,6 +55,7 @@ public class RM_UIManager : MonoBehaviour {
         escapeMenu.SetActive(false);
 
         HideNotification();
+        HideHeadupNotification(0);
     }
 
     private void Update() {
@@ -124,6 +131,18 @@ public class RM_UIManager : MonoBehaviour {
 
     public void SetNotificationText(string text) {
         notificationText.text = text;
+    }
+
+    public void ShowHeadupNotification(string text, int seconds) {
+        headupNotifictionText.text = text;
+        headupNotifictionObject.SetActive(true);
+
+        StartCoroutine(HideHeadupNotification(seconds));
+    }
+
+    public IEnumerator HideHeadupNotification(int seconds) {
+        yield return new WaitForSeconds(seconds);
+        headupNotifictionObject.SetActive(false);
     }
 
     public void DisableUI() {

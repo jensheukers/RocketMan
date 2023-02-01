@@ -8,6 +8,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Pickup", menuName = "Pickups/Pickup")]
 public class RM_PickupSO : ScriptableObject {
     [SerializeField]
+    private string pickupName = "Pickup";
+
+    [SerializeField]
     private GameObject prefab;
     
     public GameObject GetPrefab() {
@@ -15,4 +18,8 @@ public class RM_PickupSO : ScriptableObject {
     }
 
     public virtual void OnPickup(Collider collider) {}
+
+    public string GetPickupName() {
+        return pickupName;
+    }
 }
