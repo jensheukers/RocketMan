@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// RM_MissionSO is a ScriptableObject containing mission data
@@ -8,6 +9,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Mission", menuName = "Missions/Mission")]
 public class RM_MissionSO : ScriptableObject {
     public string missionName = "Unnamed Mission"; //* Mission name definition */
+    public string imagePath = "Images/missionimage_default";
     public string missionSceneName = "SampleScene"; /* Mission scene name reference */
 
     //Trigger keys

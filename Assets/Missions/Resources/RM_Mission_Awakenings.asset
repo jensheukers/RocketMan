@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RM_Mission_Awakenings
   m_EditorClassIdentifier: 
   missionName: Awakenings
+  imagePath: Images/missionimage_awakenings
   missionSceneName: RM_Scene_Awakenings
   endMissionTriggerKey: RM_Trigger_Mission_End
   missionHasEnd: 1

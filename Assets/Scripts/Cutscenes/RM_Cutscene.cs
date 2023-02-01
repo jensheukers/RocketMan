@@ -9,6 +9,9 @@ public class RM_Cutscene : MonoBehaviour {
     private Camera mainCam;
 
     [SerializeField]
+    private UnityEvent onCutsceneStart;
+
+    [SerializeField]
     private UnityEvent onCutsceneStop;
 
    
@@ -39,6 +42,10 @@ public class RM_Cutscene : MonoBehaviour {
         cam.depth = mainCam.depth + 1;
 
         animator.SetTrigger("PlayAnimation");
+
+        if (onCutsceneStart != null) {
+            onCutsceneStart.Invoke();
+        }
 
         StartCoroutine("Stop");
     }

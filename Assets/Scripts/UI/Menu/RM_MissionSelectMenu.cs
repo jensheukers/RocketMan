@@ -67,6 +67,6 @@ public class RM_MissionSelectMenu : MonoBehaviour {
     public void OnChangeMission(List<RM_MissionSO> list, int index) {
         missionText.text = list[index].missionName;
 
-        //TO:DO implement imgae
+        missionImage.sprite = Resources.Load<Sprite>(list[index].imagePath);
     }
 }
