@@ -84,7 +84,7 @@ public class RM_UIManager : MonoBehaviour {
             taskDescription.text = RM_GameState.GetCurrentMission().MissionData().GetCurrentQuest().GetCurrentTask().GetTaskDescription();
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetButtonDown("Escape")) {
             if (!escapeMenuActive) {
                 escapeMenuActive = true;
                 escapeMenu.SetActive(true);
@@ -109,7 +109,7 @@ public class RM_UIManager : MonoBehaviour {
 
         //Look for input when player is in escape menu
         if (escapeMenuActive) {
-            if (Input.GetKeyDown(KeyCode.Return)) {
+            if (Input.GetButtonDown("Submit")) {
                 RM_GameState.ReturnToMainMenu();
             }
         }

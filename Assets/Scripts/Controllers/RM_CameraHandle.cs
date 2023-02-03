@@ -48,8 +48,8 @@ public class RM_CameraHandle : MonoBehaviour {
         if (!followTarget) return; 
 
         //Rotate the Follow Target transform based on the input
-        followTarget.transform.rotation *= Quaternion.AngleAxis(Input.GetAxis("Mouse X") * rotationPower, Vector3.up);
-        followTarget.transform.rotation *= Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * rotationPower, Vector3.right);
+        followTarget.transform.rotation *= Quaternion.AngleAxis(Input.GetAxis("CameraHorizontal") * rotationPower, Vector3.up);
+        followTarget.transform.rotation *= Quaternion.AngleAxis(Input.GetAxis("CameraVertical") * rotationPower, Vector3.right);
 
         Vector3 angles = followTarget.transform.localEulerAngles;
         angles.z = 0;

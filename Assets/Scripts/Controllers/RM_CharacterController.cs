@@ -44,7 +44,7 @@ public class RM_CharacterController : MonoBehaviour {
 
         //Handle rolling input
         bool roll = false;
-        if (Input.GetKeyDown(KeyCode.C) && IsGrounded() && canRoll && input.y > 0) { 
+        if (Input.GetButtonDown("Fire3") && IsGrounded() && canRoll && input.y > 0) { 
             roll = true;
             canRoll = false;
 
@@ -64,7 +64,7 @@ public class RM_CharacterController : MonoBehaviour {
 
         if (_audioSource && _audioSource.isPlaying && !isGrounded) _audioSource.Stop();
 
-        if (Input.GetKey(KeyCode.Space) && jetPack) {
+        if (Input.GetButton("Jump") && jetPack) {
             jetPack.Boost(this.gameObject);
         }
 

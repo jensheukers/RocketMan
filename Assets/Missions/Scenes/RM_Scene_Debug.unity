@@ -3581,6 +3581,14 @@ PrefabInstance:
       propertyPath: aimTarget
       value: 
       objectReference: {fileID: 1114694595}
+    - target: {fileID: 2706593871842568433, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 44.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706593871842568433, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.47099304
+      objectReference: {fileID: 0}
     - target: {fileID: 4627107849999251309, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3629,6 +3637,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: RM_Allies_RocketMan
       objectReference: {fileID: 0}
+    - target: {fileID: 6531582190929723254, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5784485
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531582190929723254, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.034175415
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531582190929723254, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.81464136
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531582190929723254, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.024266776
+      objectReference: {fileID: 0}
     - target: {fileID: 6950815036630311609, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3644,6 +3668,22 @@ PrefabInstance:
     - target: {fileID: 7598388645785534937, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311754101542834253, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 84.713
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311754101542834253, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 5.434
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311754101542834253, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0289917
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311754101542834253, guid: ddb2ced8ac30e674fb14e82a8792e72e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.691
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
