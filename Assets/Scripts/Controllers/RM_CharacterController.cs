@@ -27,8 +27,12 @@ public class RM_CharacterController : MonoBehaviour {
     [SerializeField]
     private RM_Jetpack jetPack; /** Jetpack reference */
 
+    protected AudioSource _audioSource;
+
     private void Start() {
         canRoll = true;
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     //Input should eventually be called from a different class
@@ -49,7 +53,16 @@ public class RM_CharacterController : MonoBehaviour {
 
         if (input.x != 0 || input.y != 0) {
             HandleMovement(input, roll);
+
+            if (_audioSource && !_audioSource.isPlaying && isGrounded) _audioSource.Play();
         }
+        else {
+            if (_audioSource && _audioSource.isPlaying) {
+                _audioSource.Stop();
+            }
+        }
+
+        if (_audioSource && _audioSource.isPlaying && !isGrounded) _audioSource.Stop();
 
         if (Input.GetKey(KeyCode.Space) && jetPack) {
             jetPack.Boost(this.gameObject);

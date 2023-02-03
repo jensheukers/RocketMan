@@ -58,13 +58,13 @@ public class RM_AICharacterController : RM_CharacterController {
     }
 
     protected override void LateUpdate() {
-        HandleMovement();
+        HanldeAIBehaviour();
     }
 
     /**
      * @brief Overwritten method (ai behaviour)
      */
-    protected virtual void HandleMovement() {
+    protected virtual void HanldeAIBehaviour() {
         if (player && Vector3.Distance(player.position, transform.position) <= chaseDistance) {
             OnChase();
         }
@@ -94,10 +94,33 @@ public class RM_AICharacterController : RM_CharacterController {
     }
 
     /**
+     * @brief Handles state changes and invokes events
+     * @param RM_AiState state
+     */
+    private void ChangeState(RM_AiState state) {
+        if (this.state == state) return;
+        this.state = state;
+
+        switch (state) {
+            case RM_AiState.Patrolling:
+                onPatrol.Invoke(null);
+                break;
+            case RM_AiState.Chasing:
+                onChase.Invoke(target);
+                break;
+            case RM_AiState.Attacking:
+                //Onattack gets called from within its method
+                break;
+            default:
+                break;
+        }
+    }
+
+    /**
      * @brief Sets the patrolling state
      */
     protected virtual void OnPatrolling() {
-        state = RM_AiState.Patrolling;
+        ChangeState(RM_AiState.Patrolling);
         if (target == null || target == player) {
             //set new target
 
@@ -105,15 +128,13 @@ public class RM_AICharacterController : RM_CharacterController {
                 target = partrolPoints[Random.Range(0, partrolPoints.Count)];
             }
         }
-
-        onPatrol.Invoke(null);
     }
 
     /**
      * @brief Sets the chasing state
      */
     protected virtual void OnChase() {
-        state = RM_AiState.Chasing;
+        ChangeState(RM_AiState.Chasing);
 
         //Chasing player state
         target = player;
@@ -125,7 +146,7 @@ public class RM_AICharacterController : RM_CharacterController {
      * @brief Sets the attacking state
      */
     protected virtual void OnAttack() {
-        state = RM_AiState.Attacking;
+        ChangeState(RM_AiState.Attacking);
 
         //Attack state
         agent.isStopped = true;

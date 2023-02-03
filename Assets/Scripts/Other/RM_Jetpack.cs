@@ -24,8 +24,12 @@ public class RM_Jetpack : MonoBehaviour {
     [SerializeField]
     private ParticleSystem trailParticleSystem; /** Patricle system refernce for trail */
 
+    private AudioSource _audioSource;
+
     private void Start() {
         fuel = maxFuel;
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update() {
@@ -37,6 +41,9 @@ public class RM_Jetpack : MonoBehaviour {
      * @param GameObject holder game object
      */
     public void Boost(GameObject holder) {
+        if (_audioSource) {
+            if (!_audioSource.isPlaying) _audioSource.Play();
+        }
         if (fuel <= 0) return;
         holder.GetComponent<Rigidbody>().AddForce(new Vector3(0, force, 0) * Time.deltaTime);
 

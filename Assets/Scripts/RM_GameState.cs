@@ -109,6 +109,11 @@ public class RM_GameState : MonoBehaviour {
         onQuestCompleted = new UnityEvent<int>();
 
         StartCoroutine(currentMission.LoadAndStartMission(data));
+
+        //Set timescale to 1 (Playing)
+        Time.timeScale = 1;
+
+
         return currentMission;
     }
 
