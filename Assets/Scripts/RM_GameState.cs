@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using TMPro;
 
 /// <summary>
@@ -37,6 +38,9 @@ public class RM_GameState : MonoBehaviour {
     private TMP_Text timeScoreText; /** Text reference to highscore text object*/
 
     private Transform pickupSpawnerTransform; /** We hold a spawning position for the SpawnPickup(RM_PickupSO data) method, we can set this in SetPickupSpawnPosition(Vector3 position) */
+
+    [SerializeField]
+    private AudioMixer mainAudioMixer;
 
     /*
     * @brief Start Method, we make sure that this object will never be destroyed while running the program and set variables.
@@ -325,5 +329,12 @@ public class RM_GameState : MonoBehaviour {
 
         RM_Pickup p = g.AddComponent<RM_Pickup>();
         p.SetPickupScriptableObject(data);
+    }
+
+    /**
+     * @brief Sets the master volume
+     */
+    public static void SetMasterVolume(float volume) {
+        _instance.mainAudioMixer.SetFloat("MasterVolume", volume);
     }
 }

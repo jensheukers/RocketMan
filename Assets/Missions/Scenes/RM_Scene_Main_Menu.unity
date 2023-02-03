@@ -3177,13 +3177,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 1655824969}
   m_HandleRect: {fileID: 346980153}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8425054618262417621, guid: 17054bba748185a49b8f12ce52cac397, type: 3}
+        m_TargetAssemblyTypeName: RM_GameState, Assembly-CSharp
+        m_MethodName: SetMasterVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &681886545
 GameObject:
   m_ObjectHideFlags: 0
