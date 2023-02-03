@@ -250,6 +250,9 @@ public class RM_GameState : MonoBehaviour {
         Application.Quit();
     }
 
+    /**
+     * @brief Returns back to the mainMenu scene
+     */
     public static void ReturnToMainMenu() {
         if (_instance.mainMenu) _instance.ChangeMission(_instance.mainMenu);
     }

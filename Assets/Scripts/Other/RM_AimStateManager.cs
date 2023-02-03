@@ -20,9 +20,6 @@ public class RM_AimStateManager : MonoBehaviour {
     private Transform aimTarget;
 
     [SerializeField]
-    private Transform followTarget; // Temporary
-
-    [SerializeField]
     private float aimSmoothSpeed = 20;
 
     [SerializeField]
@@ -65,14 +62,14 @@ public class RM_AimStateManager : MonoBehaviour {
             else virtualCamera.m_Lens.FieldOfView = originalFov;
         }
 
-        if (GetComponent<RM_CharacterController>().IsMoving() || aimAmount > 0) {
+        //if (GetComponent<RM_CharacterController>().IsMoving() || aimAmount > 0) {
             Vector2 screenCentre = new Vector2(Screen.width / 2, Screen.height / 2);
             Ray ray = Camera.main.ScreenPointToRay(screenCentre);
 
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, aimMask)) {
                 aimTarget.position = Vector3.Lerp(aimTarget.position, hit.point, aimSmoothSpeed * Time.deltaTime);
             }
-        }
+        //}
     }
 
     public float GetAimAmount() {

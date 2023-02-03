@@ -68,9 +68,9 @@ public class RM_CameraHandle : MonoBehaviour {
         followTarget.transform.localEulerAngles = angles;
 
         if (!followObjectRoot) return;
-        if (followObjectRoot.GetComponent<RM_CharacterController>() && followObjectRoot.GetComponent<RM_CharacterController>().IsMoving() || followObjectRoot.GetComponent<RM_AimStateManager>().GetAimAmount() > 0) {
+        //if (followObjectRoot.GetComponent<RM_CharacterController>() && followObjectRoot.GetComponent<RM_CharacterController>().IsMoving() || followObjectRoot.GetComponent<RM_AimStateManager>().GetAimAmount() > 0) {
             RotateFollowObject(angles);
-        }
+        //}
     }
 
     /**

@@ -106,6 +106,13 @@ public class RM_UIManager : MonoBehaviour {
                 Time.timeScale = 1;
             }
         }
+
+        //Look for input when player is in escape menu
+        if (escapeMenuActive) {
+            if (Input.GetKeyDown(KeyCode.Return)) {
+                RM_GameState.ReturnToMainMenu();
+            }
+        }
     }
 
     public bool EscapeMenuActive() {
