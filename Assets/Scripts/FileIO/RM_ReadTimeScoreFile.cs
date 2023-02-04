@@ -20,8 +20,14 @@ public class RM_ReadTimeScoreFile : MonoBehaviour {
 
     private void Start() {
         if (!System.IO.File.Exists(Application.persistentDataPath + "/" + m_fileName)) return;
+        RefreshText();
+    }
+
+    /// <summary>
+    /// Refreshes the text
+    /// </summary>
+    public void RefreshText() {
         m_text = ReadFile();
-        
         if (m_textTarget) m_textTarget.text = m_text;
     }
 
@@ -29,7 +35,7 @@ public class RM_ReadTimeScoreFile : MonoBehaviour {
     /// Reads the file from m_Filename
     /// </summary>
     /// <returns>string</returns>
-    private string ReadFile() {
+    public string ReadFile() {
         string[] lines = File.ReadAllLines(Application.persistentDataPath + "/" +  m_fileName);
 
         string _t = "";

@@ -13,8 +13,14 @@ public class RM_WriteTimeScoreFile : MonoBehaviour {
     public void WriteTimeScoreToFile() {
         string playerName = RM_GameState.GetPlayerName();
 
-        StreamWriter w = new StreamWriter(Application.persistentDataPath + "/" + m_fileName);
+        StreamWriter w = new StreamWriter(Application.persistentDataPath + "/" + m_fileName, true);
         w.WriteLine(playerName + " : " + Time.time.ToString());
+        w.Close();
+    }
+
+    public void ClearFile() {
+        StreamWriter w = new StreamWriter(Application.persistentDataPath + "/" + m_fileName);
+        w.WriteLine("");
         w.Close();
     }
 }
