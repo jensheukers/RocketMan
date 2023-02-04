@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Rocket Launcher
   weaponPrefab: {fileID: 4221608861714662568, guid: e3f21cd98560f4c4cbac3e3c171720a8, type: 3}
+  icon: {fileID: 21300000, guid: a824c8dca3d87c14fbaab5b18446f3c0, type: 3}

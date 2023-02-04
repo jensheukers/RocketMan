@@ -22,6 +22,9 @@ public class RM_UIManager : MonoBehaviour {
     private TMP_Text weaponName; /*** Reference to the weaponname text*/
 
     [SerializeField]
+    private Image weaponIcon; /** Reference to the weapon icon image*/
+
+    [SerializeField]
     private TMP_Text ammoAmount; /*** Reference to the ammo text*/
 
     [SerializeField]
@@ -73,8 +76,10 @@ public class RM_UIManager : MonoBehaviour {
         RM_WeaponManager weaponManager;
         if (weaponManager = GetComponent<RM_WeaponManager>()) {
             if (weaponManager.GetCurrentWeapon()) {
+
                 weaponName.text = weaponManager.GetCurrentWeaponData().weaponName;
                 ammoAmount.text = weaponManager.GetCurrentWeapon().GetAmmo().ToString();
+                weaponIcon.sprite = weaponManager.GetCurrentWeaponData().icon;
             }
         }
 

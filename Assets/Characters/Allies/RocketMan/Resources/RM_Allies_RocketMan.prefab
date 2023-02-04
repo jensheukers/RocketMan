@@ -1002,8 +1002,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 60, y: 10}
+  m_AnchoredPosition: {x: 0, y: -5}
+  m_SizeDelta: {x: 40, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1713356704424099194
 CanvasRenderer:
@@ -2150,6 +2150,7 @@ MonoBehaviour:
   healthBarSlider: {fileID: 396163983379594251}
   jetpackFuelSlider: {fileID: 2375083517500585369}
   weaponName: {fileID: 6390123907148821552}
+  weaponIcon: {fileID: 8051659416939342442}
   ammoAmount: {fileID: 1155600065314250965}
   questName: {fileID: 3315571202316952303}
   taskName: {fileID: 7339128398630885631}
@@ -2796,7 +2797,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 80, y: 60}
+  m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &882499945120589722
 CanvasRenderer:
@@ -3278,6 +3279,14 @@ PrefabInstance:
       value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 838083834639482761, guid: 975295c6c145ce04f99f6a7e9e49a1df, type: 3}
+      propertyPath: m_margin.x
+      value: 28.205414
+      objectReference: {fileID: 0}
+    - target: {fileID: 838083834639482761, guid: 975295c6c145ce04f99f6a7e9e49a1df, type: 3}
+      propertyPath: m_margin.z
+      value: 27.198044
+      objectReference: {fileID: 0}
+    - target: {fileID: 838083834639482761, guid: 975295c6c145ce04f99f6a7e9e49a1df, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: e1a6dc91aaf0899459b4dc694183856b, type: 2}
@@ -3446,6 +3455,14 @@ PrefabInstance:
       value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 4646567867302741401, guid: 975295c6c145ce04f99f6a7e9e49a1df, type: 3}
+      propertyPath: m_margin.x
+      value: 27.198029
+      objectReference: {fileID: 0}
+    - target: {fileID: 4646567867302741401, guid: 975295c6c145ce04f99f6a7e9e49a1df, type: 3}
+      propertyPath: m_margin.z
+      value: 28.205368
+      objectReference: {fileID: 0}
+    - target: {fileID: 4646567867302741401, guid: 975295c6c145ce04f99f6a7e9e49a1df, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: e1a6dc91aaf0899459b4dc694183856b, type: 2}
@@ -3561,8 +3578,16 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4840959884340164627, guid: 975295c6c145ce04f99f6a7e9e49a1df, type: 3}
+      propertyPath: m_margin.x
+      value: 27.198029
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840959884340164627, guid: 975295c6c145ce04f99f6a7e9e49a1df, type: 3}
       propertyPath: m_margin.y
       value: 110.90928
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840959884340164627, guid: 975295c6c145ce04f99f6a7e9e49a1df, type: 3}
+      propertyPath: m_margin.z
+      value: 28.205383
       objectReference: {fileID: 0}
     - target: {fileID: 4840959884340164627, guid: 975295c6c145ce04f99f6a7e9e49a1df, type: 3}
       propertyPath: m_fontAsset
@@ -3860,3 +3885,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4767766888529230792, guid: 975295c6c145ce04f99f6a7e9e49a1df, type: 3}
   m_PrefabInstance: {fileID: 2711798918814047590}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8051659416939342442 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5340991167329351436, guid: 975295c6c145ce04f99f6a7e9e49a1df, type: 3}
+  m_PrefabInstance: {fileID: 2711798918814047590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

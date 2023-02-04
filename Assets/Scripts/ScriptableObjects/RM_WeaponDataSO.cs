@@ -9,4 +9,5 @@ using UnityEngine;
 public class RM_WeaponDataSO : ScriptableObject {
     public string weaponName; /** The name of the weapon*/
     public GameObject weaponPrefab; /** reference to the weapon prefab*/
+    public Sprite icon; /** The icon of the weapon*/
 }
