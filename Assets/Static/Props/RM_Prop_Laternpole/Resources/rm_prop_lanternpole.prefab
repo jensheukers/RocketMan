@@ -262,6 +262,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6832897741217029744}
+  - component: {fileID: 4202831301556717322}
+  - component: {fileID: 1529135814936038722}
   m_Layer: 0
   m_Name: rm_prop_lanternpole
   m_TagString: Untagged
@@ -285,6 +287,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4202831301556717322
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6167825819528791242}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.26275092, y: 2.7961426, z: 0.3}
+  m_Center: {x: 0.0475547, y: 1.1019287, z: -5.6142224e-10}
+--- !u!65 &1529135814936038722
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6167825819528791242}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.2, z: 0.2}
+  m_Center: {x: -1, y: 2.4, z: 0}
 --- !u!1 &7317466134755283495
 GameObject:
   m_ObjectHideFlags: 0

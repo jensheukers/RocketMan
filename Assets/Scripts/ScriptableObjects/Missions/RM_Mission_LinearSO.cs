@@ -19,6 +19,15 @@ public class RM_Mission_LinearSO : RM_MissionSO {
        
         //Set up gamestate events
         RM_GameState.AddOnPlayerKilled((GameObject player) => {
+
+            //Fade screens
+            RM_GameState.FadeScreen(new Color(0,0,0,0), new Color(0,0,0,1), 0.5f);
+            RM_GameState.FadeScreen(new Color(0,0,0,1), new Color(0,0,0,0), 5f);
+
+
+            RM_TextSequence ts = player.GetComponent<RM_TextSequence>();
+            ts.Play();
+
             RM_Trigger curCheckpoint = FindTriggerByName(currentCheckpointTriggerKey);
             player.transform.position = curCheckpoint.transform.position;
 
@@ -36,9 +45,6 @@ public class RM_Mission_LinearSO : RM_MissionSO {
             trigger.onTriggerEnterEvent.AddListener((Collider other) => {
                 if (other.tag == "RM_Player") {
                     Debug.Log("Checkpoint Reached!");
-                    RM_HealthComponent hc = other.GetComponent<RM_HealthComponent>();
-                    hc.Heal(hc.GetMaxHealth());
-
                     OnCheckPointReached(trigger.GetTriggerKey());
                 }
             });

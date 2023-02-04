@@ -990,7 +990,7 @@ MonoBehaviour:
   jetPack: {fileID: 0}
   chaseDistance: 20
   attackDistance: 2
-  attackInterval: 5
+  attackInterval: 2.5
   partrolPoints:
   - {fileID: 0}
   - {fileID: 0}

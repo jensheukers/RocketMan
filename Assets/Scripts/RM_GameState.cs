@@ -20,7 +20,7 @@ public class RM_GameState : MonoBehaviour {
     private RM_MissionSO mainMenu; //* Reference to the main menu RM_MissionSO */
 
     [SerializeField]
-    private List<RM_MissionSO> missions; //* List of missions. */
+    private List<RM_MissionSO> missions; //*** List of missions. */
 
     //Notify events (Which objects can cling on to)
     private UnityEvent<GameObject> onPlayerKilledEvent; /** gets triggered when player dies*/
@@ -42,7 +42,10 @@ public class RM_GameState : MonoBehaviour {
     [SerializeField]
     private AudioMixer mainAudioMixer;
 
-    /*
+    [SerializeField]
+    private string playerName = "Player";
+
+    /**
     * @brief Start Method, we make sure that this object will never be destroyed while running the program and set variables.
     * @return void
     */
@@ -92,7 +95,7 @@ public class RM_GameState : MonoBehaviour {
         } 
     }
 
-    /*
+    /**
     * @brief Changes the mission and returns new RM_Mission instance.
     * @param RM_MissionSO mission data
     * @return RM_Mission
@@ -121,7 +124,7 @@ public class RM_GameState : MonoBehaviour {
         return currentMission;
     }
 
-    /*
+    /**
     * @brief Tries to find missiondata that contains parameter value, if so returns new RM_Mission instance
     * @param string mission name
     * @return RM_Mission
@@ -142,7 +145,7 @@ public class RM_GameState : MonoBehaviour {
         _instance.ChangeMission(name);
     }
 
-    /*
+    /**
      * @brief Returns the mission list
      * @return List<RM_MissionSO>
      */
@@ -150,7 +153,7 @@ public class RM_GameState : MonoBehaviour {
         return _instance.missions;
     }
 
-    /*
+    /**
      * @brief Stop the current mission
      * */
     public static void StopCurrentMission() {
@@ -159,7 +162,7 @@ public class RM_GameState : MonoBehaviour {
         }
     }
 
-    /*
+    /**
      * @brief Triggers onPlayerKilledEvent
      */
     public static void OnPlayerKilled(GameObject player) {
@@ -168,7 +171,7 @@ public class RM_GameState : MonoBehaviour {
     }
 
 
-    /*
+    /**
      * @brief Triggers onEnemyKilledEvent
      */
     public static void OnEnemyKilled(GameObject enemy) {
@@ -193,7 +196,7 @@ public class RM_GameState : MonoBehaviour {
         
     }
 
-    /*
+    /**
      * @brief Adds to  onPlayerKilledEvent
      * @param UnityAction
      */
@@ -203,7 +206,7 @@ public class RM_GameState : MonoBehaviour {
     }
 
 
-    /*
+    /**
      * @brief Adds to onEnemyKilledEvent
      * @param UnityAction
      */
@@ -237,7 +240,7 @@ public class RM_GameState : MonoBehaviour {
         }
     }
 
-    /*
+    /**
      * Retrieves the current mission
      * @return RM_Mission
      */
@@ -266,7 +269,7 @@ public class RM_GameState : MonoBehaviour {
         if (_instance.mainMenu) _instance.ChangeMission(_instance.mainMenu);
     }
 
-    /*
+    /**
      * @brief Plays a cutscene
      */
     public static void PlayCutscene(RM_Cutscene cutscene) {
@@ -307,7 +310,7 @@ public class RM_GameState : MonoBehaviour {
         _instance.StartCoroutine(_instance.FadeScreenInternal(from, to, fadeDuration)); 
     }
 
-    /*
+    /**
      * @brief Method to set _instance.pickupSpawnerTransform position, this position is used for spawning pickups through gamestate, because our events can only handle 1 parameter
      * @param Vector3 position
      */
@@ -315,7 +318,7 @@ public class RM_GameState : MonoBehaviour {
         _instance.pickupSpawnerTransform = t;
     }
 
-    /*
+    /**
      * @brief Spawns pickup using RM_PickupSO data, spawns it at the last set _instance.pickupSpawnerTransform, make sure to call SetPickupSpawnerTransform() first
      * @param RM_PickupSO data
      */
@@ -336,5 +339,22 @@ public class RM_GameState : MonoBehaviour {
      */
     public static void SetMasterVolume(float volume) {
         _instance.mainAudioMixer.SetFloat("MasterVolume", volume);
+    }
+
+    /**
+     * Sets the player name
+     * @param string name
+     */
+    public static void SetPlayerName(string name) {
+        if (!_instance) return;
+        _instance.playerName = name;
+    }
+
+    /**
+     * Returns the player name
+     * @return string player name
+     */
+    public static string GetPlayerName() {
+        return _instance.playerName;
     }
 }

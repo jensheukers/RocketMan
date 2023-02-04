@@ -58,7 +58,7 @@ public class RM_Trigger : MonoBehaviour {
                             RM_UIManager um = other.GetComponent<RM_UIManager>();
                             if (um) {
                                 um.ShowNotification();
-                                um.SetNotificationText("You require a " + requiredItem.name);
+                                um.SetNotificationText("You require a " + requiredItem.GetPickupName());
                             }
                         }
 

@@ -259,8 +259,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 500
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e1a6dc91aaf0899459b4dc694183856b, type: 2}
+  m_sharedMaterial: {fileID: -3769219895548065206, guid: e1a6dc91aaf0899459b4dc694183856b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -419,7 +419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1181816149
 RectTransform:
   m_ObjectHideFlags: 0
@@ -642,8 +642,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press escape to close menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e1a6dc91aaf0899459b4dc694183856b, type: 2}
+  m_sharedMaterial: {fileID: -3769219895548065206, guid: e1a6dc91aaf0899459b4dc694183856b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -777,8 +777,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Your Timescore:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e1a6dc91aaf0899459b4dc694183856b, type: 2}
+  m_sharedMaterial: {fileID: -3769219895548065206, guid: e1a6dc91aaf0899459b4dc694183856b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -862,7 +862,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 453551888, guid: 17054bba748185a49b8f12ce52cac397, type: 3}
       propertyPath: m_text
-      value: RocketMan v1.06 - Beta build
+      value: RocketMan v1.10 - Beta build
       objectReference: {fileID: 0}
     - target: {fileID: 5527977325101203804, guid: 17054bba748185a49b8f12ce52cac397, type: 3}
       propertyPath: m_RootOrder

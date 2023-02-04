@@ -22,7 +22,14 @@ public class RM_TextSequence : MonoBehaviour {
     [SerializeField]
     private int preWaitTime = 2;
 
+    private bool isPlaying;
+
+    private void Start() {
+        isPlaying = false;
+    }
+
     public void Play() {
+        isPlaying = true;
         StartCoroutine(PlaySequence());
     }
 
@@ -37,6 +44,7 @@ public class RM_TextSequence : MonoBehaviour {
         }
         //Set text to empty string
         text.text = "";
+        isPlaying = false;
 
     }
 
@@ -55,4 +63,6 @@ public class RM_TextSequence : MonoBehaviour {
             yield return null;
         }
     }
+
+    public bool IsPlaying() { return isPlaying; }
 }

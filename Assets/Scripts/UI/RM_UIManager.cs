@@ -73,7 +73,7 @@ public class RM_UIManager : MonoBehaviour {
         RM_WeaponManager weaponManager;
         if (weaponManager = GetComponent<RM_WeaponManager>()) {
             if (weaponManager.GetCurrentWeapon()) {
-                weaponName.text = weaponManager.GetCurrentWeaponData().name;
+                weaponName.text = weaponManager.GetCurrentWeaponData().weaponName;
                 ammoAmount.text = weaponManager.GetCurrentWeapon().GetAmmo().ToString();
             }
         }

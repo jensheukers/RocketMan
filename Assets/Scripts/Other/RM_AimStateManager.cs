@@ -44,7 +44,7 @@ public class RM_AimStateManager : MonoBehaviour {
     }
 
     private void LateUpdate() {
-        if (Input.GetMouseButton(1)) {
+        if (Input.GetButton("Zoom")) {
             if (aimAmount < 1) aimAmount += aimSpeed * Time.deltaTime;
             else aimAmount = 1;
 
