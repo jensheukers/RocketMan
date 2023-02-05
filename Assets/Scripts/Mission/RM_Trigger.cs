@@ -5,6 +5,7 @@ using System;
 using UnityEngine.Events;
 /// <summary>
 /// Main trigger component, has multiple events that can be read and attached to.
+/// Also it is possible to add a interaction string so we can fetch inputs from the input manager and activate the trigger on interaction
 /// </summary>
 public class RM_Trigger : MonoBehaviour {
 
@@ -12,28 +13,33 @@ public class RM_Trigger : MonoBehaviour {
     private string triggerKey = "RM_Trigger"; /**Key of the trigger*/
 
     [SerializeField]
-    private KeyCode activateKeyCode = KeyCode.F;
+    private KeyCode activateKeyCode = KeyCode.F; /** Keycode that can be set to trigger the trigger with*/
 
     [SerializeField]
-    private bool usingKeycode = false;
+    private string activateKeyCodeString = "Interact"; /** The activation keycode button in InputManager*/
 
     [SerializeField]
-    private string activeKeyCodeActionText = "interact";
+    private bool usingKeycode = false; /**If true interaction is enabled*/
 
     [SerializeField]
-    private bool destroyOnInteract = false;
+    private string activeKeyCodeActionText = "interact"; /** The text displayed when a keycode is to be used*/
 
     [SerializeField]
-    private bool triggerOnce = false;
-    private bool triggeredOnce;
+    private bool destroyOnInteract = false; /** If true, this gameobject will be destroyed upon interaction*/
+
+    [SerializeField]
+    private bool triggerOnce = false; /** If true, the trigger can only be activated once*/
+
+
+    private bool triggeredOnce; /**Handles if trigger has been triggered at least once */
 
     public UnityEvent<Collider> onTriggerEnterEvent; /** OnTriggerEnter action event listener. */
     public UnityEvent<Collider> onTriggerStayEvent; /** OnTriggerStay action event listener. */
     public UnityEvent<Collider> onTriggerExitEvent; /** OnTriggerExit action event listener. */
 
-    public List<string> allowedTags = new List<string> { "RM_Player" };
+    public List<string> allowedTags = new List<string> { "RM_Player" }; /**The tags allowed to trigger this triggger*/
 
-    public RM_PickupSO requiredItem;
+    public RM_PickupSO requiredItem; /** The item required to trigger this trigger*/
 
     protected virtual void Start() {
         triggeredOnce = false;
@@ -90,7 +96,7 @@ public class RM_Trigger : MonoBehaviour {
             }
 
             if (usingKeycode) {
-                if (Input.GetKeyDown(activateKeyCode)) {
+                if (Input.GetKeyDown(activateKeyCode) || Input.GetButtonDown(activateKeyCodeString)) {
                     onTriggerStayEvent.Invoke(other);
 
                     if (destroyOnInteract) {

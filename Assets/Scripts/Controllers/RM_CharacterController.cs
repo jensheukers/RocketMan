@@ -19,20 +19,26 @@ public class RM_CharacterController : MonoBehaviour {
     private float verticalSpeed = 5f; /** The vertical movement speed*/
 
     [SerializeField]
-    private float rollIncrement = 1f;
+    private float rollIncrement = 1f; /**The increment in position when rolling*/
 
     [SerializeField]
-    private float rollCooldown = 1f;
+    private float rollCooldown = 1f; /** The cooldown for rolling*/
+
+    [SerializeField]
+    private float collisionSweepCheckDistance = 0.5f; /** The distance to check for forward colliders, if collider found object will not be moved*/
 
     [SerializeField]
     private RM_Jetpack jetPack; /** Jetpack reference */
 
-    protected AudioSource _audioSource;
+    protected AudioSource _audioSource; /**Reference to audio source*/
+
+    private Rigidbody _rb;/** Reference to RigidBody */
 
     private void Start() {
         canRoll = true;
 
         _audioSource = GetComponent<AudioSource>();
+        _rb = GetComponent<Rigidbody>();
     }
 
     //Input should eventually be called from a different class
@@ -83,9 +89,13 @@ public class RM_CharacterController : MonoBehaviour {
         targetPos = (transform.forward * input.y) * horizontalSpeed;
         targetPos += (transform.right * input.x) * verticalSpeed;
 
-        transform.position = Vector3.Lerp(transform.position, transform.position + targetPos, Time.deltaTime);
+        RaycastHit hit;
+        if (!_rb.SweepTest(targetPos, out hit, collisionSweepCheckDistance)) {
 
-        isMoving = true;
+            transform.position = Vector3.Lerp(transform.position, transform.position + targetPos, Time.deltaTime);
+
+            isMoving = true;
+        }
     }
 
     /*
@@ -104,6 +114,9 @@ public class RM_CharacterController : MonoBehaviour {
         if (roll) animator.SetTrigger("Roll");
     }
 
+    /**
+     * Resets canRoll bool
+     */
     private IEnumerator ResetCanRoll() {
         yield return new WaitForSeconds(rollCooldown);
         canRoll = true;

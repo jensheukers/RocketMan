@@ -32,7 +32,7 @@ public class RM_GameState : MonoBehaviour {
     private Image fadeImage; /**Image reference that is used to be able to fade between scenes*/
 
     [SerializeField]
-    private Canvas timescoreCanvas;
+    private Canvas timescoreCanvas; /** The canvas that displays time timescore at the end of a mission, gets set when mission.IsDone() is true*/
 
     [SerializeField]
     private TMP_Text timeScoreText; /** Text reference to highscore text object*/
@@ -40,10 +40,12 @@ public class RM_GameState : MonoBehaviour {
     private Transform pickupSpawnerTransform; /** We hold a spawning position for the SpawnPickup(RM_PickupSO data) method, we can set this in SetPickupSpawnPosition(Vector3 position) */
 
     [SerializeField]
-    private AudioMixer mainAudioMixer;
+    private AudioMixer mainAudioMixer; /** The main audio mixer */
 
     [SerializeField]
-    private string playerName = "Player";
+    private string playerName = "Player"; /**The name of the player, used for saving timescores*/
+
+    private RM_WriteTimeScoreFile timescoreWriter; /**Reference to the time score writer*/
 
     /**
     * @brief Start Method, we make sure that this object will never be destroyed while running the program and set variables.
@@ -64,6 +66,11 @@ public class RM_GameState : MonoBehaviour {
         else ChangeMission(mainMenu);
 
         timescoreCanvas.gameObject.SetActive(false);
+
+        //Try to get timescore writer
+        if (!(timescoreWriter = GetComponent<RM_WriteTimeScoreFile>())) {
+            Debug.LogWarning("No timescore writer on gamestate gameobject, cannot save timescores");
+        }
     }
 
 
@@ -77,13 +84,18 @@ public class RM_GameState : MonoBehaviour {
         //Check if mission is done if so return to main menu
         if (currentMission != null) {
             if (currentMission.IsLoaded() && currentMission.IsDone()) {
+                //Save highscore to file and set highscore
+                if (timescoreWriter) {
+                    timeScoreText.text = timescoreWriter.WriteTimeScoreToFile();
+                }
+                else {
+                    timeScoreText.text = Time.timeSinceLevelLoad.ToString();
+                }
+
                 Destroy(this.GetComponent<RM_Mission>());
                 RM_Mission m = ChangeMission(mainMenu);
 
-                //Set highscore
-                timeScoreText.text = Time.timeSinceLevelLoad.ToString();
                 timescoreCanvas.gameObject.SetActive(true);
-
             }
             else {
                 if (currentMission.MissionData().GetCurrentQuest()) {
@@ -225,6 +237,13 @@ public class RM_GameState : MonoBehaviour {
         _instance.onQuestCompleted.AddListener(action);
     }
 
+    /**
+     * @brief Sets a quest flag value, quest flags are used by the questing system
+     * @param int The quest index, set up in RM_MissionSO
+     * @param int The task index, set up in RM_QuestSO
+     * @param string the name of the flag
+     * @param the value of the flag
+     */
     public static void SetQuestTaskFlag(int questId, int taskId, string flagName, bool value) {
         if (!_instance) return;
         if (_instance.currentMission) {
@@ -271,6 +290,7 @@ public class RM_GameState : MonoBehaviour {
 
     /**
      * @brief Plays a cutscene
+     * @param RM_Cutscene cutscene component reference
      */
     public static void PlayCutscene(RM_Cutscene cutscene) {
 
@@ -294,7 +314,10 @@ public class RM_GameState : MonoBehaviour {
     }
 
     /**
-    * Fades to screen to black
+    * Fades to screen to black internally
+    * @param Color from
+    * @param Color to
+    * @param float fadeDuration
     */
     private IEnumerator FadeScreenInternal(Color from, Color to, float fadeDuration) {
         float elapsedTime = 0f;
@@ -305,6 +328,12 @@ public class RM_GameState : MonoBehaviour {
         }
     }
 
+    /**
+    * Fades to screen to black
+    * @param Color from
+    * @param Color to
+    * @param float fadeDuration
+    */
     public static void FadeScreen(Color from, Color to, float fadeDuration) {
         if (!_instance) return;
         _instance.StartCoroutine(_instance.FadeScreenInternal(from, to, fadeDuration)); 
