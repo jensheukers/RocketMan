@@ -12,9 +12,6 @@ public class RM_MissionSO : ScriptableObject {
     public string imagePath = "Images/missionimage_default";
     public string missionSceneName = "SampleScene"; /* Mission scene name reference */
 
-    //Trigger keys
-    public string endMissionTriggerKey = "RM_Trigger_Mission_End"; /* The key of the trigger that marks the end of the mission */
-    public bool missionHasEnd = true;
     public bool unlockCursorInStart = true;
     public float screenFadeTime = 2f; /** Time to fade between scenes*/
 
@@ -22,9 +19,9 @@ public class RM_MissionSO : ScriptableObject {
 
     //Questing setup
     [SerializeField]
-    private List<RM_QuestSO> quests;
-    private RM_QuestSO currentQuest;
-    private int currentQuestIndex;
+    private List<RM_QuestSO> quests; /**List of Quests*/
+    private RM_QuestSO currentQuest; /** The current quest reference*/
+    private int currentQuestIndex; /** The current quest index*/
 
     private void OnEnable() {
         done = false;
@@ -39,19 +36,6 @@ public class RM_MissionSO : ScriptableObject {
 
         if (unlockCursorInStart) Cursor.lockState = CursorLockMode.None;
 
-        //Default Level setup
-        RM_Trigger endMissionTrigger = FindTriggerByName(endMissionTriggerKey);
-
-        if (!endMissionTrigger && missionHasEnd) {
-            Debug.LogWarning("End of mission has not been set up, please make sure to create a trigger and set the triggerkey to " + endMissionTriggerKey);
-        }
-        else if (endMissionTrigger) {
-            endMissionTrigger.onTriggerEnterEvent.AddListener((Collider other) => {
-                if (other.tag == "RM_Player") {
-                    OnStop();
-                }
-            });
-        }
 
         //Start quest
         if (quests.Count > 0) {

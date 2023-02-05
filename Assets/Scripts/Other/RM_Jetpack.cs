@@ -24,7 +24,7 @@ public class RM_Jetpack : MonoBehaviour {
     [SerializeField]
     private ParticleSystem trailParticleSystem; /** Patricle system refernce for trail */
 
-    private AudioSource _audioSource;
+    private AudioSource _audioSource; /** Reference to audio source*/
 
     private void Start() {
         fuel = maxFuel;

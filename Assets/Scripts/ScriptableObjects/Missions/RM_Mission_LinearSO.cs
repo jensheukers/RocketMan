@@ -11,7 +11,7 @@ public class RM_Mission_LinearSO : RM_MissionSO {
     [SerializeField]
     private List<string> checkPointTriggerKeys; /** The trigger keys of checkpoint triggers*/
 
-    private string currentCheckpointTriggerKey;
+    private string currentCheckpointTriggerKey; /** The current checkpoint trigger key*/
 
     public override void OnStart() {
         base.OnStart();
@@ -54,6 +54,9 @@ public class RM_Mission_LinearSO : RM_MissionSO {
         currentCheckpointTriggerKey = checkPointTriggerKeys[0];
     }
 
+    /*
+     * @brief Gets called when checkpoint is reached 
+     */
     private void OnCheckPointReached(string triggerKey) {
         currentCheckpointTriggerKey = triggerKey;
     }

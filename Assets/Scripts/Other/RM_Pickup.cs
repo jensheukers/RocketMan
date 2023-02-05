@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Pickups are triggers that display a RM_PickupSO
+/// </summary>
 public class RM_Pickup : RM_Trigger {
     [SerializeField]
-    private RM_PickupSO pickupScriptableObject;
+    private RM_PickupSO pickupScriptableObject; /*** The ScriptableObject reference*/
 
     [SerializeField]
-    private float rotateSpeed = 100f;
+    private float rotateSpeed = 100f; /** The spsed to Rotate*/
 
     protected override void Start() {
         base.Start();
@@ -21,6 +24,9 @@ public class RM_Pickup : RM_Trigger {
         transform.Rotate(new Vector3(0, rotateSpeed * Time.deltaTime, 0));
     }
 
+    /**
+     * @brief Spawns the pickup prefab
+     */
     protected virtual void SpawnPickupSOPrefab() {
         if (!pickupScriptableObject) return;
         Instantiate(pickupScriptableObject.GetPrefab(), transform);
@@ -35,6 +41,10 @@ public class RM_Pickup : RM_Trigger {
         pickupScriptableObject.OnPickup(collider);
     }
 
+    /**
+     * @brief Sets the pickup scriptableobject reference
+     * @param RM_PickupSO ScriptableObject
+     */
     public void SetPickupScriptableObject(RM_PickupSO data) {
         pickupScriptableObject = data;
         SpawnPickupSOPrefab();

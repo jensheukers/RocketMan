@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Sets texture offset by script
+/// </summary>
 public class RM_SetTextureOffset : MonoBehaviour {
-    private Renderer r;
+    private Renderer r; /** Reference to renderer*/
 
     [SerializeField]
-    private float scrollSpeed = 0.5f;
+    private float scrollSpeed = 0.5f; /**The speed to scroll the texture */
 
     void Start() { 
         r = GetComponent<Renderer>();

@@ -4,23 +4,26 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.Animations.Rigging;
 
+/// <summary>
+/// Handles Aiming
+/// </summary>
 public class RM_AimStateManager : MonoBehaviour {
     private float aimAmount;
 
     [SerializeField]
-    private float aimSpeed = 5f;
+    private float aimSpeed = 5f; /**The speed to aim at*/
 
     [SerializeField]
-    private float zoomSpeed = 50f;
+    private float zoomSpeed = 50f; /**The zooming speed*/
 
     [SerializeField]
-    private float minFov = 40f;
+    private float minFov = 40f; /** Minimum FOV*/
 
     [SerializeField]
-    private Transform aimTarget;
+    private Transform aimTarget; /** The aim target*/
 
     [SerializeField]
-    private float aimSmoothSpeed = 20;
+    private float aimSmoothSpeed = 20; /** The aim smooth speed*/
 
     [SerializeField]
     private LayerMask aimMask;

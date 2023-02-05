@@ -9,7 +9,7 @@ public class RM_HealthComponent : MonoBehaviour {
     private int currentHealth; /*** The current health of the entity*/
 
     [SerializeField]
-    private bool destroyOnHealthZero;
+    private bool destroyOnHealthZero; /**If true the gameobject gets destroyed when health is zero*/
 
     public UnityEvent onHealthZeroEvent; /** OnHealthZero action event listener. */
 

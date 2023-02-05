@@ -40,18 +40,18 @@ public class RM_UIManager : MonoBehaviour {
     private GameObject escapeMenu; /** Reference to the escape menu */
 
     [SerializeField]
-    private GameObject notificationObject;
+    private GameObject notificationObject; /** The notification UI Object*/
 
     [SerializeField]
-    private TMP_Text notificationText;
+    private TMP_Text notificationText; /** The notification text object*/
 
     [SerializeField]
-    private GameObject headupNotifictionObject;
+    private GameObject headupNotifictionObject; /** The headup notification object*/
 
     [SerializeField]
-    private TMP_Text headupNotifictionText;
+    private TMP_Text headupNotifictionText; /** The headup notification text*/
 
-    private bool escapeMenuActive;
+    private bool escapeMenuActive; /** true if escape menu is active*/
 
     private void Start() {
         EnableUI();
@@ -119,6 +119,8 @@ public class RM_UIManager : MonoBehaviour {
             }
         }
     }
+
+    //public methods
 
     public bool EscapeMenuActive() {
         return escapeMenuActive;

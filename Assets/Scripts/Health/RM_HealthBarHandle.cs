@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// Handles the healthbar
+/// </summary>
 public class RM_HealthBarHandle : MonoBehaviour {
     [SerializeField]
-    private Slider slider;
+    private Slider slider; /** The slider reference*/
 
     private void Update() {
         RM_HealthComponent healthComponent = GetComponent<RM_HealthComponent>();

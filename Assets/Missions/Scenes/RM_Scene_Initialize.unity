@@ -1010,6 +1010,10 @@ PrefabInstance:
       propertyPath: timescoreCanvas
       value: 
       objectReference: {fileID: 1181816152}
+    - target: {fileID: 8425054618262417621, guid: 17054bba748185a49b8f12ce52cac397, type: 3}
+      propertyPath: missions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5527977325101203804, guid: 17054bba748185a49b8f12ce52cac397, type: 3}

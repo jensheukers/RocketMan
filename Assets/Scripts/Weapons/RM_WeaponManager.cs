@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles weapons and weapon pivot transforms
+/// </summary>
 public class RM_WeaponManager : MonoBehaviour {
     [SerializeField]
     private Transform weaponPivot;

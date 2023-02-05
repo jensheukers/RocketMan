@@ -4,12 +4,18 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
+/// <summary>
+/// AI_State Enum
+/// </summary>
 public enum RM_AiState {
     Patrolling,
     Chasing,
     Attacking
 }
 
+/// <summary>
+/// Controller for AI in RocketMan
+/// </summary>
 public class RM_AICharacterController : RM_CharacterController {
     private Transform target; /** The target transform */
 

@@ -9,7 +9,7 @@ public class RM_Projectile : MonoBehaviour {
     [Range(0f, 100f)]
     public int damage = 100; /** The amount of damage to inflict on a RM_HealthComponent */
 
-    public float blastRadius = 0;
+    public float blastRadius = 0; /** The blast radius of the projectile*/
 
     public void OnCollisionEnter(Collision collision) {
         GameObject particleSystem = Instantiate(hitParticlePrefab, transform.position, transform.rotation);
