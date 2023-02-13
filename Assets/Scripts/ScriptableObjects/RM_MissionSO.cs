@@ -23,14 +23,11 @@ public class RM_MissionSO : ScriptableObject {
     private RM_QuestSO currentQuest; /** The current quest reference*/
     private int currentQuestIndex; /** The current quest index*/
 
-    private void OnEnable() {
-        done = false;
-    }
-
     /*
      * @brief Gets called by RM_Mission class when mission data is to be started.
      */
     public virtual void OnStart() {
+        currentQuestIndex = 0;
         currentQuest = null;
         done = false;
 
