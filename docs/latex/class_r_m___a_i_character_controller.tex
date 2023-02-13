@@ -1,0 +1,139 @@
+\hypertarget{class_r_m___a_i_character_controller}{}\doxysection{RM\+\_\+\+AICharacter\+Controller Class Reference}
+\label{class_r_m___a_i_character_controller}\index{RM\_AICharacterController@{RM\_AICharacterController}}
+
+
+Controller for AI in Rocket\+Man.  
+
+
+Inheritance diagram for RM\+\_\+\+AICharacter\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_r_m___a_i_character_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_r_m___a_i_character_controller_ac4e09dade9ebc3ef726fb0b377cb68e0}{Late\+Update}} ()
+\item 
+\mbox{\Hypertarget{class_r_m___a_i_character_controller_ad5412a9073aa0005f9b06c783c50627d}\label{class_r_m___a_i_character_controller_ad5412a9073aa0005f9b06c783c50627d}} 
+virtual void {\bfseries Hanlde\+AIBehaviour} ()
+\begin{DoxyCompactList}\small\item\em Overwritten method (ai behaviour) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___a_i_character_controller_ad7ca54557ea5246ff77278db01c6c2de}\label{class_r_m___a_i_character_controller_ad7ca54557ea5246ff77278db01c6c2de}} 
+virtual void {\bfseries On\+Patrolling} ()
+\begin{DoxyCompactList}\small\item\em Sets the patrolling state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___a_i_character_controller_a0153cab5dd1e6bea33eee28f44e00250}\label{class_r_m___a_i_character_controller_a0153cab5dd1e6bea33eee28f44e00250}} 
+virtual void {\bfseries On\+Chase} ()
+\begin{DoxyCompactList}\small\item\em Sets the chasing state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___a_i_character_controller_a1379a1017173d871ac221bb48a858864}\label{class_r_m___a_i_character_controller_a1379a1017173d871ac221bb48a858864}} 
+virtual void {\bfseries On\+Attack} ()
+\begin{DoxyCompactList}\small\item\em Sets the attacking state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_r_m___character_controller}{RM\+\_\+\+Character\+Controller}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_r_m___character_controller_ac595a3a76ce7329de42679fdacb4a721}\label{class_r_m___character_controller_ac595a3a76ce7329de42679fdacb4a721}} 
+virtual void {\bfseries Late\+Update} ()
+\item 
+\mbox{\Hypertarget{class_r_m___character_controller_ac228196e4d03b47a92c74bb08748f75d}\label{class_r_m___character_controller_ac228196e4d03b47a92c74bb08748f75d}} 
+virtual void {\bfseries Handle\+Movement} (Vector2 input, bool roll=false)
+\item 
+\mbox{\Hypertarget{class_r_m___character_controller_a34782b8168b9f99274f673b795fa9ff8}\label{class_r_m___character_controller_a34782b8168b9f99274f673b795fa9ff8}} 
+virtual void {\bfseries Handle\+Animations} (Vector2 input, bool roll=false)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ Transform $>$ \mbox{\hyperlink{class_r_m___a_i_character_controller_a21beb05428a2b9cdd5e921cb82cb5db3}{partrol\+Points}}
+\item 
+Unity\+Event$<$ Transform $>$ \mbox{\hyperlink{class_r_m___a_i_character_controller_aba9fbeaab81bde5bb2dc355376b71211}{on\+Attack}}
+\item 
+Unity\+Event$<$ Transform $>$ \mbox{\hyperlink{class_r_m___a_i_character_controller_aa30d3024a411c45065fab6acb4c33043}{on\+Chase}}
+\item 
+Unity\+Event$<$ Transform $>$ \mbox{\hyperlink{class_r_m___a_i_character_controller_acc3484cf6397bd8d7ed2a82c4e9d4933}{on\+Patrol}}
+\item 
+bool \mbox{\hyperlink{class_r_m___a_i_character_controller_a2793a6fa22cdaec3b5422a05869167f9}{look\+At\+On\+Attack}} = true
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_r_m___character_controller}{RM\+\_\+\+Character\+Controller}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_r_m___character_controller_a2d502f04f48b30bad903ae6576459682}\label{class_r_m___character_controller_a2d502f04f48b30bad903ae6576459682}} 
+bool {\bfseries is\+Moving}
+\item 
+bool \mbox{\hyperlink{class_r_m___character_controller_ad2160b3a64a7827813d5326497a9681c}{is\+Grounded}}
+\item 
+\mbox{\Hypertarget{class_r_m___character_controller_afd80a865cd16b889582552dfb460a6b3}\label{class_r_m___character_controller_afd80a865cd16b889582552dfb460a6b3}} 
+bool {\bfseries can\+Roll}
+\item 
+Audio\+Source \mbox{\hyperlink{class_r_m___character_controller_a160593b2c10157142c6c0c08e0246b9a}{\+\_\+audio\+Source}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_r_m___character_controller}{RM\+\_\+\+Character\+Controller}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_r_m___character_controller_a8de18ef6adc14204a79a6ea4267213c0}{Is\+Moving}} ()
+\begin{DoxyCompactList}\small\item\em Returns true if character is moving. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_r_m___character_controller_aab28e7e5d4fff2ddbc7d07d26ef50465}{Is\+Grounded}} ()
+\begin{DoxyCompactList}\small\item\em Returns true if character is grounded. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___character_controller_ac2ad733b1aefd3e6d4173c15a113f5f2}\label{class_r_m___character_controller_ac2ad733b1aefd3e6d4173c15a113f5f2}} 
+\mbox{\hyperlink{class_r_m___jetpack}{RM\+\_\+\+Jetpack}} {\bfseries Get\+Jetpack} ()
+\item 
+\mbox{\Hypertarget{class_r_m___character_controller_a7675388a0d0da0d1c87bfbac68cad9c0}\label{class_r_m___character_controller_a7675388a0d0da0d1c87bfbac68cad9c0}} 
+void {\bfseries On\+Collision\+Enter} (Collision collision)
+\item 
+\mbox{\Hypertarget{class_r_m___character_controller_acde5756e90d5e63001e24a9879cf9e7b}\label{class_r_m___character_controller_acde5756e90d5e63001e24a9879cf9e7b}} 
+void {\bfseries On\+Collision\+Exit} (Collision collision)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller for AI in Rocket\+Man. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_m___a_i_character_controller_ac4e09dade9ebc3ef726fb0b377cb68e0}\label{class_r_m___a_i_character_controller_ac4e09dade9ebc3ef726fb0b377cb68e0}} 
+\index{RM\_AICharacterController@{RM\_AICharacterController}!LateUpdate@{LateUpdate}}
+\index{LateUpdate@{LateUpdate}!RM\_AICharacterController@{RM\_AICharacterController}}
+\doxysubsubsection{\texorpdfstring{LateUpdate()}{LateUpdate()}}
+{\footnotesize\ttfamily override void RM\+\_\+\+AICharacter\+Controller.\+Late\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_r_m___character_controller}{RM\+\_\+\+Character\+Controller}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_r_m___a_i_character_controller_a2793a6fa22cdaec3b5422a05869167f9}\label{class_r_m___a_i_character_controller_a2793a6fa22cdaec3b5422a05869167f9}} 
+\index{RM\_AICharacterController@{RM\_AICharacterController}!lookAtOnAttack@{lookAtOnAttack}}
+\index{lookAtOnAttack@{lookAtOnAttack}!RM\_AICharacterController@{RM\_AICharacterController}}
+\doxysubsubsection{\texorpdfstring{lookAtOnAttack}{lookAtOnAttack}}
+{\footnotesize\ttfamily bool RM\+\_\+\+AICharacter\+Controller.\+look\+At\+On\+Attack = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+On\+Patrol event \mbox{\Hypertarget{class_r_m___a_i_character_controller_aba9fbeaab81bde5bb2dc355376b71211}\label{class_r_m___a_i_character_controller_aba9fbeaab81bde5bb2dc355376b71211}} 
+\index{RM\_AICharacterController@{RM\_AICharacterController}!onAttack@{onAttack}}
+\index{onAttack@{onAttack}!RM\_AICharacterController@{RM\_AICharacterController}}
+\doxysubsubsection{\texorpdfstring{onAttack}{onAttack}}
+{\footnotesize\ttfamily Unity\+Event$<$Transform$>$ RM\+\_\+\+AICharacter\+Controller.\+on\+Attack\hspace{0.3cm}{\ttfamily [protected]}}
+
+All partrol points \mbox{\Hypertarget{class_r_m___a_i_character_controller_aa30d3024a411c45065fab6acb4c33043}\label{class_r_m___a_i_character_controller_aa30d3024a411c45065fab6acb4c33043}} 
+\index{RM\_AICharacterController@{RM\_AICharacterController}!onChase@{onChase}}
+\index{onChase@{onChase}!RM\_AICharacterController@{RM\_AICharacterController}}
+\doxysubsubsection{\texorpdfstring{onChase}{onChase}}
+{\footnotesize\ttfamily Unity\+Event$<$Transform$>$ RM\+\_\+\+AICharacter\+Controller.\+on\+Chase\hspace{0.3cm}{\ttfamily [protected]}}
+
+On\+Attack event \mbox{\Hypertarget{class_r_m___a_i_character_controller_acc3484cf6397bd8d7ed2a82c4e9d4933}\label{class_r_m___a_i_character_controller_acc3484cf6397bd8d7ed2a82c4e9d4933}} 
+\index{RM\_AICharacterController@{RM\_AICharacterController}!onPatrol@{onPatrol}}
+\index{onPatrol@{onPatrol}!RM\_AICharacterController@{RM\_AICharacterController}}
+\doxysubsubsection{\texorpdfstring{onPatrol}{onPatrol}}
+{\footnotesize\ttfamily Unity\+Event$<$Transform$>$ RM\+\_\+\+AICharacter\+Controller.\+on\+Patrol\hspace{0.3cm}{\ttfamily [protected]}}
+
+On\+Chase event \mbox{\Hypertarget{class_r_m___a_i_character_controller_a21beb05428a2b9cdd5e921cb82cb5db3}\label{class_r_m___a_i_character_controller_a21beb05428a2b9cdd5e921cb82cb5db3}} 
+\index{RM\_AICharacterController@{RM\_AICharacterController}!partrolPoints@{partrolPoints}}
+\index{partrolPoints@{partrolPoints}!RM\_AICharacterController@{RM\_AICharacterController}}
+\doxysubsubsection{\texorpdfstring{partrolPoints}{partrolPoints}}
+{\footnotesize\ttfamily List$<$Transform$>$ RM\+\_\+\+AICharacter\+Controller.\+partrol\+Points\hspace{0.3cm}{\ttfamily [protected]}}
+
+Time between attacks 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Controllers/RM\+\_\+\+AICharacter\+Controller.\+cs\end{DoxyCompactItemize}

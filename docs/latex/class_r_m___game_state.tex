@@ -1,0 +1,315 @@
+\hypertarget{class_r_m___game_state}{}\doxysection{RM\+\_\+\+Game\+State Class Reference}
+\label{class_r_m___game_state}\index{RM\_GameState@{RM\_GameState}}
+
+
+\mbox{\hyperlink{class_r_m___game_state}{RM\+\_\+\+Game\+State}} is the main gamestate class for Rocket\+Man, it must never be destroyed during the whole instance of the program.  
+
+
+Inheritance diagram for RM\+\_\+\+Game\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_r_m___game_state}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_r_m___mission}{RM\+\_\+\+Mission}} \mbox{\hyperlink{class_r_m___game_state_a9c79df78fc321864431634b47042322a}{Change\+Mission}} (\mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}} data)
+\begin{DoxyCompactList}\small\item\em Changes the mission and returns new \mbox{\hyperlink{class_r_m___mission}{RM\+\_\+\+Mission}} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_r_m___mission}{RM\+\_\+\+Mission}} \mbox{\hyperlink{class_r_m___game_state_a6dedf8dde108da111d2e933c65dd5d1d}{Change\+Mission}} (string name)
+\begin{DoxyCompactList}\small\item\em Tries to find missiondata that contains parameter value, if so returns new \mbox{\hyperlink{class_r_m___mission}{RM\+\_\+\+Mission}} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_r_m___game_state_a23a60090f2b1e95a4bcdc13762b16d2f}\label{class_r_m___game_state_a23a60090f2b1e95a4bcdc13762b16d2f}} 
+static void {\bfseries Change\+Mission\+Static} (\mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}} data)
+\item 
+\mbox{\Hypertarget{class_r_m___game_state_a7a3f3a28c62a1effa27f4d2e46b5df25}\label{class_r_m___game_state_a7a3f3a28c62a1effa27f4d2e46b5df25}} 
+static void {\bfseries Change\+Mission\+Static} (string name)
+\item 
+static List$<$ \mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}} $>$ \mbox{\hyperlink{class_r_m___game_state_af5e5c31e7a06d515938111973e61de8f}{Get\+Missions}} ()
+\begin{DoxyCompactList}\small\item\em Returns the mission list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___game_state_a55307cf712001768c4d6643eecdba319}\label{class_r_m___game_state_a55307cf712001768c4d6643eecdba319}} 
+static void {\bfseries Stop\+Current\+Mission} ()
+\begin{DoxyCompactList}\small\item\em Stop the current mission. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___game_state_a3f99e96caf48e42afe7442a29579f313}\label{class_r_m___game_state_a3f99e96caf48e42afe7442a29579f313}} 
+static void {\bfseries On\+Player\+Killed} (Game\+Object player)
+\begin{DoxyCompactList}\small\item\em Triggers on\+Player\+Killed\+Event. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___game_state_a7f6ff2a92e91b24d344d08e38bbbed24}\label{class_r_m___game_state_a7f6ff2a92e91b24d344d08e38bbbed24}} 
+static void {\bfseries On\+Enemy\+Killed} (Game\+Object enemy)
+\begin{DoxyCompactList}\small\item\em Triggers on\+Enemy\+Killed\+Event. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_r_m___game_state_a16323d30d9f895fab18d8242d7d9d637}{Kill\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Sets player healthcomponent health to zero. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_r_m___game_state_add4519a6074bd786065f50f0f31b26b9}{Add\+On\+Player\+Killed}} (Unity\+Action$<$ Game\+Object $>$ action)
+\begin{DoxyCompactList}\small\item\em Adds to on\+Player\+Killed\+Event. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_r_m___game_state_a6754a82926ce869494f4def6ae4f613a}{Add\+On\+Enemy\+Killed}} (Unity\+Action$<$ Game\+Object $>$ action)
+\begin{DoxyCompactList}\small\item\em Adds to on\+Enemy\+Killed\+Event. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_r_m___game_state_a04a6e4f1d0dee0f08e112a50e8801fb6}{Add\+On\+Quest\+Completed}} (int quest\+Id, Unity\+Action$<$ int $>$ action)
+\begin{DoxyCompactList}\small\item\em Adds event to onquestcompleted. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_r_m___game_state_a16340d089cc9db3a286bfb44e2fd87cc}{Set\+Quest\+Task\+Flag}} (int quest\+Id, int task\+Id, string flag\+Name, bool value)
+\begin{DoxyCompactList}\small\item\em Sets a quest flag value, quest flags are used by the questing system. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_r_m___mission}{RM\+\_\+\+Mission}} \mbox{\hyperlink{class_r_m___game_state_a21604d9014bf0279ecdbefb4be551b18}{Get\+Current\+Mission}} ()
+\item 
+\mbox{\Hypertarget{class_r_m___game_state_a853a75b5a08ef8fbc35df02b17d9c6d0}\label{class_r_m___game_state_a853a75b5a08ef8fbc35df02b17d9c6d0}} 
+static bool {\bfseries Instance\+Exists} ()
+\begin{DoxyCompactList}\small\item\em returns if gamestate instance exists \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_r_m___game_state_a25d4e10f090b333d28d2b8fa79683b23}{Quit\+Application}} ()
+\item 
+\mbox{\Hypertarget{class_r_m___game_state_a9be6275999354991d6fc4c136e0509be}\label{class_r_m___game_state_a9be6275999354991d6fc4c136e0509be}} 
+static void {\bfseries Return\+To\+Main\+Menu} ()
+\begin{DoxyCompactList}\small\item\em Returns back to the main\+Menu scene. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_r_m___game_state_afc876e3f866c421ce2eec0ae0d042619}{Play\+Cutscene}} (\mbox{\hyperlink{class_r_m___cutscene}{RM\+\_\+\+Cutscene}} cutscene)
+\begin{DoxyCompactList}\small\item\em Plays a cutscene. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_r_m___game_state_ae2aa06362290814c9b8e63cfcf8d7de7}{Fade\+Screen}} (Color from, Color to, float fade\+Duration)
+\item 
+static void \mbox{\hyperlink{class_r_m___game_state_ada79d0b45f6a9f8646e65cb07d1017b7}{Set\+Pickup\+Spawner\+Transform}} (Transform t)
+\begin{DoxyCompactList}\small\item\em Method to set \+\_\+instance.\+pickup\+Spawner\+Transform position, this position is used for spawning pickups through gamestate, because our events can only handle 1 parameter. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_r_m___game_state_a78bfbe36f82be0d03d9c4f65f50e27d0}{Spawn\+Pickup}} (\mbox{\hyperlink{class_r_m___pickup_s_o}{RM\+\_\+\+Pickup\+SO}} data)
+\begin{DoxyCompactList}\small\item\em Spawns pickup using \mbox{\hyperlink{class_r_m___pickup_s_o}{RM\+\_\+\+Pickup\+SO}} data, spawns it at the last set \+\_\+instance.\+pickup\+Spawner\+Transform, make sure to call \mbox{\hyperlink{class_r_m___game_state_ada79d0b45f6a9f8646e65cb07d1017b7}{Set\+Pickup\+Spawner\+Transform()}} first. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___game_state_a74b88236509b4a90a26e9b10ac79f68f}\label{class_r_m___game_state_a74b88236509b4a90a26e9b10ac79f68f}} 
+static void {\bfseries Set\+Master\+Volume} (float volume)
+\begin{DoxyCompactList}\small\item\em Sets the master volume. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_r_m___game_state_ab1acaca68867f1157223e0f621b45fff}{Set\+Player\+Name}} (string name)
+\item 
+static string \mbox{\hyperlink{class_r_m___game_state_aa13b3510a859166e46328063632c5e7b}{Get\+Player\+Name}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_r_m___game_state}{RM\+\_\+\+Game\+State}} is the main gamestate class for Rocket\+Man, it must never be destroyed during the whole instance of the program. 
+
+It handles mission changing, and it responsible for talking to multiple systems. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_m___game_state_a6754a82926ce869494f4def6ae4f613a}\label{class_r_m___game_state_a6754a82926ce869494f4def6ae4f613a}} 
+\index{RM\_GameState@{RM\_GameState}!AddOnEnemyKilled@{AddOnEnemyKilled}}
+\index{AddOnEnemyKilled@{AddOnEnemyKilled}!RM\_GameState@{RM\_GameState}}
+\doxysubsubsection{\texorpdfstring{AddOnEnemyKilled()}{AddOnEnemyKilled()}}
+{\footnotesize\ttfamily static void RM\+\_\+\+Game\+State.\+Add\+On\+Enemy\+Killed (\begin{DoxyParamCaption}\item[{Unity\+Action$<$ Game\+Object $>$}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds to on\+Enemy\+Killed\+Event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Unity\+Action} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_r_m___game_state_add4519a6074bd786065f50f0f31b26b9}\label{class_r_m___game_state_add4519a6074bd786065f50f0f31b26b9}} 
+\index{RM\_GameState@{RM\_GameState}!AddOnPlayerKilled@{AddOnPlayerKilled}}
+\index{AddOnPlayerKilled@{AddOnPlayerKilled}!RM\_GameState@{RM\_GameState}}
+\doxysubsubsection{\texorpdfstring{AddOnPlayerKilled()}{AddOnPlayerKilled()}}
+{\footnotesize\ttfamily static void RM\+\_\+\+Game\+State.\+Add\+On\+Player\+Killed (\begin{DoxyParamCaption}\item[{Unity\+Action$<$ Game\+Object $>$}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds to on\+Player\+Killed\+Event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Unity\+Action} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_r_m___game_state_a04a6e4f1d0dee0f08e112a50e8801fb6}\label{class_r_m___game_state_a04a6e4f1d0dee0f08e112a50e8801fb6}} 
+\index{RM\_GameState@{RM\_GameState}!AddOnQuestCompleted@{AddOnQuestCompleted}}
+\index{AddOnQuestCompleted@{AddOnQuestCompleted}!RM\_GameState@{RM\_GameState}}
+\doxysubsubsection{\texorpdfstring{AddOnQuestCompleted()}{AddOnQuestCompleted()}}
+{\footnotesize\ttfamily static void RM\+\_\+\+Game\+State.\+Add\+On\+Quest\+Completed (\begin{DoxyParamCaption}\item[{int}]{quest\+Id,  }\item[{Unity\+Action$<$ int $>$}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds event to onquestcompleted. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & quest\+Id \\
+\hline
+{\em Unity\+Action} & function, param will be the quest id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_r_m___game_state_a9c79df78fc321864431634b47042322a}\label{class_r_m___game_state_a9c79df78fc321864431634b47042322a}} 
+\index{RM\_GameState@{RM\_GameState}!ChangeMission@{ChangeMission}}
+\index{ChangeMission@{ChangeMission}!RM\_GameState@{RM\_GameState}}
+\doxysubsubsection{\texorpdfstring{ChangeMission()}{ChangeMission()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_m___mission}{RM\+\_\+\+Mission}} RM\+\_\+\+Game\+State.\+Change\+Mission (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}}}]{data }\end{DoxyParamCaption})}
+
+
+
+Changes the mission and returns new \mbox{\hyperlink{class_r_m___mission}{RM\+\_\+\+Mission}} instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}}} & mission data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_r_m___mission}{RM\+\_\+\+Mission}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_m___game_state_a6dedf8dde108da111d2e933c65dd5d1d}\label{class_r_m___game_state_a6dedf8dde108da111d2e933c65dd5d1d}} 
+\index{RM\_GameState@{RM\_GameState}!ChangeMission@{ChangeMission}}
+\index{ChangeMission@{ChangeMission}!RM\_GameState@{RM\_GameState}}
+\doxysubsubsection{\texorpdfstring{ChangeMission()}{ChangeMission()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_m___mission}{RM\+\_\+\+Mission}} RM\+\_\+\+Game\+State.\+Change\+Mission (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Tries to find missiondata that contains parameter value, if so returns new \mbox{\hyperlink{class_r_m___mission}{RM\+\_\+\+Mission}} instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & mission name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_r_m___mission}{RM\+\_\+\+Mission}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_m___game_state_ae2aa06362290814c9b8e63cfcf8d7de7}\label{class_r_m___game_state_ae2aa06362290814c9b8e63cfcf8d7de7}} 
+\index{RM\_GameState@{RM\_GameState}!FadeScreen@{FadeScreen}}
+\index{FadeScreen@{FadeScreen}!RM\_GameState@{RM\_GameState}}
+\doxysubsubsection{\texorpdfstring{FadeScreen()}{FadeScreen()}}
+{\footnotesize\ttfamily static void RM\+\_\+\+Game\+State.\+Fade\+Screen (\begin{DoxyParamCaption}\item[{Color}]{from,  }\item[{Color}]{to,  }\item[{float}]{fade\+Duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Fades to screen to black 
+\begin{DoxyParams}{Parameters}
+{\em Color} & from \\
+\hline
+{\em Color} & to \\
+\hline
+{\em float} & fade\+Duration \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_r_m___game_state_a21604d9014bf0279ecdbefb4be551b18}\label{class_r_m___game_state_a21604d9014bf0279ecdbefb4be551b18}} 
+\index{RM\_GameState@{RM\_GameState}!GetCurrentMission@{GetCurrentMission}}
+\index{GetCurrentMission@{GetCurrentMission}!RM\_GameState@{RM\_GameState}}
+\doxysubsubsection{\texorpdfstring{GetCurrentMission()}{GetCurrentMission()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_r_m___mission}{RM\+\_\+\+Mission}} RM\+\_\+\+Game\+State.\+Get\+Current\+Mission (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Retrieves the current mission \begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_r_m___mission}{RM\+\_\+\+Mission}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_m___game_state_af5e5c31e7a06d515938111973e61de8f}\label{class_r_m___game_state_af5e5c31e7a06d515938111973e61de8f}} 
+\index{RM\_GameState@{RM\_GameState}!GetMissions@{GetMissions}}
+\index{GetMissions@{GetMissions}!RM\_GameState@{RM\_GameState}}
+\doxysubsubsection{\texorpdfstring{GetMissions()}{GetMissions()}}
+{\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}} $>$ RM\+\_\+\+Game\+State.\+Get\+Missions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the mission list. 
+
+\begin{DoxyReturn}{Returns}
+List$<$\+RM\+\_\+\+Mission\+SO$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_m___game_state_aa13b3510a859166e46328063632c5e7b}\label{class_r_m___game_state_aa13b3510a859166e46328063632c5e7b}} 
+\index{RM\_GameState@{RM\_GameState}!GetPlayerName@{GetPlayerName}}
+\index{GetPlayerName@{GetPlayerName}!RM\_GameState@{RM\_GameState}}
+\doxysubsubsection{\texorpdfstring{GetPlayerName()}{GetPlayerName()}}
+{\footnotesize\ttfamily static string RM\+\_\+\+Game\+State.\+Get\+Player\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the player name \begin{DoxyReturn}{Returns}
+string player name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_m___game_state_a16323d30d9f895fab18d8242d7d9d637}\label{class_r_m___game_state_a16323d30d9f895fab18d8242d7d9d637}} 
+\index{RM\_GameState@{RM\_GameState}!KillPlayer@{KillPlayer}}
+\index{KillPlayer@{KillPlayer}!RM\_GameState@{RM\_GameState}}
+\doxysubsubsection{\texorpdfstring{KillPlayer()}{KillPlayer()}}
+{\footnotesize\ttfamily static void RM\+\_\+\+Game\+State.\+Kill\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets player healthcomponent health to zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Game\+Object} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_r_m___game_state_afc876e3f866c421ce2eec0ae0d042619}\label{class_r_m___game_state_afc876e3f866c421ce2eec0ae0d042619}} 
+\index{RM\_GameState@{RM\_GameState}!PlayCutscene@{PlayCutscene}}
+\index{PlayCutscene@{PlayCutscene}!RM\_GameState@{RM\_GameState}}
+\doxysubsubsection{\texorpdfstring{PlayCutscene()}{PlayCutscene()}}
+{\footnotesize\ttfamily static void RM\+\_\+\+Game\+State.\+Play\+Cutscene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_r_m___cutscene}{RM\+\_\+\+Cutscene}}}]{cutscene }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Plays a cutscene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{class_r_m___cutscene}{RM\+\_\+\+Cutscene}}} & cutscene component reference \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_r_m___game_state_a25d4e10f090b333d28d2b8fa79683b23}\label{class_r_m___game_state_a25d4e10f090b333d28d2b8fa79683b23}} 
+\index{RM\_GameState@{RM\_GameState}!QuitApplication@{QuitApplication}}
+\index{QuitApplication@{QuitApplication}!RM\_GameState@{RM\_GameState}}
+\doxysubsubsection{\texorpdfstring{QuitApplication()}{QuitApplication()}}
+{\footnotesize\ttfamily static void RM\+\_\+\+Game\+State.\+Quit\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Quits the application \mbox{\Hypertarget{class_r_m___game_state_ada79d0b45f6a9f8646e65cb07d1017b7}\label{class_r_m___game_state_ada79d0b45f6a9f8646e65cb07d1017b7}} 
+\index{RM\_GameState@{RM\_GameState}!SetPickupSpawnerTransform@{SetPickupSpawnerTransform}}
+\index{SetPickupSpawnerTransform@{SetPickupSpawnerTransform}!RM\_GameState@{RM\_GameState}}
+\doxysubsubsection{\texorpdfstring{SetPickupSpawnerTransform()}{SetPickupSpawnerTransform()}}
+{\footnotesize\ttfamily static void RM\+\_\+\+Game\+State.\+Set\+Pickup\+Spawner\+Transform (\begin{DoxyParamCaption}\item[{Transform}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Method to set \+\_\+instance.\+pickup\+Spawner\+Transform position, this position is used for spawning pickups through gamestate, because our events can only handle 1 parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Vector3} & position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_r_m___game_state_ab1acaca68867f1157223e0f621b45fff}\label{class_r_m___game_state_ab1acaca68867f1157223e0f621b45fff}} 
+\index{RM\_GameState@{RM\_GameState}!SetPlayerName@{SetPlayerName}}
+\index{SetPlayerName@{SetPlayerName}!RM\_GameState@{RM\_GameState}}
+\doxysubsubsection{\texorpdfstring{SetPlayerName()}{SetPlayerName()}}
+{\footnotesize\ttfamily static void RM\+\_\+\+Game\+State.\+Set\+Player\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Sets the player name 
+\begin{DoxyParams}{Parameters}
+{\em string} & name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_r_m___game_state_a16340d089cc9db3a286bfb44e2fd87cc}\label{class_r_m___game_state_a16340d089cc9db3a286bfb44e2fd87cc}} 
+\index{RM\_GameState@{RM\_GameState}!SetQuestTaskFlag@{SetQuestTaskFlag}}
+\index{SetQuestTaskFlag@{SetQuestTaskFlag}!RM\_GameState@{RM\_GameState}}
+\doxysubsubsection{\texorpdfstring{SetQuestTaskFlag()}{SetQuestTaskFlag()}}
+{\footnotesize\ttfamily static void RM\+\_\+\+Game\+State.\+Set\+Quest\+Task\+Flag (\begin{DoxyParamCaption}\item[{int}]{quest\+Id,  }\item[{int}]{task\+Id,  }\item[{string}]{flag\+Name,  }\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets a quest flag value, quest flags are used by the questing system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & The quest index, set up in \mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}} \\
+\hline
+{\em int} & The task index, set up in \mbox{\hyperlink{class_r_m___quest_s_o}{RM\+\_\+\+Quest\+SO}} \\
+\hline
+{\em string} & the name of the flag \\
+\hline
+{\em the} & value of the flag \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_r_m___game_state_a78bfbe36f82be0d03d9c4f65f50e27d0}\label{class_r_m___game_state_a78bfbe36f82be0d03d9c4f65f50e27d0}} 
+\index{RM\_GameState@{RM\_GameState}!SpawnPickup@{SpawnPickup}}
+\index{SpawnPickup@{SpawnPickup}!RM\_GameState@{RM\_GameState}}
+\doxysubsubsection{\texorpdfstring{SpawnPickup()}{SpawnPickup()}}
+{\footnotesize\ttfamily static void RM\+\_\+\+Game\+State.\+Spawn\+Pickup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_r_m___pickup_s_o}{RM\+\_\+\+Pickup\+SO}}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Spawns pickup using \mbox{\hyperlink{class_r_m___pickup_s_o}{RM\+\_\+\+Pickup\+SO}} data, spawns it at the last set \+\_\+instance.\+pickup\+Spawner\+Transform, make sure to call \mbox{\hyperlink{class_r_m___game_state_ada79d0b45f6a9f8646e65cb07d1017b7}{Set\+Pickup\+Spawner\+Transform()}} first. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{class_r_m___pickup_s_o}{RM\+\_\+\+Pickup\+SO}}} & data \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/RM\+\_\+\+Game\+State.\+cs\end{DoxyCompactItemize}

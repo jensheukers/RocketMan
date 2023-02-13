@@ -1,0 +1,79 @@
+\hypertarget{class_r_m___quest_s_o}{}\doxysection{RM\+\_\+\+Quest\+SO Class Reference}
+\label{class_r_m___quest_s_o}\index{RM\_QuestSO@{RM\_QuestSO}}
+
+
+Quest scriptable object.  
+
+
+Inheritance diagram for RM\+\_\+\+Quest\+SO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_r_m___quest_s_o}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_r_m___quest_s_o_a3ff332e697ccbffb71c5e897724274e2}\label{class_r_m___quest_s_o_a3ff332e697ccbffb71c5e897724274e2}} 
+void {\bfseries On\+Start\+Quest} ()
+\begin{DoxyCompactList}\small\item\em Starts the quest. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___quest_s_o_ad3fbe58f2efb0756c46150bf6e63585b}\label{class_r_m___quest_s_o_ad3fbe58f2efb0756c46150bf6e63585b}} 
+void {\bfseries On\+Quest\+Update} ()
+\begin{DoxyCompactList}\small\item\em Updates the quest. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_r_m___quest_s_o_a53c0a6eef01988ca0820183493d69240}{On\+Enemy\+Killed}} (Game\+Object enemy)
+\begin{DoxyCompactList}\small\item\em Gets called when a enemy is killed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_r_m___quest_s_o_a67237651808d5fd0bc88f86c018d8c8b}{On\+Player\+Killed}} (Game\+Object player)
+\begin{DoxyCompactList}\small\item\em Gets called when the player is killed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___quest_s_o_aadceca4cfa4f1cd7c4db7411da550be4}\label{class_r_m___quest_s_o_aadceca4cfa4f1cd7c4db7411da550be4}} 
+bool {\bfseries Is\+Completed} ()
+\begin{DoxyCompactList}\small\item\em Returns true if quest is completed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___quest_s_o_af829b5c86cb1ff3ed4f3500ed272b23c}\label{class_r_m___quest_s_o_af829b5c86cb1ff3ed4f3500ed272b23c}} 
+\mbox{\hyperlink{class_r_m___quest_task_s_o}{RM\+\_\+\+Quest\+Task\+SO}} {\bfseries Get\+Task} (int id)
+\begin{DoxyCompactList}\small\item\em Gets task from list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___quest_s_o_a6b31bca1be7f30184cd45de739503eeb}\label{class_r_m___quest_s_o_a6b31bca1be7f30184cd45de739503eeb}} 
+\mbox{\hyperlink{class_r_m___quest_task_s_o}{RM\+\_\+\+Quest\+Task\+SO}} {\bfseries Get\+Current\+Task} ()
+\begin{DoxyCompactList}\small\item\em Gets the current task. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___quest_s_o_ac392e5358844d87f3234fd33b1cef068}\label{class_r_m___quest_s_o_ac392e5358844d87f3234fd33b1cef068}} 
+string {\bfseries Get\+Quest\+Name} ()
+\begin{DoxyCompactList}\small\item\em Gets the quest name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Quest scriptable object. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_m___quest_s_o_a53c0a6eef01988ca0820183493d69240}\label{class_r_m___quest_s_o_a53c0a6eef01988ca0820183493d69240}} 
+\index{RM\_QuestSO@{RM\_QuestSO}!OnEnemyKilled@{OnEnemyKilled}}
+\index{OnEnemyKilled@{OnEnemyKilled}!RM\_QuestSO@{RM\_QuestSO}}
+\doxysubsubsection{\texorpdfstring{OnEnemyKilled()}{OnEnemyKilled()}}
+{\footnotesize\ttfamily void RM\+\_\+\+Quest\+SO.\+On\+Enemy\+Killed (\begin{DoxyParamCaption}\item[{Game\+Object}]{enemy }\end{DoxyParamCaption})}
+
+
+
+Gets called when a enemy is killed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Game\+Object} & player \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_r_m___quest_s_o_a67237651808d5fd0bc88f86c018d8c8b}\label{class_r_m___quest_s_o_a67237651808d5fd0bc88f86c018d8c8b}} 
+\index{RM\_QuestSO@{RM\_QuestSO}!OnPlayerKilled@{OnPlayerKilled}}
+\index{OnPlayerKilled@{OnPlayerKilled}!RM\_QuestSO@{RM\_QuestSO}}
+\doxysubsubsection{\texorpdfstring{OnPlayerKilled()}{OnPlayerKilled()}}
+{\footnotesize\ttfamily void RM\+\_\+\+Quest\+SO.\+On\+Player\+Killed (\begin{DoxyParamCaption}\item[{Game\+Object}]{player }\end{DoxyParamCaption})}
+
+
+
+Gets called when the player is killed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Game\+Object} & player \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Scriptable\+Objects/RM\+\_\+\+Quest\+SO.\+cs\end{DoxyCompactItemize}

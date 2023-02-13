@@ -1,0 +1,144 @@
+\hypertarget{class_r_m___mission_s_o}{}\doxysection{RM\+\_\+\+Mission\+SO Class Reference}
+\label{class_r_m___mission_s_o}\index{RM\_MissionSO@{RM\_MissionSO}}
+
+
+\mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}} is a Scriptable\+Object containing mission data.  
+
+
+Inheritance diagram for RM\+\_\+\+Mission\+SO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_r_m___mission_s_o}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_r_m___mission_s_o_a1515f31422b90e05acd3c171c4af913c}{On\+Start}} ()
+\item 
+\mbox{\Hypertarget{class_r_m___mission_s_o_a84ecb72333f9e9f733fa7b59856c9f97}\label{class_r_m___mission_s_o_a84ecb72333f9e9f733fa7b59856c9f97}} 
+virtual void {\bfseries On\+Stop} ()
+\begin{DoxyCompactList}\small\item\em Gets called by default end\+Mission\+Trigger. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___mission_s_o_adabc55d84ce19a6c43d610d49be919a1}\label{class_r_m___mission_s_o_adabc55d84ce19a6c43d610d49be919a1}} 
+virtual void {\bfseries On\+Update} ()
+\begin{DoxyCompactList}\small\item\em Gets called every frame by \mbox{\hyperlink{class_r_m___mission}{RM\+\_\+\+Mission}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_r_m___mission_s_o_a3ebe4901181338fb5c2ff22ed437c88c}{Is\+Done}} ()
+\begin{DoxyCompactList}\small\item\em Returns true if mission is done, else returns false. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_r_m___quest_s_o}{RM\+\_\+\+Quest\+SO}} \mbox{\hyperlink{class_r_m___mission_s_o_ad5062116a4875081dc8f063478880abf}{Get\+Current\+Quest}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current quest. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_r_m___quest_s_o}{RM\+\_\+\+Quest\+SO}} \mbox{\hyperlink{class_r_m___mission_s_o_ad7cd66d3263c84ff6066f9c9b88fd750}{Get\+Quest}} (int id)
+\begin{DoxyCompactList}\small\item\em Gets a quest from quests lists using id ~\newline
+ \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_r_m___mission_s_o_a54e42e08d229ea5dc7e572ff554120ee}{Get\+Current\+Quest\+ID}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_r_m___mission_s_o_aacd2e616d4941819da4338a8bacf27b0}\label{class_r_m___mission_s_o_aacd2e616d4941819da4338a8bacf27b0}} 
+string {\bfseries mission\+Name} = \char`\"{}Unnamed Mission\char`\"{}
+\item 
+\mbox{\Hypertarget{class_r_m___mission_s_o_a470267b2420318caa2a5c136610274cf}\label{class_r_m___mission_s_o_a470267b2420318caa2a5c136610274cf}} 
+string {\bfseries image\+Path} = \char`\"{}Images/missionimage\+\_\+default\char`\"{}
+\item 
+\mbox{\Hypertarget{class_r_m___mission_s_o_ae6e4a08cb616c81b7e6f43570a5426bc}\label{class_r_m___mission_s_o_ae6e4a08cb616c81b7e6f43570a5426bc}} 
+string {\bfseries mission\+Scene\+Name} = \char`\"{}Sample\+Scene\char`\"{}
+\item 
+\mbox{\Hypertarget{class_r_m___mission_s_o_aaaaafaaa675ddf038994c70aca2f89a2}\label{class_r_m___mission_s_o_aaaaafaaa675ddf038994c70aca2f89a2}} 
+bool {\bfseries unlock\+Cursor\+In\+Start} = true
+\item 
+\mbox{\Hypertarget{class_r_m___mission_s_o_ab7d9747a5e319abcedaa2e18ad1357dd}\label{class_r_m___mission_s_o_ab7d9747a5e319abcedaa2e18ad1357dd}} 
+float {\bfseries screen\+Fade\+Time} = 2f
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_r_m___trigger}{RM\+\_\+\+Trigger}} \mbox{\hyperlink{class_r_m___mission_s_o_a6bea6b8bdc882e942d5d1b0361dda471}{Find\+Trigger\+By\+Name}} (string trigger\+Key)
+\begin{DoxyCompactList}\small\item\em Finds a trigger by keyname. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}} is a Scriptable\+Object containing mission data. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_m___mission_s_o_a6bea6b8bdc882e942d5d1b0361dda471}\label{class_r_m___mission_s_o_a6bea6b8bdc882e942d5d1b0361dda471}} 
+\index{RM\_MissionSO@{RM\_MissionSO}!FindTriggerByName@{FindTriggerByName}}
+\index{FindTriggerByName@{FindTriggerByName}!RM\_MissionSO@{RM\_MissionSO}}
+\doxysubsubsection{\texorpdfstring{FindTriggerByName()}{FindTriggerByName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_m___trigger}{RM\+\_\+\+Trigger}} RM\+\_\+\+Mission\+SO.\+Find\+Trigger\+By\+Name (\begin{DoxyParamCaption}\item[{string}]{trigger\+Key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Finds a trigger by keyname. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_r_m___trigger}{RM\+\_\+\+Trigger}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_m___mission_s_o_ad5062116a4875081dc8f063478880abf}\label{class_r_m___mission_s_o_ad5062116a4875081dc8f063478880abf}} 
+\index{RM\_MissionSO@{RM\_MissionSO}!GetCurrentQuest@{GetCurrentQuest}}
+\index{GetCurrentQuest@{GetCurrentQuest}!RM\_MissionSO@{RM\_MissionSO}}
+\doxysubsubsection{\texorpdfstring{GetCurrentQuest()}{GetCurrentQuest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_m___quest_s_o}{RM\+\_\+\+Quest\+SO}} RM\+\_\+\+Mission\+SO.\+Get\+Current\+Quest (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current quest. 
+
+\begin{DoxyReturn}{Returns}
+quest 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_m___mission_s_o_a54e42e08d229ea5dc7e572ff554120ee}\label{class_r_m___mission_s_o_a54e42e08d229ea5dc7e572ff554120ee}} 
+\index{RM\_MissionSO@{RM\_MissionSO}!GetCurrentQuestID@{GetCurrentQuestID}}
+\index{GetCurrentQuestID@{GetCurrentQuestID}!RM\_MissionSO@{RM\_MissionSO}}
+\doxysubsubsection{\texorpdfstring{GetCurrentQuestID()}{GetCurrentQuestID()}}
+{\footnotesize\ttfamily int RM\+\_\+\+Mission\+SO.\+Get\+Current\+Quest\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the current quest id \begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_m___mission_s_o_ad7cd66d3263c84ff6066f9c9b88fd750}\label{class_r_m___mission_s_o_ad7cd66d3263c84ff6066f9c9b88fd750}} 
+\index{RM\_MissionSO@{RM\_MissionSO}!GetQuest@{GetQuest}}
+\index{GetQuest@{GetQuest}!RM\_MissionSO@{RM\_MissionSO}}
+\doxysubsubsection{\texorpdfstring{GetQuest()}{GetQuest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_m___quest_s_o}{RM\+\_\+\+Quest\+SO}} RM\+\_\+\+Mission\+SO.\+Get\+Quest (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Gets a quest from quests lists using id ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+quest 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_m___mission_s_o_a3ebe4901181338fb5c2ff22ed437c88c}\label{class_r_m___mission_s_o_a3ebe4901181338fb5c2ff22ed437c88c}} 
+\index{RM\_MissionSO@{RM\_MissionSO}!IsDone@{IsDone}}
+\index{IsDone@{IsDone}!RM\_MissionSO@{RM\_MissionSO}}
+\doxysubsubsection{\texorpdfstring{IsDone()}{IsDone()}}
+{\footnotesize\ttfamily bool RM\+\_\+\+Mission\+SO.\+Is\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns true if mission is done, else returns false. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_m___mission_s_o_a1515f31422b90e05acd3c171c4af913c}\label{class_r_m___mission_s_o_a1515f31422b90e05acd3c171c4af913c}} 
+\index{RM\_MissionSO@{RM\_MissionSO}!OnStart@{OnStart}}
+\index{OnStart@{OnStart}!RM\_MissionSO@{RM\_MissionSO}}
+\doxysubsubsection{\texorpdfstring{OnStart()}{OnStart()}}
+{\footnotesize\ttfamily virtual void RM\+\_\+\+Mission\+SO.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_r_m___mission___linear_s_o_a910f22f6473f9bb6b020e93e87f912d1}{RM\+\_\+\+Mission\+\_\+\+Linear\+SO}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Scriptable\+Objects/RM\+\_\+\+Mission\+SO.\+cs\end{DoxyCompactItemize}

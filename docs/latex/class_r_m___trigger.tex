@@ -1,0 +1,103 @@
+\hypertarget{class_r_m___trigger}{}\doxysection{RM\+\_\+\+Trigger Class Reference}
+\label{class_r_m___trigger}\index{RM\_Trigger@{RM\_Trigger}}
+
+
+Main trigger component, has multiple events that can be read and attached to. Also it is possible to add a interaction string so we can fetch inputs from the input manager and activate the trigger on interaction.  
+
+
+Inheritance diagram for RM\+\_\+\+Trigger\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_r_m___trigger}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_r_m___trigger_a5709af29657208a9905420f00f8707c0}{Get\+Trigger\+Key}} ()
+\begin{DoxyCompactList}\small\item\em Returns the trigger name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Unity\+Event$<$ Collider $>$ \mbox{\hyperlink{class_r_m___trigger_a601ede425e1c67a6969048f746c68cde}{on\+Trigger\+Enter\+Event}}
+\item 
+Unity\+Event$<$ Collider $>$ \mbox{\hyperlink{class_r_m___trigger_a3cdb9ba6d6b3e69308f4eb32dff05c9d}{on\+Trigger\+Stay\+Event}}
+\item 
+Unity\+Event$<$ Collider $>$ \mbox{\hyperlink{class_r_m___trigger_ac09c2d4cdaf9a63a4e1324f6246a10c4}{on\+Trigger\+Exit\+Event}}
+\item 
+List$<$ string $>$ \mbox{\hyperlink{class_r_m___trigger_a970ad518e9e773c1f422a9adaa86b906}{allowed\+Tags}} = new List$<$string$>$ \{ \char`\"{}RM\+\_\+\+Player\char`\"{} \}
+\item 
+\mbox{\hyperlink{class_r_m___pickup_s_o}{RM\+\_\+\+Pickup\+SO}} \mbox{\hyperlink{class_r_m___trigger_a17fe7a77414229adf9860a859feffbfb}{required\+Item}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_r_m___trigger_af784e7c451ca7edea37b24570a162688}{Start}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main trigger component, has multiple events that can be read and attached to. Also it is possible to add a interaction string so we can fetch inputs from the input manager and activate the trigger on interaction. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_m___trigger_a5709af29657208a9905420f00f8707c0}\label{class_r_m___trigger_a5709af29657208a9905420f00f8707c0}} 
+\index{RM\_Trigger@{RM\_Trigger}!GetTriggerKey@{GetTriggerKey}}
+\index{GetTriggerKey@{GetTriggerKey}!RM\_Trigger@{RM\_Trigger}}
+\doxysubsubsection{\texorpdfstring{GetTriggerKey()}{GetTriggerKey()}}
+{\footnotesize\ttfamily string RM\+\_\+\+Trigger.\+Get\+Trigger\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the trigger name. 
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_m___trigger_af784e7c451ca7edea37b24570a162688}\label{class_r_m___trigger_af784e7c451ca7edea37b24570a162688}} 
+\index{RM\_Trigger@{RM\_Trigger}!Start@{Start}}
+\index{Start@{Start}!RM\_Trigger@{RM\_Trigger}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily virtual void RM\+\_\+\+Trigger.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+The item required to trigger this trigger 
+
+Reimplemented in \mbox{\hyperlink{class_r_m___pickup_aa3acfc5968d4eeb7dc43192268ff5155}{RM\+\_\+\+Pickup}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_r_m___trigger_a970ad518e9e773c1f422a9adaa86b906}\label{class_r_m___trigger_a970ad518e9e773c1f422a9adaa86b906}} 
+\index{RM\_Trigger@{RM\_Trigger}!allowedTags@{allowedTags}}
+\index{allowedTags@{allowedTags}!RM\_Trigger@{RM\_Trigger}}
+\doxysubsubsection{\texorpdfstring{allowedTags}{allowedTags}}
+{\footnotesize\ttfamily List$<$string$>$ RM\+\_\+\+Trigger.\+allowed\+Tags = new List$<$string$>$ \{ \char`\"{}RM\+\_\+\+Player\char`\"{} \}}
+
+On\+Trigger\+Exit action event listener. \mbox{\Hypertarget{class_r_m___trigger_a601ede425e1c67a6969048f746c68cde}\label{class_r_m___trigger_a601ede425e1c67a6969048f746c68cde}} 
+\index{RM\_Trigger@{RM\_Trigger}!onTriggerEnterEvent@{onTriggerEnterEvent}}
+\index{onTriggerEnterEvent@{onTriggerEnterEvent}!RM\_Trigger@{RM\_Trigger}}
+\doxysubsubsection{\texorpdfstring{onTriggerEnterEvent}{onTriggerEnterEvent}}
+{\footnotesize\ttfamily Unity\+Event$<$Collider$>$ RM\+\_\+\+Trigger.\+on\+Trigger\+Enter\+Event}
+
+Handles if trigger has been triggered at least once \mbox{\Hypertarget{class_r_m___trigger_ac09c2d4cdaf9a63a4e1324f6246a10c4}\label{class_r_m___trigger_ac09c2d4cdaf9a63a4e1324f6246a10c4}} 
+\index{RM\_Trigger@{RM\_Trigger}!onTriggerExitEvent@{onTriggerExitEvent}}
+\index{onTriggerExitEvent@{onTriggerExitEvent}!RM\_Trigger@{RM\_Trigger}}
+\doxysubsubsection{\texorpdfstring{onTriggerExitEvent}{onTriggerExitEvent}}
+{\footnotesize\ttfamily Unity\+Event$<$Collider$>$ RM\+\_\+\+Trigger.\+on\+Trigger\+Exit\+Event}
+
+On\+Trigger\+Stay action event listener. \mbox{\Hypertarget{class_r_m___trigger_a3cdb9ba6d6b3e69308f4eb32dff05c9d}\label{class_r_m___trigger_a3cdb9ba6d6b3e69308f4eb32dff05c9d}} 
+\index{RM\_Trigger@{RM\_Trigger}!onTriggerStayEvent@{onTriggerStayEvent}}
+\index{onTriggerStayEvent@{onTriggerStayEvent}!RM\_Trigger@{RM\_Trigger}}
+\doxysubsubsection{\texorpdfstring{onTriggerStayEvent}{onTriggerStayEvent}}
+{\footnotesize\ttfamily Unity\+Event$<$Collider$>$ RM\+\_\+\+Trigger.\+on\+Trigger\+Stay\+Event}
+
+On\+Trigger\+Enter action event listener. \mbox{\Hypertarget{class_r_m___trigger_a17fe7a77414229adf9860a859feffbfb}\label{class_r_m___trigger_a17fe7a77414229adf9860a859feffbfb}} 
+\index{RM\_Trigger@{RM\_Trigger}!requiredItem@{requiredItem}}
+\index{requiredItem@{requiredItem}!RM\_Trigger@{RM\_Trigger}}
+\doxysubsubsection{\texorpdfstring{requiredItem}{requiredItem}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_m___pickup_s_o}{RM\+\_\+\+Pickup\+SO}} RM\+\_\+\+Trigger.\+required\+Item}
+
+The tags allowed to trigger this triggger 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Mission/RM\+\_\+\+Trigger.\+cs\end{DoxyCompactItemize}

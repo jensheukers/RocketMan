@@ -1,0 +1,106 @@
+\hypertarget{class_r_m___character_controller}{}\doxysection{RM\+\_\+\+Character\+Controller Class Reference}
+\label{class_r_m___character_controller}\index{RM\_CharacterController@{RM\_CharacterController}}
+
+
+RN\+\_\+\+Character\+Controller is the main controller class for controlling objects in Rocket\+Man.  
+
+
+Inheritance diagram for RM\+\_\+\+Character\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_r_m___character_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_r_m___character_controller_a8de18ef6adc14204a79a6ea4267213c0}{Is\+Moving}} ()
+\begin{DoxyCompactList}\small\item\em Returns true if character is moving. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_r_m___character_controller_aab28e7e5d4fff2ddbc7d07d26ef50465}{Is\+Grounded}} ()
+\begin{DoxyCompactList}\small\item\em Returns true if character is grounded. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___character_controller_ac2ad733b1aefd3e6d4173c15a113f5f2}\label{class_r_m___character_controller_ac2ad733b1aefd3e6d4173c15a113f5f2}} 
+\mbox{\hyperlink{class_r_m___jetpack}{RM\+\_\+\+Jetpack}} {\bfseries Get\+Jetpack} ()
+\item 
+\mbox{\Hypertarget{class_r_m___character_controller_a7675388a0d0da0d1c87bfbac68cad9c0}\label{class_r_m___character_controller_a7675388a0d0da0d1c87bfbac68cad9c0}} 
+void {\bfseries On\+Collision\+Enter} (Collision collision)
+\item 
+\mbox{\Hypertarget{class_r_m___character_controller_acde5756e90d5e63001e24a9879cf9e7b}\label{class_r_m___character_controller_acde5756e90d5e63001e24a9879cf9e7b}} 
+void {\bfseries On\+Collision\+Exit} (Collision collision)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_r_m___character_controller_ac595a3a76ce7329de42679fdacb4a721}\label{class_r_m___character_controller_ac595a3a76ce7329de42679fdacb4a721}} 
+virtual void {\bfseries Late\+Update} ()
+\item 
+\mbox{\Hypertarget{class_r_m___character_controller_ac228196e4d03b47a92c74bb08748f75d}\label{class_r_m___character_controller_ac228196e4d03b47a92c74bb08748f75d}} 
+virtual void {\bfseries Handle\+Movement} (Vector2 input, bool roll=false)
+\item 
+\mbox{\Hypertarget{class_r_m___character_controller_a34782b8168b9f99274f673b795fa9ff8}\label{class_r_m___character_controller_a34782b8168b9f99274f673b795fa9ff8}} 
+virtual void {\bfseries Handle\+Animations} (Vector2 input, bool roll=false)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_r_m___character_controller_a2d502f04f48b30bad903ae6576459682}\label{class_r_m___character_controller_a2d502f04f48b30bad903ae6576459682}} 
+bool {\bfseries is\+Moving}
+\item 
+bool \mbox{\hyperlink{class_r_m___character_controller_ad2160b3a64a7827813d5326497a9681c}{is\+Grounded}}
+\item 
+\mbox{\Hypertarget{class_r_m___character_controller_afd80a865cd16b889582552dfb460a6b3}\label{class_r_m___character_controller_afd80a865cd16b889582552dfb460a6b3}} 
+bool {\bfseries can\+Roll}
+\item 
+Audio\+Source \mbox{\hyperlink{class_r_m___character_controller_a160593b2c10157142c6c0c08e0246b9a}{\+\_\+audio\+Source}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+RN\+\_\+\+Character\+Controller is the main controller class for controlling objects in Rocket\+Man. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_m___character_controller_aab28e7e5d4fff2ddbc7d07d26ef50465}\label{class_r_m___character_controller_aab28e7e5d4fff2ddbc7d07d26ef50465}} 
+\index{RM\_CharacterController@{RM\_CharacterController}!IsGrounded@{IsGrounded}}
+\index{IsGrounded@{IsGrounded}!RM\_CharacterController@{RM\_CharacterController}}
+\doxysubsubsection{\texorpdfstring{IsGrounded()}{IsGrounded()}}
+{\footnotesize\ttfamily bool RM\+\_\+\+Character\+Controller.\+Is\+Grounded (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns true if character is grounded. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_m___character_controller_a8de18ef6adc14204a79a6ea4267213c0}\label{class_r_m___character_controller_a8de18ef6adc14204a79a6ea4267213c0}} 
+\index{RM\_CharacterController@{RM\_CharacterController}!IsMoving@{IsMoving}}
+\index{IsMoving@{IsMoving}!RM\_CharacterController@{RM\_CharacterController}}
+\doxysubsubsection{\texorpdfstring{IsMoving()}{IsMoving()}}
+{\footnotesize\ttfamily bool RM\+\_\+\+Character\+Controller.\+Is\+Moving (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns true if character is moving. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_r_m___character_controller_a160593b2c10157142c6c0c08e0246b9a}\label{class_r_m___character_controller_a160593b2c10157142c6c0c08e0246b9a}} 
+\index{RM\_CharacterController@{RM\_CharacterController}!\_audioSource@{\_audioSource}}
+\index{\_audioSource@{\_audioSource}!RM\_CharacterController@{RM\_CharacterController}}
+\doxysubsubsection{\texorpdfstring{\_audioSource}{\_audioSource}}
+{\footnotesize\ttfamily Audio\+Source RM\+\_\+\+Character\+Controller.\+\_\+audio\+Source\hspace{0.3cm}{\ttfamily [protected]}}
+
+Jetpack reference \mbox{\Hypertarget{class_r_m___character_controller_ad2160b3a64a7827813d5326497a9681c}\label{class_r_m___character_controller_ad2160b3a64a7827813d5326497a9681c}} 
+\index{RM\_CharacterController@{RM\_CharacterController}!isGrounded@{isGrounded}}
+\index{isGrounded@{isGrounded}!RM\_CharacterController@{RM\_CharacterController}}
+\doxysubsubsection{\texorpdfstring{isGrounded}{isGrounded}}
+{\footnotesize\ttfamily bool RM\+\_\+\+Character\+Controller.\+is\+Grounded\hspace{0.3cm}{\ttfamily [protected]}}
+
+True if character is moving 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Controllers/RM\+\_\+\+Character\+Controller.\+cs\end{DoxyCompactItemize}

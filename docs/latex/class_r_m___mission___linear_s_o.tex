@@ -1,0 +1,83 @@
+\hypertarget{class_r_m___mission___linear_s_o}{}\doxysection{RM\+\_\+\+Mission\+\_\+\+Linear\+SO Class Reference}
+\label{class_r_m___mission___linear_s_o}\index{RM\_Mission\_LinearSO@{RM\_Mission\_LinearSO}}
+
+
+\mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}} is a derrived Scriptable\+Object containing mission data Linear missions are missions where the player has to get from point a to point b and passes through checkpoints.  
+
+
+Inheritance diagram for RM\+\_\+\+Mission\+\_\+\+Linear\+SO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_r_m___mission___linear_s_o}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_r_m___mission___linear_s_o_a910f22f6473f9bb6b020e93e87f912d1}{On\+Start}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_r_m___mission_s_o_a1515f31422b90e05acd3c171c4af913c}{On\+Start}} ()
+\item 
+\mbox{\Hypertarget{class_r_m___mission_s_o_a84ecb72333f9e9f733fa7b59856c9f97}\label{class_r_m___mission_s_o_a84ecb72333f9e9f733fa7b59856c9f97}} 
+virtual void {\bfseries On\+Stop} ()
+\begin{DoxyCompactList}\small\item\em Gets called by default end\+Mission\+Trigger. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___mission_s_o_adabc55d84ce19a6c43d610d49be919a1}\label{class_r_m___mission_s_o_adabc55d84ce19a6c43d610d49be919a1}} 
+virtual void {\bfseries On\+Update} ()
+\begin{DoxyCompactList}\small\item\em Gets called every frame by \mbox{\hyperlink{class_r_m___mission}{RM\+\_\+\+Mission}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_r_m___mission_s_o_a3ebe4901181338fb5c2ff22ed437c88c}{Is\+Done}} ()
+\begin{DoxyCompactList}\small\item\em Returns true if mission is done, else returns false. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_r_m___quest_s_o}{RM\+\_\+\+Quest\+SO}} \mbox{\hyperlink{class_r_m___mission_s_o_ad5062116a4875081dc8f063478880abf}{Get\+Current\+Quest}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current quest. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_r_m___quest_s_o}{RM\+\_\+\+Quest\+SO}} \mbox{\hyperlink{class_r_m___mission_s_o_ad7cd66d3263c84ff6066f9c9b88fd750}{Get\+Quest}} (int id)
+\begin{DoxyCompactList}\small\item\em Gets a quest from quests lists using id ~\newline
+ \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_r_m___mission_s_o_a54e42e08d229ea5dc7e572ff554120ee}{Get\+Current\+Quest\+ID}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_r_m___mission_s_o_aacd2e616d4941819da4338a8bacf27b0}\label{class_r_m___mission_s_o_aacd2e616d4941819da4338a8bacf27b0}} 
+string {\bfseries mission\+Name} = \char`\"{}Unnamed Mission\char`\"{}
+\item 
+\mbox{\Hypertarget{class_r_m___mission_s_o_a470267b2420318caa2a5c136610274cf}\label{class_r_m___mission_s_o_a470267b2420318caa2a5c136610274cf}} 
+string {\bfseries image\+Path} = \char`\"{}Images/missionimage\+\_\+default\char`\"{}
+\item 
+\mbox{\Hypertarget{class_r_m___mission_s_o_ae6e4a08cb616c81b7e6f43570a5426bc}\label{class_r_m___mission_s_o_ae6e4a08cb616c81b7e6f43570a5426bc}} 
+string {\bfseries mission\+Scene\+Name} = \char`\"{}Sample\+Scene\char`\"{}
+\item 
+\mbox{\Hypertarget{class_r_m___mission_s_o_aaaaafaaa675ddf038994c70aca2f89a2}\label{class_r_m___mission_s_o_aaaaafaaa675ddf038994c70aca2f89a2}} 
+bool {\bfseries unlock\+Cursor\+In\+Start} = true
+\item 
+\mbox{\Hypertarget{class_r_m___mission_s_o_ab7d9747a5e319abcedaa2e18ad1357dd}\label{class_r_m___mission_s_o_ab7d9747a5e319abcedaa2e18ad1357dd}} 
+float {\bfseries screen\+Fade\+Time} = 2f
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_r_m___trigger}{RM\+\_\+\+Trigger}} \mbox{\hyperlink{class_r_m___mission_s_o_a6bea6b8bdc882e942d5d1b0361dda471}{Find\+Trigger\+By\+Name}} (string trigger\+Key)
+\begin{DoxyCompactList}\small\item\em Finds a trigger by keyname. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}} is a derrived Scriptable\+Object containing mission data Linear missions are missions where the player has to get from point a to point b and passes through checkpoints. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_m___mission___linear_s_o_a910f22f6473f9bb6b020e93e87f912d1}\label{class_r_m___mission___linear_s_o_a910f22f6473f9bb6b020e93e87f912d1}} 
+\index{RM\_Mission\_LinearSO@{RM\_Mission\_LinearSO}!OnStart@{OnStart}}
+\index{OnStart@{OnStart}!RM\_Mission\_LinearSO@{RM\_Mission\_LinearSO}}
+\doxysubsubsection{\texorpdfstring{OnStart()}{OnStart()}}
+{\footnotesize\ttfamily override void RM\+\_\+\+Mission\+\_\+\+Linear\+SO.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+The current checkpoint trigger key 
+
+Reimplemented from \mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Scriptable\+Objects/\+Missions/RM\+\_\+\+Mission\+\_\+\+Linear\+SO.\+cs\end{DoxyCompactItemize}

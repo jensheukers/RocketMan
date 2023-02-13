@@ -1,0 +1,91 @@
+\hypertarget{class_r_m___pickup}{}\doxysection{RM\+\_\+\+Pickup Class Reference}
+\label{class_r_m___pickup}\index{RM\_Pickup@{RM\_Pickup}}
+
+
+Pickups are triggers that display a \mbox{\hyperlink{class_r_m___pickup_s_o}{RM\+\_\+\+Pickup\+SO}}.  
+
+
+Inheritance diagram for RM\+\_\+\+Pickup\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_r_m___pickup}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_r_m___pickup_a02b75c84698ba5c7849dcdee54dabaa6}{Set\+Pickup\+Scriptable\+Object}} (\mbox{\hyperlink{class_r_m___pickup_s_o}{RM\+\_\+\+Pickup\+SO}} data)
+\begin{DoxyCompactList}\small\item\em Sets the pickup scriptableobject reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_r_m___trigger}{RM\+\_\+\+Trigger}}}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_r_m___trigger_a5709af29657208a9905420f00f8707c0}{Get\+Trigger\+Key}} ()
+\begin{DoxyCompactList}\small\item\em Returns the trigger name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_r_m___pickup_aa3acfc5968d4eeb7dc43192268ff5155}{Start}} ()
+\item 
+\mbox{\Hypertarget{class_r_m___pickup_a63c08aa145c6e66cbded8371390b66a0}\label{class_r_m___pickup_a63c08aa145c6e66cbded8371390b66a0}} 
+virtual void {\bfseries Update} ()
+\item 
+\mbox{\Hypertarget{class_r_m___pickup_a82b49afb73bea10a98006b39fbb8baf4}\label{class_r_m___pickup_a82b49afb73bea10a98006b39fbb8baf4}} 
+virtual void {\bfseries Spawn\+Pickup\+SOPrefab} ()
+\begin{DoxyCompactList}\small\item\em Spawns the pickup prefab. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___pickup_af748ccd4e1bc54a7950f3de754ed8f1f}\label{class_r_m___pickup_af748ccd4e1bc54a7950f3de754ed8f1f}} 
+virtual void {\bfseries On\+Pickup} (Collider collider)
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_r_m___trigger_af784e7c451ca7edea37b24570a162688}{Start}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_r_m___trigger}{RM\+\_\+\+Trigger}}}
+\begin{DoxyCompactItemize}
+\item 
+Unity\+Event$<$ Collider $>$ \mbox{\hyperlink{class_r_m___trigger_a601ede425e1c67a6969048f746c68cde}{on\+Trigger\+Enter\+Event}}
+\item 
+Unity\+Event$<$ Collider $>$ \mbox{\hyperlink{class_r_m___trigger_a3cdb9ba6d6b3e69308f4eb32dff05c9d}{on\+Trigger\+Stay\+Event}}
+\item 
+Unity\+Event$<$ Collider $>$ \mbox{\hyperlink{class_r_m___trigger_ac09c2d4cdaf9a63a4e1324f6246a10c4}{on\+Trigger\+Exit\+Event}}
+\item 
+List$<$ string $>$ \mbox{\hyperlink{class_r_m___trigger_a970ad518e9e773c1f422a9adaa86b906}{allowed\+Tags}} = new List$<$string$>$ \{ \char`\"{}RM\+\_\+\+Player\char`\"{} \}
+\item 
+\mbox{\hyperlink{class_r_m___pickup_s_o}{RM\+\_\+\+Pickup\+SO}} \mbox{\hyperlink{class_r_m___trigger_a17fe7a77414229adf9860a859feffbfb}{required\+Item}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Pickups are triggers that display a \mbox{\hyperlink{class_r_m___pickup_s_o}{RM\+\_\+\+Pickup\+SO}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_m___pickup_a02b75c84698ba5c7849dcdee54dabaa6}\label{class_r_m___pickup_a02b75c84698ba5c7849dcdee54dabaa6}} 
+\index{RM\_Pickup@{RM\_Pickup}!SetPickupScriptableObject@{SetPickupScriptableObject}}
+\index{SetPickupScriptableObject@{SetPickupScriptableObject}!RM\_Pickup@{RM\_Pickup}}
+\doxysubsubsection{\texorpdfstring{SetPickupScriptableObject()}{SetPickupScriptableObject()}}
+{\footnotesize\ttfamily void RM\+\_\+\+Pickup.\+Set\+Pickup\+Scriptable\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_r_m___pickup_s_o}{RM\+\_\+\+Pickup\+SO}}}]{data }\end{DoxyParamCaption})}
+
+
+
+Sets the pickup scriptableobject reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{class_r_m___pickup_s_o}{RM\+\_\+\+Pickup\+SO}}} & Scriptable\+Object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_r_m___pickup_aa3acfc5968d4eeb7dc43192268ff5155}\label{class_r_m___pickup_aa3acfc5968d4eeb7dc43192268ff5155}} 
+\index{RM\_Pickup@{RM\_Pickup}!Start@{Start}}
+\index{Start@{Start}!RM\_Pickup@{RM\_Pickup}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily override void RM\+\_\+\+Pickup.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+The spsed to Rotate 
+
+Reimplemented from \mbox{\hyperlink{class_r_m___trigger_af784e7c451ca7edea37b24570a162688}{RM\+\_\+\+Trigger}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Other/RM\+\_\+\+Pickup.\+cs\end{DoxyCompactItemize}

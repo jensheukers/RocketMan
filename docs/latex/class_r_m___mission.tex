@@ -1,0 +1,71 @@
+\hypertarget{class_r_m___mission}{}\doxysection{RM\+\_\+\+Mission Class Reference}
+\label{class_r_m___mission}\index{RM\_Mission@{RM\_Mission}}
+
+
+\mbox{\hyperlink{class_r_m___mission}{RM\+\_\+\+Mission}} acts as a sort of wrapper for the \mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}} object. handles communication between gamestate and the current mission data.  
+
+
+Inheritance diagram for RM\+\_\+\+Mission\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_r_m___mission}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+IEnumerator \mbox{\hyperlink{class_r_m___mission_a5643ffe62e867a780d86cef89debbb2c}{Load\+And\+Start\+Mission}} (\mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}} data)
+\begin{DoxyCompactList}\small\item\em Loads and start the mission, should be called first before any other runtime action is performed on the mission. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___mission_af023eb12ac7256193418479704b80f23}\label{class_r_m___mission_af023eb12ac7256193418479704b80f23}} 
+void {\bfseries Stop\+Mission} ()
+\begin{DoxyCompactList}\small\item\em Calls the On\+Stop function on mission data Scriptable\+Object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_r_m___mission_a8d4ba59ed8d36df8a87d4188fd4b722c}{Is\+Done}} ()
+\begin{DoxyCompactList}\small\item\em returns data.\+Is\+Done \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_r_m___mission_abab9ae0822726072d35b320f47eb9cfa}\label{class_r_m___mission_abab9ae0822726072d35b320f47eb9cfa}} 
+void {\bfseries Update} ()
+\begin{DoxyCompactList}\small\item\em Calls the On\+Update function on mission data Scriptable\+Object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}} \mbox{\hyperlink{class_r_m___mission_a5e977a4606b87200082c67eca09edc44}{Mission\+Data}} ()
+\item 
+\mbox{\Hypertarget{class_r_m___mission_aa199b85a2cd075a6fb8f174232edc9bb}\label{class_r_m___mission_aa199b85a2cd075a6fb8f174232edc9bb}} 
+bool {\bfseries Is\+Loaded} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_r_m___mission}{RM\+\_\+\+Mission}} acts as a sort of wrapper for the \mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}} object. handles communication between gamestate and the current mission data. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_m___mission_a8d4ba59ed8d36df8a87d4188fd4b722c}\label{class_r_m___mission_a8d4ba59ed8d36df8a87d4188fd4b722c}} 
+\index{RM\_Mission@{RM\_Mission}!IsDone@{IsDone}}
+\index{IsDone@{IsDone}!RM\_Mission@{RM\_Mission}}
+\doxysubsubsection{\texorpdfstring{IsDone()}{IsDone()}}
+{\footnotesize\ttfamily bool RM\+\_\+\+Mission.\+Is\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns data.\+Is\+Done 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_m___mission_a5643ffe62e867a780d86cef89debbb2c}\label{class_r_m___mission_a5643ffe62e867a780d86cef89debbb2c}} 
+\index{RM\_Mission@{RM\_Mission}!LoadAndStartMission@{LoadAndStartMission}}
+\index{LoadAndStartMission@{LoadAndStartMission}!RM\_Mission@{RM\_Mission}}
+\doxysubsubsection{\texorpdfstring{LoadAndStartMission()}{LoadAndStartMission()}}
+{\footnotesize\ttfamily IEnumerator RM\+\_\+\+Mission.\+Load\+And\+Start\+Mission (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}}}]{data }\end{DoxyParamCaption})}
+
+
+
+Loads and start the mission, should be called first before any other runtime action is performed on the mission. 
+
+The coroutine operation \mbox{\Hypertarget{class_r_m___mission_a5e977a4606b87200082c67eca09edc44}\label{class_r_m___mission_a5e977a4606b87200082c67eca09edc44}} 
+\index{RM\_Mission@{RM\_Mission}!MissionData@{MissionData}}
+\index{MissionData@{MissionData}!RM\_Mission@{RM\_Mission}}
+\doxysubsubsection{\texorpdfstring{MissionData()}{MissionData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_m___mission_s_o}{RM\+\_\+\+Mission\+SO}} RM\+\_\+\+Mission.\+Mission\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the mission data 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Mission/RM\+\_\+\+Mission.\+cs\end{DoxyCompactItemize}
